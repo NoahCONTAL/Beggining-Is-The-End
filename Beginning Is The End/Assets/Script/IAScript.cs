@@ -33,5 +33,11 @@ public class IAScript : MonoBehaviour
             // déplace l'IA vers le joueur
             transform.position = Vector3.MoveTowards(transform.position, targetPlayer.transform.position, speed * Time.deltaTime);
         }
+        
+        // si l'IA est en contact avec un joueur alors elle lui retire de la vie
+        if (targetPlayer is not null && minDistance < 1f)
+        {
+            targetPlayer.GetComponent<Player>().TakeDamage(1);
+        }
     }
 }

@@ -5,13 +5,14 @@ using UnityEngine.UI;
 public class PlayerUI : Player
 {
     [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject dieMenu;
     [SerializeField] private RectTransform healthBar;
     [SerializeField] private RectTransform energyBar;
 
     private float currentHealth;
     private float currentEnergy;
-    private float maxHealth;
-    private float maxEnergy;
+    private float maxiHealth;
+    private float maxiEnergy;
     
     private PlayerSetup playerSetup;
     private PlayerMotor PlayerMotor;
@@ -26,8 +27,8 @@ public class PlayerUI : Player
         playerSetup = GetComponent<PlayerSetup>();
         PlayerMotor = GetComponent<PlayerMotor>();
         networkManager = NetworkManager.singleton;
-        maxHealth = GetComponent<Player>().maxHealth;
-        maxEnergy = GetComponent<Player>().maxEnergy;
+        maxiHealth = GetComponent<Player>().maxHealth;
+        maxiEnergy = GetComponent<Player>().maxEnergy;
     }
 
     private void Update()
@@ -74,6 +75,11 @@ public class PlayerUI : Player
             playerCameraController.enabled = false;
         }
     }
+    
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 
     public void LeaveButton()
     {
@@ -102,18 +108,41 @@ public class PlayerUI : Player
     private void UpdateHealth()
     {
         currentHealth = GetComponent<Player>().health;
-        healthBar.sizeDelta = new Vector2(healthBar.sizeDelta.x, currentHealth / maxHealth * 300);
+        healthBar.sizeDelta = new Vector2(healthBar.sizeDelta.x, currentHealth / maxiHealth * 300);
     }
     
     //Gestion de la barre d'énergie verticale qui doit descendre quand on prend des dégats
     private void UpdateEnergy()
     {
         currentEnergy = GetComponent<Player>().energy;
-        energyBar.sizeDelta = new Vector2(energyBar.sizeDelta.x, currentEnergy / maxEnergy * 300);
+        energyBar.sizeDelta = new Vector2(energyBar.sizeDelta.x, currentEnergy / maxiEnergy * 300);
     }
     
-    public void QuitGame()
+    //Fait apparaître un effet de mort
+    public void Die()
     {
-        Application.Quit();
-    }   
+        if (isLocalPlayer)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            dieMenu.SetActive(true);
+            playerSetup.enabled = false;
+            PlayerMotor.enabled = false;
+            playerAnimations.enabled = false;
+            playerCameraController.enabled = false;
+        }
+    }
+    
+    public void respawn()
+    {
+        if (isLocalPlayer)
+        {
+            GetComponent<Player>().respawn();
+            Cursor.lockState = CursorLockMode.Locked;
+            dieMenu.SetActive(false);
+            playerSetup.enabled = true;
+            PlayerMotor.enabled = true;
+            playerAnimations.enabled = true;
+            playerCameraController.enabled = true;
+        }
+    }
 }
