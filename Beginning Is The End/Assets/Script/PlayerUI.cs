@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Mirror;
 using UnityEngine.UI;
@@ -92,14 +93,31 @@ public class PlayerUI : Player
             networkManager.StopHost();
         }
     }
+    
+    private bool isHosting = false;
+    
     public void HostButton()
     {
-        networkManager.StartHost();
+        if (isHosting)
+        {
+            NetworkManager.singleton.StopHost(); // Arrête le serveur si on héberge déjà
+        }
+        else
+        {
+            NetworkManager.singleton.StartHost(); // Démarre un serveur pour héberger la partie
+        }
+
+        isHosting = !isHosting; // Inverse la valeur de la variable pour la prochaine fois que le bouton sera cliqué
     }
+
+   
     public void JoinButton()
     {
-        networkManager.networkAddress = GameObject.Find("InputField").GetComponent<InputField>().text;
-        networkManager.StartClient();
+        //Récupère l'adresse IP du serveur
+        string ipAddress = GameObject.Find("IpAdress").GetComponent<InputField>().text;
+        NetworkManager.singleton.networkAddress = ipAddress; // Définit l'adresse IP du NetworkManager
+        NetworkManager.singleton.StartClient(); // Démarre un client pour rejoindre la partie
+
     }
 
     //Gestion de l'interface

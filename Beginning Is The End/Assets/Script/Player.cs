@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Player : NetworkBehaviour
 {
-    [SerializeField] internal int health = 100;
+    [SerializeField] public float health = 100;
     public int maxHealth = 100;
-    [SerializeField] internal int energy = 100;
+    [SerializeField] public float energy = 100;
     public int maxEnergy  = 100;
-    [SerializeField] private int damage = 5;
+    [SerializeField] public int damage = 5;
     
     public void TakeDamage(int damage)
     {
@@ -32,5 +32,23 @@ public class Player : NetworkBehaviour
         energy = maxEnergy;
         transform.position = new Vector3(-192, 1, -160);
         transform.rotation = Quaternion.Euler(0, 160, 0);
+    }
+    
+    public void useEnergy(float energyUsed)
+    {
+        energy -= energyUsed;
+        if (energy <= 0)
+        {
+            energy = 0;
+        }
+    }
+    
+    public void addEnergy(float energyAdded)
+    {
+        energy += energyAdded;
+        if (energy > maxEnergy)
+        {
+            energy = maxEnergy;
+        }
     }
 }

@@ -24,6 +24,11 @@ public class PlayerMotor : MonoBehaviour
         return Physics.Raycast(rb.transform.position, -Vector3.up, distanceToGround + 0.1f);
     }
     
+    private bool IsNotTired(float ernegyCost)
+    {
+        return GetComponent<Player>().energy > ernegyCost;
+    }
+    
     private void Update()
     {
         //Gestion des inpputs est des vitesse associ� (marche / court) sur l'axe z
@@ -33,9 +38,10 @@ public class PlayerMotor : MonoBehaviour
             rb.MovePosition(rb.transform.position + (WalkSpeed * Time.fixedDeltaTime * rb.transform.forward));
         }
 
-        if (Input.GetKey(inputFront) && Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(inputFront) && Input.GetKey(KeyCode.LeftShift) && IsNotTired(0.1f))
         {
             rb.MovePosition(rb.transform.position + (SprintSpeed * Time.fixedDeltaTime * rb.transform.forward));
+            GetComponent<Player>().useEnergy(0.1f);
         }
 
         if (Input.GetKey(inputBack) && !Input.GetKey(KeyCode.LeftShift))
@@ -43,18 +49,20 @@ public class PlayerMotor : MonoBehaviour
             rb.MovePosition(rb.transform.position + (-WalkSpeed * Time.fixedDeltaTime * rb.transform.forward ));
         }
 
-        if (Input.GetKey(inputBack) && Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(inputBack) && Input.GetKey(KeyCode.LeftShift) && IsNotTired(0.1f))
         {
             rb.MovePosition(rb.transform.position + (-SprintSpeed * Time.fixedDeltaTime * rb.transform.forward));
+            GetComponent<Player>().useEnergy(0.1f);
         }
 
         //Gestion du saut 
 
         var jumpVelocity = Vector3.zero;
 
-        if (IsGrounded() && Input.GetKeyDown(KeyCode.Space))
+        if (IsGrounded() && Input.GetKeyDown(KeyCode.Space) && IsNotTired(3))
         {
             rb.AddForce(Vector3.up * JumpForce, ForceMode.Impulse);
+            GetComponent<Player>().useEnergy(3);
         }
 
         //Gestion des inpputs est des vitesse associ� (marche / court) sur l'axe x
@@ -64,9 +72,10 @@ public class PlayerMotor : MonoBehaviour
             rb.MovePosition(rb.transform.position + (TurnSpeed * Time.fixedDeltaTime * rb.transform.right));
         }
 
-        if (Input.GetKey(inputRight) && Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(inputRight) && Input.GetKey(KeyCode.LeftShift) && IsNotTired(0.1f))
         {
             rb.MovePosition(rb.transform.position + (SprintTurnSpeed * Time.fixedDeltaTime * rb.transform.right));
+            GetComponent<Player>().useEnergy(0.1f);
         }
 
         if (Input.GetKey(inputLeft) && !Input.GetKey(KeyCode.LeftShift))
@@ -74,9 +83,12 @@ public class PlayerMotor : MonoBehaviour
             rb.MovePosition(rb.transform.position + (-TurnSpeed * Time.fixedDeltaTime * rb.transform.right));
         }
 
-        if (Input.GetKey(inputLeft) && Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(inputLeft) && Input.GetKey(KeyCode.LeftShift) && IsNotTired(0.1f))
         {
             rb.MovePosition(rb.transform.position + (-SprintTurnSpeed * Time.fixedDeltaTime * rb.transform.right));
+            GetComponent<Player>().useEnergy(0.1f);
         }
+        
+        GetComponent<Player>().addEnergy(0.05f);
     }
 }
