@@ -5,8 +5,8 @@ public class PlayerCameraController : MonoBehaviour
     public Transform target; // Référence au point de référence sur la tête du personnage
     public float sensitivity = 5f; // Sensibilité de la souris
     public float distance = 2f; // Distance entre la caméra et le point de référence
-    public float minYAngle = -90f; // Angle minimal de la caméra en hauteur
-    public float maxYAngle = 90f; // Angle maximal de la caméra en hauteur
+    private float minYAngle = -70f; // Angle minimal de la caméra en hauteur
+    private float maxYAngle = 90f; // Angle maximal de la caméra en hauteur
     public float smoothTime = 0.1f; // Temps de lissage de la position de la caméra
     public float maxDistance = 5f; // Distance maximale entre la caméra et le joueur
 

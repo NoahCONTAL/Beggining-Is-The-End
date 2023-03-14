@@ -6,9 +6,15 @@ public class PlayerAnimations : MonoBehaviour
 {
    [SerializeField]
    private Animator anim;
-
+   
+   private bool IsNotTired(float ernegyCost)
+   {
+      return true;
+   }
+   
    private void Update()
    {
+      
       if (Input.GetKey(KeyCode.Z) && !Input.GetKey(KeyCode.LeftShift))
       {
          anim.SetBool("WalkFront", true);
@@ -17,6 +23,7 @@ public class PlayerAnimations : MonoBehaviour
       {
          anim.SetBool("WalkFront", false);
       }
+      
       if (Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.LeftShift))
       {
          anim.SetBool("WalkBack", true);
@@ -34,6 +41,7 @@ public class PlayerAnimations : MonoBehaviour
       {
          anim.SetBool("Left", false);
       }
+      
       if (Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.Z) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.LeftShift))
       {
          anim.SetBool("Right", true);
@@ -43,7 +51,7 @@ public class PlayerAnimations : MonoBehaviour
          anim.SetBool("Right", false);
       }
       
-      if (Input.GetKey(KeyCode.Z) && Input.GetKey(KeyCode.LeftShift))
+      if (Input.GetKey(KeyCode.Z) && Input.GetKey(KeyCode.LeftShift) && IsNotTired(0.1f))
       {
          anim.SetBool("RunFront", true);
       }
@@ -51,7 +59,8 @@ public class PlayerAnimations : MonoBehaviour
       {
          anim.SetBool("RunFront", false);
       }
-      if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.LeftShift))
+
+      if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.LeftShift) && IsNotTired(0.1f))
       {
          anim.SetBool("RunBack", true);
       }
@@ -59,7 +68,7 @@ public class PlayerAnimations : MonoBehaviour
       {
          anim.SetBool("RunBack", false);
       }
-      if (Input.GetKey(KeyCode.Q) && !Input.GetKey(KeyCode.Z) && !Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.LeftShift))
+      if (Input.GetKey(KeyCode.Q) && !Input.GetKey(KeyCode.Z) && !Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.LeftShift) && IsNotTired(0.1f))
       {
          anim.SetBool("Left 0", true);
       }
@@ -67,7 +76,7 @@ public class PlayerAnimations : MonoBehaviour
       {
          anim.SetBool("Left 0", false);
       }
-      if (Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.Z) && !Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.LeftShift))
+      if (Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.Z) && !Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.LeftShift) && IsNotTired(0.1f))
       {
          anim.SetBool("Right 0", true);
       }

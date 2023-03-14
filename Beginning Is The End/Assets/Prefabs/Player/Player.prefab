@@ -708,8 +708,6 @@ MonoBehaviour:
   target: {fileID: 6123232229898402536}
   sensitivity: 5
   distance: 2
-  minYAngle: -90
-  maxYAngle: 90
   smoothTime: 0.1
   maxDistance: 5
   rb: {fileID: 1738507142098526814}
@@ -1041,7 +1039,6 @@ MonoBehaviour:
   energyBar: {fileID: 627090535655736609}
   playerCameraController: {fileID: 2039971443}
   playerAnimations: {fileID: 1215792221068694694}
-  ipAddressField: {fileID: 8194877448384806375, guid: 7e6578fcf56d37c4c8671d5f9941fb61, type: 3}
 --- !u!114 &1691978589593369693
 MonoBehaviour:
   m_ObjectHideFlags: 0
