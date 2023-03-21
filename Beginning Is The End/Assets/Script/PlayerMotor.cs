@@ -20,12 +20,14 @@ public class PlayerMotor : MonoBehaviour
     [SerializeField] private string inputRight = "d";
     private Player _player;
     private CapsuleCollider _capsuleCollider;
+    GameObject Player_GFX;
     
 
     private void Start()
     {
         _capsuleCollider = GetComponent<CapsuleCollider>();
         _player = GetComponent<Player>();
+        Player_GFX = GameObject.Find("Player GFX");
     }
 
     private bool IsGrounded()
@@ -41,6 +43,8 @@ public class PlayerMotor : MonoBehaviour
     
     private void Update()
     {
+        var ini = Player_GFX.transform.position;
+        
         //Gestion des inpputs est des vitesse associ� (marche / court) sur l'axe z
 
         if (Input.GetKey(inputFront) && !Input.GetKey(inputRight) && !Input.GetKey(inputLeft) && !Input.GetKey(KeyCode.LeftShift))
@@ -147,5 +151,7 @@ public class PlayerMotor : MonoBehaviour
         
         //gestion de la récupération d'énergie
         _player.addEnergy(0.05f);
+
+        Player_GFX.transform.position = ini;
     }
 }

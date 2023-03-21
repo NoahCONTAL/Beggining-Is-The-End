@@ -2113,7 +2113,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6f7ae66318bc264ca114e41cf7f0c49, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.95
+      value: -0.94
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f6f7ae66318bc264ca114e41cf7f0c49, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2155,6 +2155,14 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 2768b919719c1384c936d21e07a1439f, type: 2}
+    - target: {fileID: 5866666021909216657, guid: f6f7ae66318bc264ca114e41cf7f0c49, type: 3}
+      propertyPath: m_CullingMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: f6f7ae66318bc264ca114e41cf7f0c49, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6f7ae66318bc264ca114e41cf7f0c49, type: 3}
 --- !u!1 &1403897609642544539 stripped
