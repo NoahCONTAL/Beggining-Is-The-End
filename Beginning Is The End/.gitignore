@@ -10,6 +10,8 @@
 /[Uu]serSettings/
 /[Bb]uild
 /[Bb]uilds
+Builds.x86_64
+Builds_Data/
 .idea/
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
