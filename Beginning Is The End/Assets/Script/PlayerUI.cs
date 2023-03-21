@@ -1,14 +1,16 @@
 using System;
 using UnityEngine;
 using Mirror;
-using UnityEngine.UI;
+using TMPro;
 
 public class PlayerUI : Player
 {
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject dieMenu;
     [SerializeField] private RectTransform healthBar;
+    [SerializeField] private RectTransform healthBarImage;
     [SerializeField] private RectTransform energyBar;
+    [SerializeField] private RectTransform energyBarImage;
 
     private float currentHealth;
     private float currentEnergy;
@@ -60,7 +62,9 @@ public class PlayerUI : Player
             playerSetup.enabled = true;
             PlayerMotor.enabled = true;
             playerAnimations.enabled = true;
-            playerCameraController.enabled = true;   
+            playerCameraController.enabled = true;
+            healthBarImage.gameObject.SetActive(true);
+            energyBarImage.gameObject.SetActive(true);
         }
     }
 
@@ -74,6 +78,8 @@ public class PlayerUI : Player
             PlayerMotor.enabled = false;
             playerAnimations.enabled = false;
             playerCameraController.enabled = false;
+            healthBarImage.gameObject.SetActive(false);
+            energyBarImage.gameObject.SetActive(false);
         }
     }
     
@@ -114,7 +120,7 @@ public class PlayerUI : Player
     public void JoinButton()
     {
         //Récupère l'adresse IP du serveur
-        string ipAddress = GameObject.Find("IpAdress").GetComponent<InputField>().text;
+        string ipAddress = GameObject.Find("IpAdress").GetComponent<TMP_InputField>().text;
         NetworkManager.singleton.networkAddress = ipAddress; // Définit l'adresse IP du NetworkManager
         NetworkManager.singleton.StartClient(); // Démarre un client pour rejoindre la partie
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : NetworkBehaviour
 {
-    [SerializeField] public float health = 100;
+    [SerializeField] public float health = 200;
     public int maxHealth = 100;
     [SerializeField] public float energy = 100;
     public int maxEnergy  = 100;
