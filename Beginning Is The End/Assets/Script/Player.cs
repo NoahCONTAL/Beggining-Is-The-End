@@ -23,6 +23,7 @@ public class Player : NetworkBehaviour
     private void Die()
     {
         // Fait apparaître un effet de mort
+        transform.position = new Vector3(0, -100, 0);
         GetComponent<PlayerUI>().Die();
     }
     

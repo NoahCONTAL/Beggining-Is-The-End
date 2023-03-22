@@ -22,6 +22,7 @@ public class PlayerUI : Player
     [SerializeField] private PlayerCameraController playerCameraController;
     [SerializeField] private PlayerAnimations playerAnimations;
     private NetworkManager networkManager;
+    
 
     private void Start()
     {
@@ -112,7 +113,6 @@ public class PlayerUI : Player
         {
             NetworkManager.singleton.StartHost(); // Démarre un serveur pour héberger la partie
         }
-
         isHosting = !isHosting; // Inverse la valeur de la variable pour la prochaine fois que le bouton sera cliqué
     }
 
@@ -145,28 +145,24 @@ public class PlayerUI : Player
     //Fait apparaître un effet de mort
     public void Die()
     {
-        if (isLocalPlayer)
-        {
-            Cursor.lockState = CursorLockMode.None;
-            dieMenu.SetActive(true);
-            playerSetup.enabled = false;
-            PlayerMotor.enabled = false;
-            playerAnimations.enabled = false;
-            playerCameraController.enabled = false;
-        }
+        if (!isLocalPlayer) return;
+        Cursor.lockState = CursorLockMode.None;
+        dieMenu.SetActive(true);
+        playerSetup.enabled = false;
+        PlayerMotor.enabled = false;
+        playerAnimations.enabled = false;
+        playerCameraController.enabled = false;
     }
     
     public void respawn()
     {
-        if (isLocalPlayer)
-        {
-            GetComponent<Player>().respawn();
-            Cursor.lockState = CursorLockMode.Locked;
-            dieMenu.SetActive(false);
-            playerSetup.enabled = true;
-            PlayerMotor.enabled = true;
-            playerAnimations.enabled = true;
-            playerCameraController.enabled = true;
-        }
+        if (!isLocalPlayer) return;
+        GetComponent<Player>().respawn();
+        Cursor.lockState = CursorLockMode.Locked;
+        dieMenu.SetActive(false);
+        playerSetup.enabled = true;
+        PlayerMotor.enabled = true;
+        playerAnimations.enabled = true;
+        playerCameraController.enabled = true;
     }
 }
