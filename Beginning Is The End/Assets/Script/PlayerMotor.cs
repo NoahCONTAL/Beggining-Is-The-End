@@ -52,7 +52,7 @@ public class PlayerMotor : MonoBehaviour
             rb.MovePosition(rb.transform.position + (WalkSpeed * Time.fixedDeltaTime * rb.transform.forward));
         }
 
-        if (Input.GetKey(inputFront) && !Input.GetKey(inputRight) && !Input.GetKey(inputLeft) && Input.GetKey(KeyCode.LeftShift) && IsNotTired(0.1f))
+        if (Input.GetKey(inputFront) && !Input.GetKey(inputRight) && !Input.GetKey(inputLeft) && Input.GetKey(KeyCode.LeftShift) && IsNotTired(0.1f) &&!IsNearLabo())
         {
             rb.MovePosition(rb.transform.position + (SprintSpeed * Time.fixedDeltaTime * rb.transform.forward));
             _player.useEnergy(0.1f);
@@ -63,7 +63,7 @@ public class PlayerMotor : MonoBehaviour
             rb.MovePosition(rb.transform.position + (-WalkSpeed * Time.fixedDeltaTime * rb.transform.forward ));
         }
 
-        if (Input.GetKey(inputBack) && !Input.GetKey(inputRight) && !Input.GetKey(inputLeft) && Input.GetKey(KeyCode.LeftShift) && IsNotTired(0.1f))
+        if (Input.GetKey(inputBack) && !Input.GetKey(inputRight) && !Input.GetKey(inputLeft) && Input.GetKey(KeyCode.LeftShift) && IsNotTired(0.1f) && !IsNearLabo())
         {
             rb.MovePosition(rb.transform.position + (-SprintSpeed * Time.fixedDeltaTime * rb.transform.forward));
             _player.useEnergy(0.1f);
@@ -73,7 +73,7 @@ public class PlayerMotor : MonoBehaviour
 
         var jumpVelocity = Vector3.zero;
 
-        if (IsGrounded() && Input.GetKeyDown(KeyCode.Space) && IsNotTired(3))
+        if (IsGrounded() && Input.GetKeyDown(KeyCode.Space) && IsNotTired(3) && !IsNearLabo())
         {
             rb.AddForce(Vector3.up * JumpForce, ForceMode.Impulse);
             _player.useEnergy(3);
@@ -86,7 +86,7 @@ public class PlayerMotor : MonoBehaviour
             rb.MovePosition(rb.transform.position + (TurnSpeed * Time.fixedDeltaTime * rb.transform.right));
         }
 
-        if (!Input.GetKey(inputFront) && Input.GetKey(inputRight) && Input.GetKey(KeyCode.LeftShift) && IsNotTired(0.1f))
+        if (!Input.GetKey(inputFront) && Input.GetKey(inputRight) && Input.GetKey(KeyCode.LeftShift) && IsNotTired(0.1f) && !IsNearLabo())
         {
             rb.MovePosition(rb.transform.position + (SprintTurnSpeed * Time.fixedDeltaTime * rb.transform.right));
             _player.useEnergy(0.1f);
@@ -97,7 +97,7 @@ public class PlayerMotor : MonoBehaviour
             rb.MovePosition(rb.transform.position + (-TurnSpeed * Time.fixedDeltaTime * rb.transform.right));
         }
 
-        if (!Input.GetKey(inputFront) && Input.GetKey(inputLeft) && Input.GetKey(KeyCode.LeftShift) && IsNotTired(0.1f))
+        if (!Input.GetKey(inputFront) && Input.GetKey(inputLeft) && Input.GetKey(KeyCode.LeftShift) && IsNotTired(0.1f) && !IsNearLabo())
         {
             rb.MovePosition(rb.transform.position + (-SprintTurnSpeed * Time.fixedDeltaTime * rb.transform.right));
             _player.useEnergy(0.1f);
@@ -110,7 +110,7 @@ public class PlayerMotor : MonoBehaviour
             rb.MovePosition(rb.transform.position + (WalkSpeed * Time.fixedDeltaTime * rb.transform.forward + TurnSpeed * Time.fixedDeltaTime * rb.transform.right));
         }
         
-        if (Input.GetKey(inputFront) && Input.GetKey(inputRight) && Input.GetKey(KeyCode.LeftShift) && IsNotTired(0.1f))
+        if (Input.GetKey(inputFront) && Input.GetKey(inputRight) && Input.GetKey(KeyCode.LeftShift) && IsNotTired(0.1f) &&!IsNearLabo())
         {
             rb.MovePosition(rb.transform.position + (SprintSpeed * Time.fixedDeltaTime * rb.transform.forward + SprintTurnSpeed * Time.fixedDeltaTime * rb.transform.right));
             _player.useEnergy(0.1f);
@@ -121,7 +121,7 @@ public class PlayerMotor : MonoBehaviour
             rb.MovePosition(rb.transform.position + (WalkSpeed * Time.fixedDeltaTime * rb.transform.forward + -TurnSpeed * Time.fixedDeltaTime * rb.transform.right));
         }
 
-        if (Input.GetKey(inputFront) && Input.GetKey(inputLeft) && Input.GetKey(KeyCode.LeftShift) && IsNotTired(0.1f))
+        if (Input.GetKey(inputFront) && Input.GetKey(inputLeft) && Input.GetKey(KeyCode.LeftShift) && IsNotTired(0.1f) && !IsNearLabo())
         {
             rb.MovePosition(rb.transform.position + (SprintSpeed * Time.fixedDeltaTime * rb.transform.forward + -SprintTurnSpeed * Time.fixedDeltaTime * rb.transform.right));
             _player.useEnergy(0.1f);
@@ -132,7 +132,7 @@ public class PlayerMotor : MonoBehaviour
             rb.MovePosition(rb.transform.position + (-WalkSpeed * Time.fixedDeltaTime * rb.transform.forward + TurnSpeed * Time.fixedDeltaTime * rb.transform.right));
         }
         
-        if (Input.GetKey(inputBack) && Input.GetKey(inputRight) && Input.GetKey(KeyCode.LeftShift) && IsNotTired(0.1f))
+        if (Input.GetKey(inputBack) && Input.GetKey(inputRight) && Input.GetKey(KeyCode.LeftShift) && IsNotTired(0.1f) && !IsNearLabo())
         {
             rb.MovePosition(rb.transform.position + (-SprintSpeed * Time.fixedDeltaTime * rb.transform.forward + SprintTurnSpeed * Time.fixedDeltaTime * rb.transform.right));
             _player.useEnergy(0.1f);
@@ -143,7 +143,7 @@ public class PlayerMotor : MonoBehaviour
             rb.MovePosition(rb.transform.position + (-WalkSpeed * Time.fixedDeltaTime * rb.transform.forward + -TurnSpeed * Time.fixedDeltaTime * rb.transform.right));
         }
         
-        if (Input.GetKey(inputBack) && Input.GetKey(inputLeft) && Input.GetKey(KeyCode.LeftShift) && IsNotTired(0.1f))
+        if (Input.GetKey(inputBack) && Input.GetKey(inputLeft) && Input.GetKey(KeyCode.LeftShift) && IsNotTired(0.1f) && !IsNearLabo())
         {
             rb.MovePosition(rb.transform.position + (-SprintSpeed * Time.fixedDeltaTime * rb.transform.forward + -SprintTurnSpeed * Time.fixedDeltaTime * rb.transform.right));
             _player.useEnergy(0.1f);
@@ -153,5 +153,19 @@ public class PlayerMotor : MonoBehaviour
         _player.addEnergy(0.05f);
 
         Player_GFX.transform.position = ini;
+    }
+    
+    //Detecte si le joeur est proche d'un object possedant le tag "Labo"
+    private bool IsNearLabo()
+    {
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 15);
+        foreach (var hitCollider in hitColliders)
+        {
+            if (hitCollider.CompareTag("Labo"))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }
