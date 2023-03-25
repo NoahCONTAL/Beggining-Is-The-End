@@ -2,17 +2,16 @@ using UnityEngine;
 
 public class IAScript : MonoBehaviour
 {
-    public float attractionDistance = 10.0f; // la distance à laquelle l'IA est attirée par les joueurs
-    public float speed = 5.0f; // vitesse de déplacement de l'IA
+    public float attractionDistance = 10.0f;
+    public float speed = 5.0f;
+    public float attackCooldown = 2.0f; // temps de recharge entre chaque attaque
+    private float timeSinceLastAttack = 0.0f; // temps écoulé depuis la dernière attaque
+    private GameObject targetPlayer;
 
-    private GameObject targetPlayer; // le joueur le plus proche de l'IA
-    
-    void Update()
+    private void Update()
     {
-        // récupère tous les GameObjects portant le tag "Player" dans la scène
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
 
-        // boucle sur tous les joueurs et récupère le joueur le plus proche de l'IA
         float minDistance = 40f;
         foreach (GameObject player in players)
         {
@@ -24,23 +23,23 @@ public class IAScript : MonoBehaviour
             }
         }
 
-        // si un joueur a été trouvé, déplace l'IA vers ce joueur et que l'ia est dans la zone d'attraction
         if (targetPlayer is not null && minDistance < attractionDistance)
         {
-            // calcule la direction vers le joueur
-            Vector3 direction = targetPlayer.transform.position - transform.position;
-
-            // déplace l'IA vers le joueur
+            Vector3 direction = targetPlayer.transform.position - transform.position + 1 * Vector3.up ;
             transform.position = Vector3.MoveTowards(transform.position, targetPlayer.transform.position, speed * Time.deltaTime);
-            
-            //oriente l'IA vers le joueur
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), 0.1f);
-        }
+            transform.rotation = Quaternion.Slerp(transform.rotation , Quaternion.LookRotation(direction), 0.1f);
         
-        // si l'IA est en contact avec un joueur alors elle lui retire de la vie
-        if (targetPlayer is not null && minDistance < 1.5f)
-        {
-            targetPlayer.GetComponent<Player>().TakeDamage(1);
+            // vérifie si le temps de recharge est écoulé avant de pouvoir attaquer à nouveau
+            if (timeSinceLastAttack >= attackCooldown)
+            {
+                targetPlayer.GetComponent<Player>().TakeDamage(5);
+                timeSinceLastAttack = 0.0f; // réinitialise le temps écoulé depuis la dernière attaque
+            }
+            else
+            {
+                timeSinceLastAttack += Time.deltaTime; // incrémente le temps écoulé depuis la dernière attaque
+            }
         }
     }
+
 }

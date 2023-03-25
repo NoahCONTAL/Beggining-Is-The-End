@@ -1,18 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Mirror;
 
-public class Teleporter : MonoBehaviour
+public class Teleporter : NetworkBehaviour
 {
-    [SerializeField] private Vector3 teleportPosition;
-    [SerializeField] private Vector3 teleportRotation; 
+    public string nextSceneName;
     
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && Input.GetKey(KeyCode.E))
-        {
-            other.transform.position = teleportPosition;
-            other.transform.rotation = Quaternion.Euler(teleportRotation);
-        }
+        if (!isServer) return;
+        Debug.Log("passed 1");
+        
+        if (!other.CompareTag("Player")) return;
+        Debug.Log("passed 2");
+
+        var networkManager = NetworkManager.singleton;
+
+        networkManager.ServerChangeScene(nextSceneName);
+        var spawnPoint = NetworkManager.singleton.GetStartPosition();
+        other.transform.position = spawnPoint.position;
+        other.transform.rotation = spawnPoint.rotation;
     }
 }

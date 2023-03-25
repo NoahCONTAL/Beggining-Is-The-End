@@ -55,7 +55,7 @@ public class PlayerMotor : MonoBehaviour
         if (Input.GetKey(inputFront) && !Input.GetKey(inputRight) && !Input.GetKey(inputLeft) && Input.GetKey(KeyCode.LeftShift) && IsNotTired(0.1f) &&!IsNearLabo())
         {
             rb.MovePosition(rb.transform.position + (SprintSpeed * Time.fixedDeltaTime * rb.transform.forward));
-            _player.useEnergy(0.1f);
+            _player.UseEnergy(0.1f);
         }
 
         if (Input.GetKey(inputBack) && !Input.GetKey(inputRight) && !Input.GetKey(inputLeft) && !Input.GetKey(KeyCode.LeftShift))
@@ -66,7 +66,7 @@ public class PlayerMotor : MonoBehaviour
         if (Input.GetKey(inputBack) && !Input.GetKey(inputRight) && !Input.GetKey(inputLeft) && Input.GetKey(KeyCode.LeftShift) && IsNotTired(0.1f) && !IsNearLabo())
         {
             rb.MovePosition(rb.transform.position + (-SprintSpeed * Time.fixedDeltaTime * rb.transform.forward));
-            _player.useEnergy(0.1f);
+            _player.UseEnergy(0.1f);
         }
 
         //Gestion du saut 
@@ -76,7 +76,7 @@ public class PlayerMotor : MonoBehaviour
         if (IsGrounded() && Input.GetKeyDown(KeyCode.Space) && IsNotTired(3) && !IsNearLabo())
         {
             rb.AddForce(Vector3.up * JumpForce, ForceMode.Impulse);
-            _player.useEnergy(3);
+            _player.UseEnergy(3);
         }
 
         //Gestion des inpputs est des vitesse associ� (marche / court) sur l'axe x
@@ -89,7 +89,7 @@ public class PlayerMotor : MonoBehaviour
         if (!Input.GetKey(inputFront) && Input.GetKey(inputRight) && Input.GetKey(KeyCode.LeftShift) && IsNotTired(0.1f) && !IsNearLabo())
         {
             rb.MovePosition(rb.transform.position + (SprintTurnSpeed * Time.fixedDeltaTime * rb.transform.right));
-            _player.useEnergy(0.1f);
+            _player.UseEnergy(0.1f);
         }
 
         if (!Input.GetKey(inputFront) && Input.GetKey(inputLeft) && !Input.GetKey(KeyCode.LeftShift))
@@ -100,7 +100,7 @@ public class PlayerMotor : MonoBehaviour
         if (!Input.GetKey(inputFront) && Input.GetKey(inputLeft) && Input.GetKey(KeyCode.LeftShift) && IsNotTired(0.1f) && !IsNearLabo())
         {
             rb.MovePosition(rb.transform.position + (-SprintTurnSpeed * Time.fixedDeltaTime * rb.transform.right));
-            _player.useEnergy(0.1f);
+            _player.UseEnergy(0.1f);
         }
         
         //Gestion des déplacements en diagonale
@@ -113,7 +113,7 @@ public class PlayerMotor : MonoBehaviour
         if (Input.GetKey(inputFront) && Input.GetKey(inputRight) && Input.GetKey(KeyCode.LeftShift) && IsNotTired(0.1f) &&!IsNearLabo())
         {
             rb.MovePosition(rb.transform.position + (SprintSpeed * Time.fixedDeltaTime * rb.transform.forward + SprintTurnSpeed * Time.fixedDeltaTime * rb.transform.right));
-            _player.useEnergy(0.1f);
+            _player.UseEnergy(0.1f);
         }
         
         if (Input.GetKey(inputFront) && Input.GetKey(inputLeft) && !Input.GetKey(KeyCode.LeftShift))
@@ -124,7 +124,7 @@ public class PlayerMotor : MonoBehaviour
         if (Input.GetKey(inputFront) && Input.GetKey(inputLeft) && Input.GetKey(KeyCode.LeftShift) && IsNotTired(0.1f) && !IsNearLabo())
         {
             rb.MovePosition(rb.transform.position + (SprintSpeed * Time.fixedDeltaTime * rb.transform.forward + -SprintTurnSpeed * Time.fixedDeltaTime * rb.transform.right));
-            _player.useEnergy(0.1f);
+            _player.UseEnergy(0.1f);
         }
         
         if (Input.GetKey(inputBack) && Input.GetKey(inputRight) && !Input.GetKey(KeyCode.LeftShift))
@@ -135,7 +135,7 @@ public class PlayerMotor : MonoBehaviour
         if (Input.GetKey(inputBack) && Input.GetKey(inputRight) && Input.GetKey(KeyCode.LeftShift) && IsNotTired(0.1f) && !IsNearLabo())
         {
             rb.MovePosition(rb.transform.position + (-SprintSpeed * Time.fixedDeltaTime * rb.transform.forward + SprintTurnSpeed * Time.fixedDeltaTime * rb.transform.right));
-            _player.useEnergy(0.1f);
+            _player.UseEnergy(0.1f);
         }
         
         if (Input.GetKey(inputBack) && Input.GetKey(inputLeft) && !Input.GetKey(KeyCode.LeftShift))
@@ -146,11 +146,11 @@ public class PlayerMotor : MonoBehaviour
         if (Input.GetKey(inputBack) && Input.GetKey(inputLeft) && Input.GetKey(KeyCode.LeftShift) && IsNotTired(0.1f) && !IsNearLabo())
         {
             rb.MovePosition(rb.transform.position + (-SprintSpeed * Time.fixedDeltaTime * rb.transform.forward + -SprintTurnSpeed * Time.fixedDeltaTime * rb.transform.right));
-            _player.useEnergy(0.1f);
+            _player.UseEnergy(0.1f);
         }
         
         //gestion de la récupération d'énergie
-        _player.addEnergy(0.05f);
+        _player.AddEnergy(0.05f);
 
         Player_GFX.transform.position = ini;
     }
