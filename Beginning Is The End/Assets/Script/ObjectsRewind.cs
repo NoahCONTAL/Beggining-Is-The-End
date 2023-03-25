@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,18 +12,6 @@ public class ObjectsRewind : MonoBehaviour
     void Start()
     {
         pointsInTime = new List<PointInTime>();
-    }
-    
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            StartRewind();
-        }
-        if (Input.GetKeyUp(KeyCode.R))
-        {
-            StopRewind();
-        }
     }
     
     void FixedUpdate()
@@ -67,12 +54,20 @@ public class ObjectsRewind : MonoBehaviour
     public void StartRewind()
     {
         isRewinding = true;
-        GetComponent<Rigidbody>().isKinematic = true;
+        Rigidbody rb = GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.isKinematic = true;
+        }
     }
-    
+
     public void StopRewind()
     {
         isRewinding = false;
-        GetComponent<Rigidbody>().isKinematic = false;
+        Rigidbody rb = GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.isKinematic = false;
+        }
     }
 }

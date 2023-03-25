@@ -1,4 +1,3 @@
-using System;
 using Cinemachine;
 using UnityEngine;
 using Mirror;
@@ -10,14 +9,9 @@ public class PlayerUI : Player
     [SerializeField] private GameObject dieMenu;
     [SerializeField] private RectTransform healthBar;
     [SerializeField] private RectTransform healthBarImage;
-    [SerializeField] private RectTransform energyBar;
-    [SerializeField] private RectTransform energyBarImage;
-
     private float _currentHealth;
-    private float _currentEnergy;
     private float _maxiHealth;
-    private float _maxiEnergy;
-    
+
     private PlayerSetup _playerSetup;
     private PlayerMovement _playerMovement;
     [SerializeField] private CinemachineFreeLook CinemachineFreeLook;
@@ -31,7 +25,6 @@ public class PlayerUI : Player
         _playerSetup = GetComponent<PlayerSetup>();
         _networkManager = NetworkManager.singleton;
         _maxiHealth = GetComponent<Player>().maxHealth;
-        _maxiEnergy = GetComponent<Player>().maxEnergy;
     }
 
     private void Update()
@@ -49,7 +42,6 @@ public class PlayerUI : Player
         }
 
         UpdateHealth();
-        UpdateEnergy();
     }
 
     //Gestion du menu pause
@@ -62,9 +54,7 @@ public class PlayerUI : Player
             _playerSetup.enabled = true;
             playerAnimations.enabled = true;
             healthBar.gameObject.SetActive(true);
-            energyBar.gameObject.SetActive(true);
             healthBarImage.gameObject.SetActive(true);
-            energyBarImage.gameObject.SetActive(true);
             _playerMovement.enabled = true;
             CinemachineFreeLook.enabled = true;
         }
@@ -79,9 +69,7 @@ public class PlayerUI : Player
             _playerSetup.enabled = false;
             playerAnimations.enabled = false;
             healthBar.gameObject.SetActive(false);
-            energyBar.gameObject.SetActive(false);
             healthBarImage.gameObject.SetActive(false);
-            energyBarImage.gameObject.SetActive(false);
             _playerMovement.enabled = false;
             CinemachineFreeLook.enabled = false;
         }
@@ -104,48 +92,36 @@ public class PlayerUI : Player
         }
     }
     
-    private bool isHosting = false;
+    private bool _isHosting;
     
     public void HostButton()
     {
-        if (isHosting)
+        if (_isHosting)
         {
-            NetworkManager.singleton.StopHost(); // Arrête le serveur si on héberge déjà
+            NetworkManager.singleton.StopHost();
         }
         else
         {
-            NetworkManager.singleton.StartHost(); // Démarre un serveur pour héberger la partie
+            NetworkManager.singleton.StartHost();
         }
-        isHosting = !isHosting; // Inverse la valeur de la variable pour la prochaine fois que le bouton sera cliqué
+        _isHosting = !_isHosting;
     }
 
    
     public void JoinButton()
     {
-        //Récupère l'adresse IP du serveur
-        string ipAddress = GameObject.Find("IpAdress").GetComponent<TMP_InputField>().text;
-        NetworkManager.singleton.networkAddress = ipAddress; // Définit l'adresse IP du NetworkManager
-        NetworkManager.singleton.StartClient(); // Démarre un client pour rejoindre la partie
+        var ipAddress = GameObject.Find("IpAdress").GetComponent<TMP_InputField>().text;
+        NetworkManager.singleton.networkAddress = ipAddress;
+        NetworkManager.singleton.StartClient();
 
     }
-
-    //Gestion de l'interface
-
-    //Gestion de la barre de vie verticale qui doit descendre quand on prend des dégats
+    
     private void UpdateHealth()
     {
         _currentHealth = GetComponent<Player>().health;
         healthBar.sizeDelta = new Vector2(healthBar.sizeDelta.x, _currentHealth / _maxiHealth * 300);
     }
     
-    //Gestion de la barre d'énergie verticale qui doit descendre quand on prend des dégats
-    private void UpdateEnergy()
-    {
-        _currentEnergy = GetComponent<Player>().energy;
-        energyBar.sizeDelta = new Vector2(energyBar.sizeDelta.x, _currentEnergy / _maxiEnergy * 300);
-    }
-    
-    //Fait apparaître un effet de mort
     public void Die()
     {
         if (!isLocalPlayer) return;

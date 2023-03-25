@@ -521,13 +521,13 @@ GameObject:
   - component: {fileID: 17754835}
   - component: {fileID: 17754834}
   - component: {fileID: 17754833}
-  - component: {fileID: 17754832}
   - component: {fileID: 17754831}
+  - component: {fileID: 17754832}
   - component: {fileID: 17754830}
   - component: {fileID: 17754829}
   m_Layer: 0
   m_Name: IA (1)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26830,13 +26830,13 @@ GameObject:
   - component: {fileID: 1795712349}
   - component: {fileID: 1795712348}
   - component: {fileID: 1795712347}
-  - component: {fileID: 1795712346}
   - component: {fileID: 1795712350}
+  - component: {fileID: 1795712346}
   - component: {fileID: 1795712352}
   - component: {fileID: 1795712351}
   m_Layer: 0
   m_Name: IA
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26931,14 +26931,14 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0
   target: {fileID: 1795712349}
-  clientAuthority: 1
+  clientAuthority: 0
   syncPosition: 1
   syncRotation: 1
   syncScale: 0
   showGizmos: 0
   showOverlay: 0
   overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
-  onlySyncOnChange: 1
+  onlySyncOnChange: 0
   onlySyncOnChangeCorrectionMultiplier: 2
   rotationSensitivity: 0.01
   compressRotation: 0
