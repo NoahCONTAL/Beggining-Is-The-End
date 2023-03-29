@@ -17,11 +17,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (controller.isGrounded && velocity.y < 0f)
-        {
+        if (controller.isGrounded && velocity.y < 0f) 
             velocity.y = -2f;
-        }
-
+        
         var horizontal = Input.GetAxisRaw("Horizontal");
         var vertical = Input.GetAxisRaw("Vertical");
         var direction = new Vector3(horizontal, 0f, vertical).normalized;
@@ -33,8 +31,7 @@ public class PlayerMovement : MonoBehaviour
         if (direction.magnitude >= 0.1f)
         {
             var targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
-            var angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity,
-                turnSmoothTime);
+            var angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
             var moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
@@ -43,10 +40,8 @@ public class PlayerMovement : MonoBehaviour
         }
 
         if (Input.GetButtonDown("Jump") && controller.isGrounded)
-        {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-        }
-
+        
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
     }
