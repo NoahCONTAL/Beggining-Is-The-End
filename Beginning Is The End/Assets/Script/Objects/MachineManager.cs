@@ -26,14 +26,20 @@ public class MachineManager : MonoBehaviour
         {
             Machine1.SetActive(false);
             Machine2.SetActive(true);
+            Machine3.SetActive(false);
+            Machine4.SetActive(false);
         }
-        else if (level2finished)
+        if (level2finished)
         {
+            Machine1.SetActive(false);
             Machine2.SetActive(false);
             Machine3.SetActive(true);
+            Machine4.SetActive(false);
         }
-        else if (level3finished)
+        if (level3finished)
         {
+            Machine1.SetActive(false);
+            Machine2.SetActive(false);
             Machine3.SetActive(false);
             Machine4.SetActive(true);
         }

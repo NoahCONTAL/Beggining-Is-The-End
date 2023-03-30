@@ -4,13 +4,13 @@ public class PlayerRewind : MonoBehaviour
 {
     private ObjectsRewind[] objectsToRewind;
 
-    void Start()
+    private void Start()
     {
-        GameObject[] enemyObjects = GameObject.FindGameObjectsWithTag("Enemy");
+        var enemyObjects = GameObject.FindGameObjectsWithTag("Enemy");
         objectsToRewind = new ObjectsRewind[enemyObjects.Length];
-        for (int i = 0; i < enemyObjects.Length; i++)
+        for (var i = 0; i < enemyObjects.Length; i++)
         {
-            ObjectsRewind obj = enemyObjects[i].GetComponent<ObjectsRewind>();
+            var obj = enemyObjects[i].GetComponent<ObjectsRewind>();
             if (obj != null)
             {
                 objectsToRewind[i] = obj;
@@ -18,7 +18,7 @@ public class PlayerRewind : MonoBehaviour
         }
     }
 
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
@@ -30,9 +30,9 @@ public class PlayerRewind : MonoBehaviour
         }
     }
 
-    void StartRewind()
+    private void StartRewind()
     {
-        foreach (ObjectsRewind obj in objectsToRewind)
+        foreach (var obj in objectsToRewind)
         {
             if (obj != null)
             {
@@ -41,9 +41,9 @@ public class PlayerRewind : MonoBehaviour
         }
     }
 
-    void StopRewind()
+    private void StopRewind()
     {
-        foreach (ObjectsRewind obj in objectsToRewind)
+        foreach (var obj in objectsToRewind)
         {
             if (obj != null)
             {

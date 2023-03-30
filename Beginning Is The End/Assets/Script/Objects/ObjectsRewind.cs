@@ -3,20 +3,20 @@ using UnityEngine;
 
 public class ObjectsRewind : MonoBehaviour
 {
-    bool isRewinding = false;
+    private bool _isRewinding = false;
     
     public float recordTime = 5f;
-    
-    List<PointInTime> pointsInTime; 
-    
-    void Start()
+
+    private List<PointInTime> _pointsInTime;
+
+    private void Start()
     {
-        pointsInTime = new List<PointInTime>();
+        _pointsInTime = new List<PointInTime>();
     }
-    
-    void FixedUpdate()
+
+    private void FixedUpdate()
     {
-        if (isRewinding)
+        if (_isRewinding)
         {
             Rewind();
         }
@@ -26,35 +26,35 @@ public class ObjectsRewind : MonoBehaviour
         }
     }
     
-    void Rewind()
+    private void Rewind()
     {
-        if (pointsInTime.Count > 0)
+        if (_pointsInTime.Count > 0)
         {
-            PointInTime pointInTime = pointsInTime[0];
+            var pointInTime = _pointsInTime[0];
             transform.position = pointInTime.position;
             transform.rotation = pointInTime.rotation;
-            pointsInTime.RemoveAt(0);
+            _pointsInTime.RemoveAt(0);
         }
         else
         {
             StopRewind();
         }
     }
-    
-    void Record()
+
+    private void Record()
     {
-        if (pointsInTime.Count > Mathf.Round(recordTime / Time.fixedDeltaTime))
+        if (_pointsInTime.Count > Mathf.Round(recordTime / Time.fixedDeltaTime))
         {
-            pointsInTime.RemoveAt(pointsInTime.Count - 1);
+            _pointsInTime.RemoveAt(_pointsInTime.Count - 1);
         }
         
-        pointsInTime.Insert(0, new PointInTime(transform.position, transform.rotation));
+        _pointsInTime.Insert(0, gameObject.AddComponent<PointInTime>());
     }
     
     public void StartRewind()
     {
-        isRewinding = true;
-        Rigidbody rb = GetComponent<Rigidbody>();
+        _isRewinding = true;
+        var rb = GetComponent<Rigidbody>();
         if (rb != null)
         {
             rb.isKinematic = true;
@@ -63,8 +63,8 @@ public class ObjectsRewind : MonoBehaviour
 
     public void StopRewind()
     {
-        isRewinding = false;
-        Rigidbody rb = GetComponent<Rigidbody>();
+        _isRewinding = false;
+        var rb = GetComponent<Rigidbody>();
         if (rb != null)
         {
             rb.isKinematic = false;

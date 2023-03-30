@@ -3,8 +3,7 @@ using Mirror;
 
 public class PlayerSetup : NetworkBehaviour
 {
-    [SerializeField]
-    Behaviour[] componentsToDisable;
+    [SerializeField] private Behaviour[] componentsToDisable;
 
     Camera scneneCamera;
 
@@ -12,9 +11,9 @@ public class PlayerSetup : NetworkBehaviour
     {
         if (!isLocalPlayer)
         {
-            for (int i = 0; i < componentsToDisable.Length; i++)
+            foreach (var t in componentsToDisable)
             {
-                componentsToDisable[i].enabled = false;
+                t.enabled = false;
             }
         }
         else

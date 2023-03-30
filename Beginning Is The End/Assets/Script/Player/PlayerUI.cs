@@ -43,36 +43,31 @@ public class PlayerUI : Player
 
         UpdateHealth();
     }
-
-    //Gestion du menu pause
+    
     public void Resume()
     {
-        if (isLocalPlayer)
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-            pauseMenu.SetActive(false);
-            _playerSetup.enabled = true;
-            playerAnimations.enabled = true;
-            healthBar.gameObject.SetActive(true);
-            healthBarImage.gameObject.SetActive(true);
-            _playerMovement.enabled = true;
-            CinemachineFreeLook.enabled = true;
-        }
+        if (!isLocalPlayer) return;
+        Cursor.lockState = CursorLockMode.Locked;
+        pauseMenu.SetActive(false);
+        _playerSetup.enabled = true;
+        playerAnimations.enabled = true;
+        healthBar.gameObject.SetActive(true);
+        healthBarImage.gameObject.SetActive(true);
+        _playerMovement.enabled = true;
+        CinemachineFreeLook.enabled = true;
     }
 
-    public void Pause()
+    private void Pause()
     {
-        if (isLocalPlayer)
-        {
-            Cursor.lockState = CursorLockMode.None;
-            pauseMenu.SetActive(true);
-            _playerSetup.enabled = false;
-            playerAnimations.enabled = false;
-            healthBar.gameObject.SetActive(false);
-            healthBarImage.gameObject.SetActive(false);
-            _playerMovement.enabled = false;
-            CinemachineFreeLook.enabled = false;
-        }
+        if (!isLocalPlayer) return;
+        Cursor.lockState = CursorLockMode.None;
+        pauseMenu.SetActive(true);
+        _playerSetup.enabled = false;
+        playerAnimations.enabled = false;
+        healthBar.gameObject.SetActive(false);
+        healthBarImage.gameObject.SetActive(false);
+        _playerMovement.enabled = false;
+        CinemachineFreeLook.enabled = false;
     }
     
     public void QuitGame()

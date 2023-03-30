@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/Scenes/Labbo + Ext\xE9rieure.unity"
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
-    path: Assets/Scenes/Test.unity
-    guid: 0f36c7abcc43dcbd4bf33189a89cf8e7
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}
