@@ -3,7 +3,42 @@ guid: 53f3bf184cd39a89b8d4f75a827032b4
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bouttio rouge.005
+    second: {fileID: 2100000, guid: 94c2c259389a27bb0a83b105cf12baed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boutton vert.005
+    second: {fileID: 2100000, guid: 4769ec6a95a653358abdf15f8838f107, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.006
+    second: {fileID: 2100000, guid: 08b597c2f07e87d00a1bef9f57663d48, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal.005
+    second: {fileID: 2100000, guid: 0708af9776fc606dbaa0bf94c8db9f44, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Vitre.005
+    second: {fileID: 2100000, guid: 00b905d3bd3c75f578f9d15e52b1ab1d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: switch.005
+    second: {fileID: 2100000, guid: 8a2f99fc3373fbef9a9870c74dfef612, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\xE9cran"
+    second: {fileID: 2100000, guid: 1ede9ba3619dc616db41a101c56ff5a2, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

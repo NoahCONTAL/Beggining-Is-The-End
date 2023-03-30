@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Bat
-    second: {fileID: 2100000, guid: 8519974a1a2143849b3fbf4ea74bd159, type: 2}
+    second: {fileID: 2100000, guid: 006ff9d22bfaa69d0a58dc2b318eedd8, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
