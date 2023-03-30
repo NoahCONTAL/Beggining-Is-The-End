@@ -48,7 +48,7 @@ public class ObjectsRewind : MonoBehaviour
             _pointsInTime.RemoveAt(_pointsInTime.Count - 1);
         }
         
-        _pointsInTime.Insert(0, gameObject.AddComponent<PointInTime>());
+        _pointsInTime.Insert(0, new PointInTime(transform.position, transform.rotation));
     }
     
     public void StartRewind()
