@@ -4,7 +4,7 @@ public class IAScript : MonoBehaviour
 {
     public float attractionDistance = 10.0f;
     public float speed = 5.0f;
-    public float attackCooldown = 1.0f;
+    public float attackCooldown = 0.25f;
     private float _timeSinceLastAttack = 0.0f;
     private GameObject _targetPlayer;
 
@@ -26,7 +26,7 @@ public class IAScript : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, _targetPlayer.transform.position - new Vector3(1,1,1) , speed * Time.deltaTime);
         transform.rotation = Quaternion.Slerp(transform.rotation , Quaternion.LookRotation(direction), 0.1f);
             
-        if (_timeSinceLastAttack >= attackCooldown)
+        if (_timeSinceLastAttack >= attackCooldown && Vector3.Distance(transform.position, _targetPlayer.transform.position) < 3f)
         {
             _targetPlayer.GetComponent<Player>().TakeDamage(5);
             _timeSinceLastAttack = 0.0f;
@@ -36,5 +36,4 @@ public class IAScript : MonoBehaviour
             _timeSinceLastAttack += Time.deltaTime;
         }
     }
-
 }
