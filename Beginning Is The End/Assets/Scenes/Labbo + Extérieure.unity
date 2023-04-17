@@ -31945,7 +31945,7 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0.1
-  nextSceneName: Test
+  nextSceneName: level 1
 --- !u!64 &1697344622
 MeshCollider:
   m_ObjectHideFlags: 0
