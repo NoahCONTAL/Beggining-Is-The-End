@@ -8,7 +8,7 @@ public class PlayerAnimations : MonoBehaviour
    private void Update()
    {
       
-      if (Input.GetKey(KeyCode.Z) && !Input.GetKey(KeyCode.LeftShift))
+      if (Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.LeftShift))
       {
          anim.SetBool("WalkFront", true);
       }
@@ -17,7 +17,7 @@ public class PlayerAnimations : MonoBehaviour
          anim.SetBool("WalkFront", false);
       }
       
-      if (Input.GetKey(KeyCode.Z) && Input.GetKey(KeyCode.LeftShift))
+      if (Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.LeftShift))
       {
          anim.SetBool("RunFront", true);
       }

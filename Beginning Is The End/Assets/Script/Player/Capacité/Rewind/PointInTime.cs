@@ -1,9 +1,10 @@
 using UnityEngine;
+using Mirror;
 
-public class PointInTime : MonoBehaviour
+public class PointInTime : NetworkBehaviour
 {
-    public Vector3 position;
-    public Quaternion rotation;
+    [SyncVar] public Vector3 position;
+    [SyncVar] public Quaternion rotation;
     
     public PointInTime(Vector3 _position, Quaternion _rotation)
     {
