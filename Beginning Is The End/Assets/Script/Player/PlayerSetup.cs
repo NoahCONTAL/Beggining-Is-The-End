@@ -1,5 +1,5 @@
 using UnityEngine;
-using Mirror;
+using Unity.Netcode;
 
 public class PlayerSetup : NetworkBehaviour
 {
@@ -9,7 +9,7 @@ public class PlayerSetup : NetworkBehaviour
 
     private void Start()
     {
-        if (!isLocalPlayer)
+        if (!IsOwner)
         {
             foreach (var t in componentsToDisable)
             {
