@@ -1,13 +1,18 @@
+using System;
 using UnityEngine;
+using Mirror;
 
-public class Boost_Vie : MonoBehaviour
+public class Boost_Vie : NetworkBehaviour
 {
     private void OnCollisionEnter(Collision other)
     {
+        if (!isServer) return;
+
         if (!other.gameObject.CompareTag("Player")) return;
-        
-        other.gameObject.GetComponent<Player>().maxHealth = 150;
-        other.gameObject.GetComponent<Player>().health = 150;
+
+        var player = other.gameObject.GetComponent<Player>();
+        player.maxHealth += 10;
+        player.health += 10;
         
         Destroy(gameObject);
     }
