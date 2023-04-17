@@ -1,7 +1,6 @@
-using System;
 using Cinemachine;
 using UnityEngine;
-using Unity.Netcode;
+using Mirror;
 using TMPro;
 
 public class PlayerUI : Player
@@ -24,7 +23,7 @@ public class PlayerUI : Player
         Cursor.lockState = CursorLockMode.Locked;
         _playerMovement = GetComponent<PlayerMovement>();
         _playerSetup = GetComponent<PlayerSetup>();
-        _networkManager = NetworkManager.Singleton;
+        _networkManager = NetworkManager.singleton;
         _maxiHealth = GetComponent<Player>().maxHealth;
     }
 
@@ -47,7 +46,7 @@ public class PlayerUI : Player
     
     public void Resume()
     {
-        if (!IsOwner) return;
+        if (!isLocalPlayer) return;
         Cursor.lockState = CursorLockMode.Locked;
         pauseMenu.SetActive(false);
         _playerSetup.enabled = true;
@@ -60,7 +59,7 @@ public class PlayerUI : Player
 
     private void Pause()
     {
-        if (!IsOwner) return;
+        if (!isLocalPlayer) return;
         Cursor.lockState = CursorLockMode.None;
         pauseMenu.SetActive(true);
         _playerSetup.enabled = false;
@@ -75,6 +74,42 @@ public class PlayerUI : Player
     {
         Application.Quit();
     }
+
+    public void LeaveButton()
+    {
+        if (isClientOnly)
+        {
+            _networkManager.StopClient();
+        }
+        else
+        {
+            _networkManager.StopHost();
+        }
+    }
+    
+    private bool _isHosting;
+    
+    public void HostButton()
+    {
+        if (_isHosting)
+        {
+            NetworkManager.singleton.StopHost();
+        }
+        else
+        {
+            NetworkManager.singleton.StartHost();
+        }
+        _isHosting = !_isHosting;
+    }
+
+   
+    public void JoinButton()
+    {
+        var ipAddress = GameObject.Find("IpAdress").GetComponent<TMP_InputField>().text;
+        NetworkManager.singleton.networkAddress = ipAddress;
+        NetworkManager.singleton.StartClient();
+
+    }
     
     private void UpdateHealth()
     {
@@ -84,7 +119,7 @@ public class PlayerUI : Player
     
     public void Die()
     {
-        if (!IsOwner) return;
+        if (!isLocalPlayer) return;
         Cursor.lockState = CursorLockMode.None;
         dieMenu.SetActive(true);
         _playerSetup.enabled = false;
@@ -95,7 +130,7 @@ public class PlayerUI : Player
     
     public void respawn()
     {
-        if (!IsOwner) return;
+        if (!isLocalPlayer) return;
         GetComponent<Player>().Respawn();
         Cursor.lockState = CursorLockMode.Locked;
         dieMenu.SetActive(false);
@@ -103,12 +138,5 @@ public class PlayerUI : Player
         playerAnimations.enabled = true;
         _playerMovement.enabled = true;
         CinemachineFreeLook.enabled = true;
-    }
-    
-    public void Disconnect()
-    {
-        if (!IsOwner) return;
-        
-        _networkManager.Shutdown();
     }
 }

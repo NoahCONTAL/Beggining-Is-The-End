@@ -1,19 +1,22 @@
-using System;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using Unity.Netcode;
+using Mirror;
 
 public class Teleporter : NetworkBehaviour
 {
     public string nextSceneName;
-
+    
     private void OnTriggerEnter(Collider other)
     {
-        if (!IsOwner) return;
+        if (!isServer) return;
 
-        if (other.CompareTag("Player"))
-        {
-            SceneManager.LoadScene(nextSceneName);
-        }
+        if (!other.CompareTag("Player")) return;
+
+        var networkManager = NetworkManager.singleton;
+
+        networkManager.ServerChangeScene(nextSceneName);
+        var spawnPoint = NetworkManager.singleton.GetStartPosition();
+        var playerTransform = other.transform;
+        playerTransform.position = spawnPoint.position;
+        playerTransform.rotation = spawnPoint.rotation;
     }
 }
