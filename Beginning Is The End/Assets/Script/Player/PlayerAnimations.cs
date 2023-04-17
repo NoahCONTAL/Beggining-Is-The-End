@@ -5,11 +5,6 @@ public class PlayerAnimations : MonoBehaviour
    [SerializeField]
    private Animator anim;
    
-   private bool IsNotTired(float ernegyCost)
-   {
-      return true;
-   }
-   
    private void Update()
    {
       
@@ -22,7 +17,7 @@ public class PlayerAnimations : MonoBehaviour
          anim.SetBool("WalkFront", false);
       }
       
-      if (Input.GetKey(KeyCode.Z) && Input.GetKey(KeyCode.LeftShift) && IsNotTired(0.1f))
+      if (Input.GetKey(KeyCode.Z) && Input.GetKey(KeyCode.LeftShift))
       {
          anim.SetBool("RunFront", true);
       }

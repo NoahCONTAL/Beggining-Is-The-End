@@ -8,6 +8,7 @@ public class Boost_Vitessse : MonoBehaviour
         
         other.gameObject.GetComponent<PlayerMovement>().speed = 8;
         other.gameObject.GetComponent<PlayerMovement>().sprintSpeed = 12;
+        
         Destroy(gameObject);
     }
 }

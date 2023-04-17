@@ -8,6 +8,7 @@ public class Boost_Vie : MonoBehaviour
         
         other.gameObject.GetComponent<Player>().maxHealth = 150;
         other.gameObject.GetComponent<Player>().health = 150;
+        
         Destroy(gameObject);
     }
 }

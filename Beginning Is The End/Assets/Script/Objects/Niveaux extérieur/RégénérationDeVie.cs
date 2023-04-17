@@ -6,7 +6,8 @@ public class RégénérationDeVie : MonoBehaviour
     {
         if (!other.gameObject.CompareTag("Player")) return;
         
-        other.gameObject.GetComponent<Player>().health += 10;
+        other.gameObject.GetComponent<Player>().health += 5;
+        
         Destroy(gameObject);
     }
 }
