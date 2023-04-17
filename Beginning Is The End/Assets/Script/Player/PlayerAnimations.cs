@@ -1,14 +1,16 @@
 using UnityEngine;
+using Unity.Netcode;
 
-public class PlayerAnimations : MonoBehaviour
+public class PlayerAnimations : NetworkBehaviour
 {
    [SerializeField]
    private Animator anim;
    
    private void Update()
    {
-      
-      if (Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.LeftShift))
+      if (!IsOwner) return;
+
+         if (Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.LeftShift))
       {
          anim.SetBool("WalkFront", true);
       }
