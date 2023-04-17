@@ -1,4 +1,4 @@
-Library: /home/noahc/Documents/Programation/Sup/Projet/Begginning_Is_The_End/Beginning Is The End/Temp/StagingArea/Data/Plugins/lib_burst_generated
+Library: /home/noahc/Documents/Programation/Sup/Projet/Beggining_Is_The_End/Beginning Is The End/Temp/StagingArea/Data/Plugins/lib_burst_generated
 --platform=Linux
 --backend=burst-llvm-14
 --target=X64_SSE2
@@ -115,15 +115,15 @@ Library: /home/noahc/Documents/Programation/Sup/Projet/Begginning_Is_The_End/Beg
 --compilation-defines=MIRROR_70_0_OR_NEWER
 --compilation-defines=MIRROR_71_0_OR_NEWER
 --compilation-defines=MIRROR_73_OR_NEWER
+--compilation-defines=ENABLE_VR_MODULE
+--compilation-defines=ENABLE_XR_MODULE
+--compilation-defines=CSHARP_7_OR_LATER
+--compilation-defines=CSHARP_7_3_OR_NEWER
 --compilation-defines=PACKAGE_PHYSICS
 --compilation-defines=PACKAGE_PHYSICS2D
 --compilation-defines=PACKAGE_TILEMAP
 --compilation-defines=PACKAGE_ANIMATION
 --compilation-defines=PACKAGE_UITOOLKIT
---compilation-defines=CSHARP_7_OR_LATER
---compilation-defines=CSHARP_7_3_OR_NEWER
---compilation-defines=ENABLE_VR_MODULE
---compilation-defines=ENABLE_XR_MODULE
 --compilation-defines=MODULE_AI_EXISTS
 --compilation-defines=MODULE_ANIMATION_EXISTS
 --compilation-defines=MODULE_PHYSICS_EXISTS
@@ -141,8 +141,8 @@ Library: /home/noahc/Documents/Programation/Sup/Projet/Begginning_Is_The_End/Beg
 --compilation-defines=CINEMACHINE_UNITY_IMGUI
 --compilation-defines=TIMELINE_FRAMEACCURATE
 --generate-link-xml=Temp/burst.link.xml
---temp-folder=/home/noahc/Documents/Programation/Sup/Projet/Begginning_Is_The_End/Beginning Is The End/Temp/Burst
---output=/home/noahc/Documents/Programation/Sup/Projet/Begginning_Is_The_End/Beginning Is The End/Temp/StagingArea/Data/Plugins/lib_burst_generated
+--temp-folder=/home/noahc/Documents/Programation/Sup/Projet/Beggining_Is_The_End/Beginning Is The End/Temp/Burst
+--output=/home/noahc/Documents/Programation/Sup/Projet/Beggining_Is_The_End/Beginning Is The End/Temp/StagingArea/Data/Plugins/lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 --pdb-search-paths=Temp/ManagedSymbols/
 
@@ -275,15 +275,15 @@ Library: /home/noahc/Documents/Programation/Sup/Projet/Begginning_Is_The_End/Beg
 --compilation-defines=MIRROR_70_0_OR_NEWER
 --compilation-defines=MIRROR_71_0_OR_NEWER
 --compilation-defines=MIRROR_73_OR_NEWER
+--compilation-defines=ENABLE_VR_MODULE
+--compilation-defines=ENABLE_XR_MODULE
+--compilation-defines=CSHARP_7_OR_LATER
+--compilation-defines=CSHARP_7_3_OR_NEWER
 --compilation-defines=PACKAGE_PHYSICS
 --compilation-defines=PACKAGE_PHYSICS2D
 --compilation-defines=PACKAGE_TILEMAP
 --compilation-defines=PACKAGE_ANIMATION
 --compilation-defines=PACKAGE_UITOOLKIT
---compilation-defines=CSHARP_7_OR_LATER
---compilation-defines=CSHARP_7_3_OR_NEWER
---compilation-defines=ENABLE_VR_MODULE
---compilation-defines=ENABLE_XR_MODULE
 --compilation-defines=MODULE_AI_EXISTS
 --compilation-defines=MODULE_ANIMATION_EXISTS
 --compilation-defines=MODULE_PHYSICS_EXISTS
@@ -301,8 +301,8 @@ Library: /home/noahc/Documents/Programation/Sup/Projet/Begginning_Is_The_End/Beg
 --compilation-defines=CINEMACHINE_UNITY_IMGUI
 --compilation-defines=TIMELINE_FRAMEACCURATE
 --generate-link-xml=Temp/burst.link.xml
---temp-folder=/home/noahc/Documents/Programation/Sup/Projet/Begginning_Is_The_End/Beginning Is The End/Temp/Burst
---output=/home/noahc/Documents/Programation/Sup/Projet/Begginning_Is_The_End/Beginning Is The End/Temp/StagingArea/Data/Plugins/lib_burst_generated
+--temp-folder=/home/noahc/Documents/Programation/Sup/Projet/Beggining_Is_The_End/Beginning Is The End/Temp/Burst
+--output=/home/noahc/Documents/Programation/Sup/Projet/Beggining_Is_The_End/Beginning Is The End/Temp/StagingArea/Data/Plugins/lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 --pdb-search-paths=Temp/ManagedSymbols/
 
