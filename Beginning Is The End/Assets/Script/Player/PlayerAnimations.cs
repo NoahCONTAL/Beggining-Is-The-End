@@ -1,5 +1,3 @@
-
-using System;
 using UnityEngine;
 
 public class PlayerAnimations : MonoBehaviour
@@ -24,33 +22,6 @@ public class PlayerAnimations : MonoBehaviour
          anim.SetBool("WalkFront", false);
       }
       
-      if (Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.LeftShift))
-      {
-         anim.SetBool("WalkBack", true);
-      }
-      else
-      {
-         anim.SetBool("WalkBack", false);
-      }
-      
-      if (Input.GetKey(KeyCode.Q) && !Input.GetKey(KeyCode.Z) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.LeftShift))
-      {
-         anim.SetBool("Left", true);
-      }
-      else
-      {
-         anim.SetBool("Left", false);
-      }
-      
-      if (Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.Z) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.LeftShift))
-      {
-         anim.SetBool("Right", true);
-      }
-      else
-      {
-         anim.SetBool("Right", false);
-      }
-      
       if (Input.GetKey(KeyCode.Z) && Input.GetKey(KeyCode.LeftShift) && IsNotTired(0.1f))
       {
          anim.SetBool("RunFront", true);
@@ -58,31 +29,6 @@ public class PlayerAnimations : MonoBehaviour
       else
       {
          anim.SetBool("RunFront", false);
-      }
-
-      if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.LeftShift) && IsNotTired(0.1f))
-      {
-         anim.SetBool("RunBack", true);
-      }
-      else
-      {
-         anim.SetBool("RunBack", false);
-      }
-      if (Input.GetKey(KeyCode.Q) && !Input.GetKey(KeyCode.Z) && !Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.LeftShift) && IsNotTired(0.1f))
-      {
-         anim.SetBool("Left 0", true);
-      }
-      else
-      {
-         anim.SetBool("Left 0", false);
-      }
-      if (Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.Z) && !Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.LeftShift) && IsNotTired(0.1f))
-      {
-         anim.SetBool("Right 0", true);
-      }
-      else
-      {
-         anim.SetBool("Right 0", false);
       }
    }
 }
