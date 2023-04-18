@@ -13,6 +13,11 @@ public class Player : NetworkBehaviour
     [SerializeField]
     private Animator animator;
     
+    private AudioSource _audioSource;
+
+    [SerializeField] 
+    private AudioClip attackSound;
+    
     public void TakeDamage(int _damage)
     {
         StartCoroutine(aux(_damage));
@@ -21,6 +26,8 @@ public class Player : NetworkBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         animator.SetTrigger("Hurt");
+        yield return new WaitForSeconds(0.133f);
+        _audioSource.PlayOneShot(attackSound);
         health -= _damage;
         if ((health <= 0))
         {
@@ -29,7 +36,6 @@ public class Player : NetworkBehaviour
         }
     }
 
-    // ReSharper disable Unity.PerformanceAnalysis
     private void Die()
     {
         transform.position = new Vector3(0, -100, 0);

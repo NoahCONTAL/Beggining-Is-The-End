@@ -8,6 +8,11 @@ public class PlayerObjects : MonoBehaviour
 
     private Player player;
     private PlayerMovement playerMov;
+    
+    private AudioSource _audioSource;
+
+    [SerializeField] 
+    private AudioClip pickupSound;
 
     private void Start()
     {
@@ -27,6 +32,7 @@ public class PlayerObjects : MonoBehaviour
                 if (Input.GetKey(KeyCode.E))
                 {
                     player.health += 5;
+                    _audioSource.PlayOneShot(pickupSound);
                     Destroy(hit.collider.gameObject);
                 }
             }
@@ -37,6 +43,7 @@ public class PlayerObjects : MonoBehaviour
                 {
                     player.maxEnergy += 10;
                     player.health += 10;
+                    _audioSource.PlayOneShot(pickupSound);
                     Destroy(hit.collider.gameObject);
                 }
             }
@@ -47,6 +54,7 @@ public class PlayerObjects : MonoBehaviour
                 {
                     playerMov.speed += 2;
                     playerMov.sprintSpeed += 2;
+                    _audioSource.PlayOneShot(pickupSound);
                     Destroy(hit.collider.gameObject);
                 }
             }
@@ -56,6 +64,7 @@ public class PlayerObjects : MonoBehaviour
                 if (Input.GetKey(KeyCode.E))
                 {
                     playerMov.jumpHeight += 2;
+                    _audioSource.PlayOneShot(pickupSound);
                     Destroy(hit.collider.gameObject);
                 }
             }
