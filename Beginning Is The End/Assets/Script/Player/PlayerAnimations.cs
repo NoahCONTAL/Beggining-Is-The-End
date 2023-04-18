@@ -8,22 +8,22 @@ public class PlayerAnimations : MonoBehaviour
    private void Update()
    {
       
-      if (Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.LeftShift))
+      if ((Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.S)) && !Input.GetKey(KeyCode.LeftShift))
       {
-         anim.SetBool("WalkFront", true);
+         anim.SetBool("Walk", true);
       }
       else
       {
-         anim.SetBool("WalkFront", false);
+         anim.SetBool("Walk", false);
       }
       
-      if (Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.LeftShift))
+      if ((Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.S)) && Input.GetKey(KeyCode.LeftShift))
       {
-         anim.SetBool("RunFront", true);
+         anim.SetBool("Run", true);
       }
       else
       {
-         anim.SetBool("RunFront", false);
+         anim.SetBool("Run", false);
       }
    }
 }
