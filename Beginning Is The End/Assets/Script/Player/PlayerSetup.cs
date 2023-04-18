@@ -19,7 +19,7 @@ public class PlayerSetup : NetworkBehaviour
         else
         {
             scneneCamera = Camera.main;
-            if(scneneCamera != null)
+            if (scneneCamera != null)
             {
                 scneneCamera.gameObject.SetActive(false);
             }
@@ -28,7 +28,7 @@ public class PlayerSetup : NetworkBehaviour
 
     private void OnDisable()
     {
-        if(scneneCamera != null)
+        if (scneneCamera != null)
         {
             scneneCamera.gameObject.SetActive(true);
         }

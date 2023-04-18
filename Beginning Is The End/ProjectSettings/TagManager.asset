@@ -7,11 +7,16 @@ TagManager:
   - Labo
   - Object
   - Enemy
+  - HealthBoost
+  - SpeedBoost
+  - JumpBoost
+  - HealthRegen
+  - Rewinder
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - 

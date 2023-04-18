@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="style.css">
     </head>
     
-    <body>
+    <body class="cardbody">
         <header>
             <nav class="pics">
                 <a href="home.html">
@@ -18,36 +18,51 @@
                 <ul>
                     <li><button onclick="location.href='home.html'">Acceuil</button></li>
                     <li><button onclick="location.href='Equipe.html'">Présentation de l'équipe</button></li>
+                    <li><button onclick="location.href='Jeu.html'">Présentation du jeu</button></li>
                     <li><button onclick="location.href='DEVLOG.html'">DevLogs</button></li>
                 </ul>
             </nav>
         </header>
 
         <main>
-            <h1> Présentation de l'équipe</h1>
-            <section class="membres">
-                
-                <ul>
-                    <li></li>
-                    <li><img src="Ressources/Photo_Jeremie.png" width="80" height="80px" class="Jeremie"></li>
-                    <li><img src="Ressources/Photo_Noah.png" width="80" height="80" class="Noah"></li>
-                    <li><img src="Ressources/Photo_Tom.png" width="80" height="80" class="Tom"></li>
-                </ul>
-                <div class="textlatin">The standard Lorem Ipsum passage, used since the 1500s
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                     aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
-                     ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-                <div class="tohover">hoverme</div>
-            </section>
-
-            <section class="Présentation_du_jeu">
-
-            </section>
-
-            <section class="Présentation_de_l'équipe">
-            
-            </section>
+            <ul id="cards">
+                <li class="card" id="card_1">
+                    <div class="card__content">
+                        <div>
+                            <h2 class="card">Jérémie</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <p><a href="#top" class="btn btn--accent">Read more</a></p>
+                        </div>
+                        <figure>
+                            <img src="Ressources/jeremie.levan_f4c654bc-8ffa-46cf-be22-f172ec95d57f-thumb.jpg" alt="Image description">
+                        </figure>
+                    </div>
+                </li>
+                <li class="card" id="card_2">
+                    <div class="card__content">
+                        <div>
+                            <h2 class="card">Noah</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <p><a href="#top" class="btn btn--accent">Read more</a></p>
+                        </div>
+                        <figure>
+                            <img src="Ressources/noah.contal_9939d120-f0dd-47d8-adbe-347efb1364e4.jpg" alt="Image description">
+                        </figure>
+                    </div>
+                </li>
+                <li class="card" id="card_3">
+                    <div class="card__content">
+                        <div>
+                            <h2 class="card">Tom</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <p><a href="#top" class="btn btn--accent">Read more</a></p>
+                        </div>
+                        <figure>
+                            <img src="Ressources/tom.giles_923eb03c-8404-41c0-800c-9b48187fba4d-thumb.jpg" alt="Image description">
+                        </figure>
+                    </div>
+                </li>
+            </ul>
         </main>
 
         <footer>

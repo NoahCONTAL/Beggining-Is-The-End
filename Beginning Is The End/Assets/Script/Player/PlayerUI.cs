@@ -17,7 +17,7 @@ public class PlayerUI : Player
     [SerializeField] private CinemachineFreeLook CinemachineFreeLook;
     [SerializeField] private PlayerAnimations playerAnimations;
     private NetworkManager _networkManager;
-    
+
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -43,7 +43,7 @@ public class PlayerUI : Player
 
         UpdateHealth();
     }
-    
+
     public void Resume()
     {
         if (!isLocalPlayer) return;
@@ -69,7 +69,7 @@ public class PlayerUI : Player
         _playerMovement.enabled = false;
         CinemachineFreeLook.enabled = false;
     }
-    
+
     public void QuitGame()
     {
         Application.Quit();
@@ -86,9 +86,9 @@ public class PlayerUI : Player
             _networkManager.StopHost();
         }
     }
-    
+
     private bool _isHosting;
-    
+
     public void HostButton()
     {
         if (_isHosting)
@@ -99,24 +99,26 @@ public class PlayerUI : Player
         {
             NetworkManager.singleton.StartHost();
         }
+
         _isHosting = !_isHosting;
     }
 
-   
+
     public void JoinButton()
     {
-        var ipAddress = GameObject.Find("IpAdress").GetComponent<TMP_InputField>().text;
+        var ipAddress = GameObject.Find("IpAdress")
+            .GetComponent<TMP_InputField>().text;
         NetworkManager.singleton.networkAddress = ipAddress;
         NetworkManager.singleton.StartClient();
-
     }
-    
+
     private void UpdateHealth()
     {
         _currentHealth = GetComponent<Player>().health;
-        healthBar.sizeDelta = new Vector2(healthBar.sizeDelta.x, _currentHealth / _maxiHealth * 300);
+        healthBar.sizeDelta = new Vector2(healthBar.sizeDelta.x,
+            _currentHealth / _maxiHealth * 300);
     }
-    
+
     public void Die()
     {
         if (!isLocalPlayer) return;
@@ -127,7 +129,7 @@ public class PlayerUI : Player
         _playerMovement.enabled = false;
         CinemachineFreeLook.enabled = false;
     }
-    
+
     public void respawn()
     {
         if (!isLocalPlayer) return;

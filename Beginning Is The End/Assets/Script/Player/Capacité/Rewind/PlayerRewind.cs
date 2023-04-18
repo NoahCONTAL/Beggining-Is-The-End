@@ -1,53 +1,29 @@
 using UnityEngine;
+using Mirror;
 
-public class PlayerRewind : MonoBehaviour
+public class PlayerRewind : NetworkBehaviour
 {
-    private ObjectsRewind[] objectsToRewind;
+    private GameObject[] rewinder;
 
-    private void Start()
+    void Start()
     {
-        var enemyObjects = GameObject.FindGameObjectsWithTag("Enemy");
-        objectsToRewind = new ObjectsRewind[enemyObjects.Length];
-        for (var i = 0; i < enemyObjects.Length; i++)
-        {
-            var obj = enemyObjects[i].GetComponent<ObjectsRewind>();
-            if (obj != null)
-            {
-                objectsToRewind[i] = obj;
-            }
-        }
+        rewinder = GameObject.FindGameObjectsWithTag("Rewinder");
     }
 
-    private void Update()
+    void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            StartRewind();
-        }
-        if (Input.GetKeyUp(KeyCode.R))
-        {
-            StopRewind();
-        }
-    }
-
-    private void StartRewind()
-    {
-        foreach (var obj in objectsToRewind)
-        {
-            if (obj != null)
+            foreach (var rew in rewinder)
             {
-                obj.StartRewind();
+                rew.GetComponent<TimeBody>().CmdStartRewind();
             }
         }
-    }
-
-    private void StopRewind()
-    {
-        foreach (var obj in objectsToRewind)
+        else if (Input.GetKeyUp(KeyCode.R))
         {
-            if (obj != null)
+            foreach (var rew in rewinder)
             {
-                obj.StopRewind();
+                rew.GetComponent<TimeBody>().CmdStopRewind();
             }
         }
     }
