@@ -32,8 +32,8 @@ public class PlayerObjects : MonoBehaviour
                 if (Input.GetKey(KeyCode.E))
                 {
                     player.health += 5;
-                    _audioSource.PlayOneShot(pickupSound);
                     Destroy(hit.collider.gameObject);
+                    _audioSource.PlayOneShot(pickupSound);
                 }
             }
 
@@ -43,8 +43,8 @@ public class PlayerObjects : MonoBehaviour
                 {
                     player.maxEnergy += 10;
                     player.health += 10;
-                    _audioSource.PlayOneShot(pickupSound);
                     Destroy(hit.collider.gameObject);
+                    _audioSource.PlayOneShot(pickupSound);
                 }
             }
 
@@ -54,8 +54,8 @@ public class PlayerObjects : MonoBehaviour
                 {
                     playerMov.speed += 2;
                     playerMov.sprintSpeed += 2;
-                    _audioSource.PlayOneShot(pickupSound);
                     Destroy(hit.collider.gameObject);
+                    _audioSource.PlayOneShot(pickupSound);
                 }
             }
 
@@ -64,8 +64,8 @@ public class PlayerObjects : MonoBehaviour
                 if (Input.GetKey(KeyCode.E))
                 {
                     playerMov.jumpHeight += 2;
-                    _audioSource.PlayOneShot(pickupSound);
                     Destroy(hit.collider.gameObject);
+                    _audioSource.PlayOneShot(pickupSound);
                 }
             }
         }
