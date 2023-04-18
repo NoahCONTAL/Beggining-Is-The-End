@@ -19,7 +19,8 @@ public class PlayerObjects : MonoBehaviour
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, transform.forward, out hit, pickupRange))
+        if (Physics.Raycast(transform.position, transform.forward, out hit,
+                pickupRange))
         {
             if (hit.collider.gameObject.CompareTag("HealthRegen"))
             {

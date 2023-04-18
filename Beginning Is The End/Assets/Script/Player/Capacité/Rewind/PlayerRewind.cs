@@ -4,12 +4,12 @@ using Mirror;
 public class PlayerRewind : NetworkBehaviour
 {
     private GameObject[] rewinder;
-    
+
     void Start()
     {
         rewinder = GameObject.FindGameObjectsWithTag("Rewinder");
     }
-    
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
@@ -25,6 +25,6 @@ public class PlayerRewind : NetworkBehaviour
             {
                 rew.GetComponent<TimeBody>().CmdStopRewind();
             }
-        }   
+        }
     }
 }

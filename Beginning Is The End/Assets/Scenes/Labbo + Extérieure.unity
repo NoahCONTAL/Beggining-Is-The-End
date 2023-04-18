@@ -3523,7 +3523,7 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0.1
-  nextSceneName: 
+  nextSceneName: Level 2
 --- !u!64 &167904865
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -32604,7 +32604,7 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0.1
-  nextSceneName: 
+  nextSceneName: Level 3
 --- !u!64 &1597518147
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -34615,7 +34615,7 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0.1
-  nextSceneName: level 1
+  nextSceneName: Level 1
 --- !u!64 &1697344622
 MeshCollider:
   m_ObjectHideFlags: 0

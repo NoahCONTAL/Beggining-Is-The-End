@@ -4,7 +4,7 @@ using Mirror;
 public class Teleporter : NetworkBehaviour
 {
     public string nextSceneName;
-    
+
     private void OnTriggerEnter(Collider other)
     {
         if (!isServer) return;

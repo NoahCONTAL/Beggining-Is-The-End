@@ -12,23 +12,24 @@ public class PickableObjects : MonoBehaviour
     private bool beingCarried = false;
     private bool touched = false;
 
-    
+
     void Update()
     {
-        float disk = Vector3.Distance(gameObject.transform.position, player.position);
+        float disk =
+            Vector3.Distance(gameObject.transform.position, player.position);
 
         hasPlayer = disk <= 1.9f;
 
-        if(hasPlayer && Input.GetKey(KeyCode.E))
+        if (hasPlayer && Input.GetKey(KeyCode.E))
         {
             GetComponent<Rigidbody>().isKinematic = true;
             transform.parent = playerCam;
             beingCarried = true;
         }
 
-        if(beingCarried)
+        if (beingCarried)
         {
-            if(touched)
+            if (touched)
             {
                 GetComponent<Rigidbody>().isKinematic = false;
                 transform.parent = null;
@@ -36,13 +37,13 @@ public class PickableObjects : MonoBehaviour
                 touched = false;
             }
 
-            if(Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0))
             {
                 GetComponent<Rigidbody>().isKinematic = false;
                 transform.parent = null;
                 beingCarried = false;
-                GetComponent<Rigidbody>().AddForce(playerCam.forward * throwForce);
-
+                GetComponent<Rigidbody>()
+                    .AddForce(playerCam.forward * throwForce);
             }
 
             else if (Input.GetMouseButtonDown(1))
@@ -56,7 +57,7 @@ public class PickableObjects : MonoBehaviour
 
     void OnTriggerEnter()
     {
-        if(beingCarried)
+        if (beingCarried)
         {
             touched = true;
         }
