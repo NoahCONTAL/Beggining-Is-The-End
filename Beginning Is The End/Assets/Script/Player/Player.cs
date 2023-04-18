@@ -1,3 +1,4 @@
+using System.Collections;
 using Mirror;
 using UnityEngine;
 
@@ -8,13 +9,24 @@ public class Player : NetworkBehaviour
     [SerializeField] public float energy = 100;
     public int maxEnergy = 100;
     [SerializeField] public int damage = 5;
-
+    
+    [SerializeField]
+    private Animator animator;
+    
     public void TakeDamage(int _damage)
     {
+        StartCoroutine(aux(_damage));
+    }
+    private IEnumerator aux(int _damage)
+    {
+        yield return new WaitForSeconds(0.5f);
+        animator.SetTrigger("Hurt");
         health -= _damage;
-        if (!(health <= 0)) return;
-        health = 0;
-        Die();
+        if ((health <= 0))
+        {
+            health = 0;
+            Die();
+        }
     }
 
     // ReSharper disable Unity.PerformanceAnalysis
