@@ -27,7 +27,7 @@ public class Player : NetworkBehaviour
         yield return new WaitForSeconds(0.5f);
         animator.SetTrigger("Hurt");
         yield return new WaitForSeconds(0.133f);
-        _audioSource.PlayOneShot(attackSound);
+        //_audioSource.PlayOneShot(attackSound);
         health -= _damage;
         if ((health <= 0))
         {
