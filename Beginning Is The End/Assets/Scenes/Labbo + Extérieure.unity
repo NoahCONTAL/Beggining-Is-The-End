@@ -4525,6 +4525,8 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   nextSceneName: Level 2
+  nextSceneSpawnPoint: {x: 0, y: 0, z: 0}
+  nextSceneSpawnRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!64 &167904865
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -42873,6 +42875,8 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   nextSceneName: Level 3
+  nextSceneSpawnPoint: {x: 0, y: 0, z: 0}
+  nextSceneSpawnRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!64 &1597518147
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -45316,6 +45320,8 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   nextSceneName: Level 1
+  nextSceneSpawnPoint: {x: 0, y: 0, z: -4}
+  nextSceneSpawnRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!64 &1697344622
 MeshCollider:
   m_ObjectHideFlags: 0

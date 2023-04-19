@@ -1,9 +1,10 @@
 using UnityEngine;
 using Mirror;
-
 public class Teleporter : NetworkBehaviour
 {
     public string nextSceneName;
+    public Vector3 nextSceneSpawnPoint;
+    public Quaternion nextSceneSpawnRotation;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -14,9 +15,8 @@ public class Teleporter : NetworkBehaviour
         var networkManager = NetworkManager.singleton;
 
         networkManager.ServerChangeScene(nextSceneName);
-        var spawnPoint = NetworkManager.singleton.GetStartPosition();
         var playerTransform = other.transform;
-        playerTransform.position = spawnPoint.position;
-        playerTransform.rotation = spawnPoint.rotation;
+        playerTransform.position = nextSceneSpawnPoint;
+        playerTransform.rotation = nextSceneSpawnRotation;
     }
 }
