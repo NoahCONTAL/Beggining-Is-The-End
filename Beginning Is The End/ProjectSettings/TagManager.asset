@@ -12,6 +12,8 @@ TagManager:
   - JumpBoost
   - HealthRegen
   - Rewinder
+  - pickableObject
+  - caissesParent
   layers:
   - Default
   - TransparentFX
