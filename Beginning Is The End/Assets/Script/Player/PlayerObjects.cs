@@ -13,11 +13,16 @@ public class PlayerObjects : MonoBehaviour
 
     [SerializeField] 
     private AudioClip pickupSound;
+    
+    [SerializeField]
+    private Light _light;
 
     private void Start()
     {
         player = GetComponent<Player>();
         playerMov = GetComponent<PlayerMovement>();
+        
+        _light.color = Color.green;
     }
 
     private void Update()
