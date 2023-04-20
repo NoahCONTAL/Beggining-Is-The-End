@@ -23,12 +23,7 @@ public class isFirstLittleLevelComplete : MonoBehaviour
         }
         if(completed)
         {
-            DestroyGameObject();
+            transform.position += new Vector3(0, 69, 0);
         }
-    }
-    
-    void DestroyGameObject()
-    {
-        Destroy(gameObject);
     }
 }
