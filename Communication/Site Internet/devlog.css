@@ -1,0 +1,218 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@200;400;700&display=swap");
+body.pres {
+  background: linear-gradient(90deg, royalblue, rgb(37, 65, 148));
+  color: #333;
+  font-family: "Lato", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Style pour le header */
+header.pres {
+  position: relative;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  padding-bottom: 70px;
+  margin-top: 8px;
+  margin-right: 7px;
+  margin-left: 7px;
+}
+
+/* Style pour la barre de navigation */
+nav.pres {
+  background-color: #333;
+  border-radius: 20px;
+}
+
+nav.pres img {
+  float: left;
+  height: 50px;
+}
+
+nav.pres ul.pres {
+  /* centre la liste par rapport à la barre de navigation */
+  float: right;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+nav.pres li.pres {
+  float: left;
+}
+
+ul.pres li.pres button.pres {
+  display: block;
+  margin-left: auto;
+  margin-right: 10px;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 24px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  height: 48px;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 2px 24px;
+  text-align: center;
+  touch-action: manipulation;
+  width: auto;
+  border: none;
+}
+
+ul.pres li.pres button.pres:hover {
+  transition: 0.5s;
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+nav.pres a.pres {
+  display: block;
+  color: #fff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+nav.pics a.pres {
+  display: block;
+  color: #fff;
+  text-align: center;
+  padding: 0px 0px;
+  text-decoration: none;
+}
+
+nav.pres a.pres:hover {
+  background-color: #555;
+  color: royalblue;
+}
+
+/* Style pour la section principale */
+main.pres {
+  width: 100%;
+  flex: 1;
+}
+
+main.pres h1.pres {
+  background-color: #333;
+  border-radius: 30px;
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: rgb(180, 180, 172);
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  box-shadow: 0 0 30px #333;
+}
+
+section.pres {
+  margin-bottom: 40px;
+  background-color: rgb(180, 180, 172);
+  border-radius: 30px;
+  padding: 20px;
+  box-shadow: 0 0 30px #333;
+}
+
+section h2.pres {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+section.pres img.pres {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 300px;
+}
+
+section.pres p.pres {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #555;
+}
+
+/* Style pour le footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+a.pres {
+  color: royalblue;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: "Poppins";
+}
+
+.wrapper {
+  overflow-x: hidden;
+  position: relative;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+svg {
+  position: absolute;
+  top: 12em;
+  left: 10vw;
+  width: 50vw;
+}
+svg .mask {
+  width: 0;
+}
+
+.container {
+  display: flex;
+  width: 300vw;
+}
+.container .col {
+  display: flex;
+  gap: 3em;
+}
+.container .col p {
+  font-size: 0.8rem;
+}
+.container section {
+  width: 100vw;
+  padding: 20vw 10vw;
+}
+.container section h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+.container section p {
+  font-size: 1.2rem;
+  width: 50vw;
+}
+.container section ul {
+  list-style-type: none;
+  display: flex;
+  gap: 3em;
+  width: 100%;
+  height: 300px;
+  padding: 0;
+}
+.container section ul li {
+  background: white;
+  border-radius: 0.3em;
+  flex-grow: 1;
+}
+
+section {
+  height: 100vh;
+}/*# sourceMappingURL=devlog.css.map */
