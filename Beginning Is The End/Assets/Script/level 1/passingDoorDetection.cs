@@ -2,29 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class doorOpener : MonoBehaviour
+public class passingDoorDetection : MonoBehaviour
 {
+    [SerializeField] private GameObject pressurePlate;
     [SerializeField] GameObject door;
 
-
-    void OnTriggerEnter(Collider col)
+    void OnTriggerExit(Collider other)
     {
-        if(col.CompareTag("Player") || col.CompareTag("pickableObject"))
-        {
-            door.transform.position += new Vector3(0, -5, 0);
-        }
-        
-        
-    }
-
-    void OnTriggerExit(Collider col)
-    {
-        if(col.CompareTag("Player") || col.CompareTag("pickableObject"))
+        bool boo = pressurePlate.GetComponent<DoorExit>().comingFromInside;
+        if(other.CompareTag("Player") && boo)
         {
             door.transform.position += new Vector3(0, 5, 0);
+            boo = false;
         }
     }
-
     // Start is called before the first frame update
     void Start()
     {
