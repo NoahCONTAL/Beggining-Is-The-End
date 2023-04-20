@@ -271,7 +271,8 @@ body {
 .card__content > figure > img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 h1 {
@@ -332,6 +333,4 @@ aside p {
   border-image-width: 10px;
 }
 
-/* PAGE DEVBLOG */
-
-/*# sourceMappingURL=index.css.map */
+/* PAGE DEVBLOG *//*# sourceMappingURL=index.css.map */
