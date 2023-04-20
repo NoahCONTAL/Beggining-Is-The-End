@@ -104,7 +104,6 @@ main.pres h1.pres {
   text-align: center;
   font-size: 32px;
   margin-bottom: 20px;
-  color: rgb(180, 180, 172);
   margin-left: auto;
   margin-right: auto;
   width: 50%;
@@ -113,7 +112,7 @@ main.pres h1.pres {
 
 section.pres {
   margin-bottom: 40px;
-  background-color: rgb(180, 180, 172);
+  background-color: #f4f4f4;
   border-radius: 30px;
   padding: 20px;
   box-shadow: 0 0 30px #333;
@@ -155,6 +154,7 @@ body {
   margin: 0;
   height: 100vh;
   font-family: "Poppins";
+  background-color: rgb(180, 180, 172);
 }
 
 .wrapper {
@@ -164,6 +164,10 @@ body {
 
 * {
   box-sizing: border-box;
+}
+
+div.dev {
+  background-color: rgb(180, 180, 172);
 }
 
 svg {
@@ -208,7 +212,7 @@ svg .mask {
   padding: 0;
 }
 .container section ul li {
-  background: white;
+  background: rgb(180, 180, 172);
   border-radius: 0.3em;
   flex-grow: 1;
 }
