@@ -20655,7 +20655,7 @@ GameObject:
   - component: {fileID: 876437801}
   m_Layer: 0
   m_Name: Village
-  m_TagString: Farm
+  m_TagString: Village
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
