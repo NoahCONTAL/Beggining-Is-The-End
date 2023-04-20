@@ -29,9 +29,10 @@
                 <li class="card" id="card_1">
                     <div class="card__content">
                         <div>
-                            <h2 class="card">Jérémie</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                            <p><a href="#top" class="btn btn--accent">Read more</a></p>
+                            <h2 class="card dis-block" id="id11">Jérémie</h2>
+                            <p class="dis-block" id="id12">Role: Chef de groupe, Game design, Communication</p>
+                            <p class="dis-none text-pres" id="id13">Sa scolarité étant issue des petits collèges et lycées de campagne en Bourgogne Franche-Comté, il n’a jamais pratiqué la programmation avant le lycée. Mais la passion des jeux vidéo l’a poussé à s’y intéresser par lui-même grâce à Unity3D afin de se rendre compte de l’envers du décor derrière celle-ci. Il décide alors d’intégrer EPITA avec comme objectif d’avoir un futur dans le développement et la programmation de logiciel. C’est sa motivation à créer son tout premier jeu vidéo qui l’a poussé à être chef de groupe de ce projet.</p>
+                            <p><a onclick="toggle_visibility('id11'); toggle_visibility('id12'); toggle_visibility('id13'); toggleText(this.id);" id="id" class="btn btn--accent">Lire plus</a></p>
                         </div>
                         <figure>
                             <img src="Ressources/jeremie.levan_f4c654bc-8ffa-46cf-be22-f172ec95d57f-thumb.jpg" alt="Image description">
@@ -41,9 +42,10 @@
                 <li class="card" id="card_2">
                     <div class="card__content">
                         <div>
-                            <h2 class="card">Noah</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                            <p><a href="#top" class="btn btn--accent">Read more</a></p>
+                            <h2 class="card dis-block" id="id21">Noah</h2>
+                            <p class="dis-block" id="id22">Role: Intelligence aritificiel, Interface utilisateur, Unity</p>
+                            <p class="dis-none text-pres" id="id23">Originaire d'Alsace, il a étudié dans des établissements de campagne, Il a déjà pratiqué la programmation a des fins de développement de mods pour des jeux ou encore le développement web. Il a alors décidé d’intégrer l’EPITA Strasbourg pour rester proche de chez lui, tout en pouvant acquérir des compétences fortes dans le domaine de l’informatique, afin de créer son avenir autour de l’informatique et de pouvoir améliorer la qualité de ses projets qu’il effectue à des fins ludiques et lucratives.</p>
+                            <p><a onclick="toggle_visibility('id21'); toggle_visibility('id22'); toggle_visibility('id23'); toggleText(this.id);" id="id" class="btn btn--accent">Lire plus</a></p>
                         </div>
                         <figure>
                             <img src="Ressources/noah.contal_9939d120-f0dd-47d8-adbe-347efb1364e4.jpg" alt="Image description">
@@ -53,9 +55,10 @@
                 <li class="card" id="card_3">
                     <div class="card__content">
                         <div>
-                            <h2 class="card">Tom</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                            <p><a href="#top" class="btn btn--accent">Read more</a></p>
+                            <h2 class="card dis-block" id="id31">Tom</h2>
+                            <p class="dis-block" id="id32">Role: Site web, Graphisme, 3D</p>
+                            <p class="dis-none text-pres" id="id33">Originaire du Maroc puis ayant migré dans les Vosges. C’est son père qui lui fit faire ses premiers pas dans le monde dans de l’informatique en jouant avec lui aux jeux-vidéos. Puis cette passion est devenue de plus en plus forte, ne pouvant pas avoir accès à la spécialité NSI dans son lycée, il a fait des petits projets avec ses amis. Pour lui son chemin dans l’informatique était tout tracé. C’est alors qu’il décida d’intégrer EPITA avec pour objectif de construire son avenir dans l’informatique.</p>
+                            <p><a onclick="toggle_visibility('id31'); toggle_visibility('id32'); toggle_visibility('id33'); toggleText(this.id);" id="id" class="btn btn--accent">Lire plus</a></p>
                         </div>
                         <figure>
                             <img src="Ressources/tom.giles_923eb03c-8404-41c0-800c-9b48187fba4d-thumb.jpg" alt="Image description">
@@ -70,3 +73,35 @@
         </footer>
     </body>
 </html>
+
+
+<script type="text/javascript">
+    <!--
+        function getStyle(el, name) {
+        if ( document.defaultView && document.defaultView.getComputedStyle )
+        {
+            var style = document.defaultView.getComputedStyle(el, null);
+            if ( style )
+                return style[name];
+            }
+        else if ( el.currentStyle )
+            return el.currentStyle[name];       
+        return null;
+}
+
+
+    function toggle_visibility(id) {
+        var e = document.getElementById(id);
+        if(getStyle(e, "display") == "none"){
+            e.style.display="block"
+        } else {
+            e.style.display="none"
+        }
+    }
+
+    function toggleText(button_id)  {
+   var text = document.getElementById(button_id).firstChild;
+   text.data = text.data == "Lire plus" ? "Lire moins" : "Lire plus";
+}
+    //-->
+    </script>
