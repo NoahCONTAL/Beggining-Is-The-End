@@ -127,11 +127,11 @@ public class EnemyAI : MonoBehaviour
         _isAttacking = false;
     }
     
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, attractionDistance);
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(transform.position, attackRadius);
-    }
+    // private void OnDrawGizmos()
+    // {
+    //     Gizmos.color = Color.red;
+    //     Gizmos.DrawWireSphere(transform.position, attractionDistance);
+    //     Gizmos.color = Color.blue;
+    //     Gizmos.DrawWireSphere(transform.position, attackRadius);
+    // }
 }
