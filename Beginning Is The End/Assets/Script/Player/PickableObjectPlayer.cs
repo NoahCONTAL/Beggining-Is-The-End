@@ -28,23 +28,16 @@ public class PickableObjectPlayer : MonoBehaviour
 
             if (beingCarried)
             {
-                if (touched)
+                if (Input.GetMouseButton(1))
                 {
                     pickableObject.GetComponent<Rigidbody>().isKinematic = false;
                     pickableObject.transform.parent = null;
                     beingCarried = false;
-                    touched = false;
-                }
-
-                if (Input.GetKey(KeyCode.A))
-                {
-                    pickableObject.GetComponent<Rigidbody>().isKinematic = false;
-                    pickableObject.transform.parent = null;
-                    beingCarried = false;
+                    return;
                 }
             }
 
-            if (hasPlayer && Input.GetKey(KeyCode.E))
+            if (hasPlayer && Input.GetMouseButton(0))
             {
                 pickableObject.GetComponent<Rigidbody>().isKinematic = true;
                 pickableObject.transform.parent = player;

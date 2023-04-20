@@ -11,6 +11,7 @@ public class doorOpener : MonoBehaviour
     {
         if(col.CompareTag("Player") || col.CompareTag("pickableObject"))
         {
+            Debug.Log("miam");
             door.transform.position += new Vector3(0, -5, 0);
         }
         

@@ -14,6 +14,7 @@ TagManager:
   - Rewinder
   - pickableObject
   - caissesParent
+  - Floor
   layers:
   - Default
   - TransparentFX
