@@ -5,6 +5,7 @@ using UnityEngine;
 public class doorOpener : MonoBehaviour
 {
     [SerializeField] GameObject door;
+    public bool AlreadyOnFirstPlate = false;
 
 
     void OnTriggerEnter(Collider col)
@@ -12,6 +13,7 @@ public class doorOpener : MonoBehaviour
         if(col.CompareTag("Player") || col.CompareTag("pickableObject"))
         {
             door.transform.position += new Vector3(0, -5, 0);
+            AlreadyOnFirstPlate = true;
         }
         
         
@@ -22,6 +24,7 @@ public class doorOpener : MonoBehaviour
         if(col.CompareTag("Player") || col.CompareTag("pickableObject"))
         {
             door.transform.position += new Vector3(0, 5, 0);
+            AlreadyOnFirstPlate = false;
         }
     }
 
