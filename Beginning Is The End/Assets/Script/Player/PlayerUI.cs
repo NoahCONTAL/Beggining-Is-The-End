@@ -1,7 +1,9 @@
+using System;
 using Cinemachine;
 using UnityEngine;
 using Mirror;
 using TMPro;
+using UnityEngine.Serialization;
 
 public class PlayerUI : Player
 {
@@ -9,6 +11,8 @@ public class PlayerUI : Player
     [SerializeField] private GameObject dieMenu;
     [SerializeField] private RectTransform healthBar;
     [SerializeField] private RectTransform healthBarImage;
+    [SerializeField] private GameObject farmHint;
+    [SerializeField] private GameObject villageHint;
     private float _currentHealth;
     private float _maxiHealth;
 
@@ -140,5 +144,29 @@ public class PlayerUI : Player
         playerAnimations.enabled = true;
         _playerMovement.enabled = true;
         CinemachineFreeLook.enabled = true;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Farm"))
+        {
+            farmHint.SetActive(true);
+        }
+        else if (other.CompareTag("Village"))
+        {
+            villageHint.SetActive(true);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Farm"))
+        {
+            farmHint.SetActive(false);
+        }
+        else if (other.CompareTag("Village"))
+        {
+            villageHint.SetActive(false);
+        }
     }
 }
