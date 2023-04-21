@@ -11,7 +11,7 @@ public class DoorExit : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        if(col.CompareTag("Player") && (firstPressurePlate.GetComponent<doorOpener>().AlreadyOnFirstPlate))
+        if(col.CompareTag("Player") && !(firstPressurePlate.GetComponent<doorOpener>().AlreadyOnFirstPlate))
         {
             door.transform.position += new Vector3(0, -5, 0);
             comingFromInside = true;
