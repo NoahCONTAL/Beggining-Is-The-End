@@ -1958,7 +1958,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3479630356466307754}
-  m_LocalRotation: {x: 0.004985957, y: 0.99222726, z: -0.04231336, w: 0.116918206}
+  m_LocalRotation: {x: 0.0049859565, y: 0.99222726, z: -0.04231336, w: 0.1169182}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3262,6 +3262,7 @@ MonoBehaviour:
   damage: 5
   animator: {fileID: 6998792789794335211}
   attackSound: {fileID: 0}
+  scriptDesactiver: {fileID: 3479630357022820820}
 --- !u!114 &3479630357022820817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3327,6 +3328,7 @@ MonoBehaviour:
   damage: 5
   animator: {fileID: 6998792789794335211}
   attackSound: {fileID: 0}
+  scriptDesactiver: {fileID: 0}
   OptionMenu: {fileID: 5914293768121554218}
   pauseMenu: {fileID: 3479630357918197959}
   dieMenu: {fileID: 3479630357978752704}
@@ -3840,7 +3842,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3479630357460227062}
-  m_LocalRotation: {x: 0.0071118176, y: 0.99129343, z: -0.060354494, w: 0.11680816}
+  m_LocalRotation: {x: 0.0071118143, y: 0.99129343, z: -0.06035448, w: 0.116808146}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

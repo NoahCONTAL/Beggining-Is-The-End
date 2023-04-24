@@ -18,15 +18,18 @@ public class Player : NetworkBehaviour
     [SerializeField] 
     private AudioClip attackSound;
     
+    public GameObject scriptDesactiver;
+
     public void TakeDamage(int _damage)
     {
         StartCoroutine(aux(_damage));
     }
     private IEnumerator aux(int _damage)
     {
-        yield return new WaitForSeconds(0.5f);
+        scriptDesactiver.GetComponent<PlayerMovement>().enabled = false;
         animator.SetTrigger("Hurt");
-        yield return new WaitForSeconds(0.133f);
+        yield return new WaitForSeconds(2f);
+        scriptDesactiver.GetComponent<PlayerMovement>().enabled = true;
         //_audioSource.PlayOneShot(attackSound);
         health -= _damage;
         if ((health <= 0))

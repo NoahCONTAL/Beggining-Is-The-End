@@ -21,7 +21,7 @@ public class EnemyAI : MonoBehaviour
 
     [SerializeField] private float attractionDistance = 6f;
 
-    [SerializeField] private float attackRadius = 2.5f;
+    private float attackRadius = 1.5f;
 
     [SerializeField] private float attackDelay = 2.633f;
 
