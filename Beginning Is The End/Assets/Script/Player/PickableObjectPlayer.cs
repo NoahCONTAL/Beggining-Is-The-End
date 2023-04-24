@@ -28,7 +28,7 @@ public class PickableObjectPlayer : MonoBehaviour
 
             if (beingCarried)
             {
-                if (Input.GetMouseButton(1))
+                if (Input.GetButton("Use"))
                 {
                     pickableObject.GetComponent<Rigidbody>().isKinematic = false;
                     pickableObject.transform.parent = null;
@@ -37,7 +37,7 @@ public class PickableObjectPlayer : MonoBehaviour
                 }
             }
 
-            if (hasPlayer && Input.GetMouseButton(0))
+            if (hasPlayer && Input.GetButton("Use"))
             {
                 pickableObject.GetComponent<Rigidbody>().isKinematic = true;
                 pickableObject.transform.parent = player;

@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
         var vertical = Input.GetAxisRaw("Vertical");
         var direction = new Vector3(horizontal, 0f, vertical).normalized;
 
-        var isSprinting = Input.GetKey(KeyCode.LeftShift) &&
+        var isSprinting = Input.GetButton("Sprint") &&
                           direction.magnitude >= 0.1f;
 
         var currentSpeed = isSprinting ? sprintSpeed : speed;

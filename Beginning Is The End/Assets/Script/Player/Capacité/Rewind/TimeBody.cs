@@ -31,11 +31,11 @@ public class TimeBody : NetworkBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetButtonDown("Rewind"))
         {
             CmdStartRewind();
         }
-        else if (Input.GetKeyUp(KeyCode.R))
+        else if (Input.GetButtonUp("Rewind"))
         {
             CmdStopRewind();
         }

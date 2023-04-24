@@ -4,9 +4,12 @@ using UnityEngine;
 using Mirror;
 using TMPro;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class PlayerUI : Player
 {
+    [SerializeField] private Image OptionMenu;
+
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject dieMenu;
     [SerializeField] private RectTransform healthBar;
@@ -57,6 +60,7 @@ public class PlayerUI : Player
         playerAnimations.enabled = true;
         healthBar.gameObject.SetActive(true);
         healthBarImage.gameObject.SetActive(true);
+        OptionMenu.gameObject.SetActive(false);
         _playerMovement.enabled = true;
         CinemachineFreeLook.enabled = true;
     }
@@ -72,6 +76,14 @@ public class PlayerUI : Player
         healthBarImage.gameObject.SetActive(false);
         _playerMovement.enabled = false;
         CinemachineFreeLook.enabled = false;
+    }
+    
+    public void Option()
+    {
+        if (!isLocalPlayer) return;
+        Cursor.lockState = CursorLockMode.None;
+        pauseMenu.SetActive(false);
+        OptionMenu.gameObject.SetActive(true);
     }
 
     public void QuitGame()

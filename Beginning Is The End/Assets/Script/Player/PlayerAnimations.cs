@@ -6,9 +6,7 @@ public class PlayerAnimations : MonoBehaviour
 
     private void Update()
     {
-        if ((Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.Q) ||
-             Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.S)) &&
-            !Input.GetKey(KeyCode.LeftShift))
+        if ((Input.GetButton("Horizontal") || Input.GetButton("Vertical")) && !Input.GetButton("Sprint"))
         {
             anim.SetBool("Walk", true);
         }
@@ -17,9 +15,7 @@ public class PlayerAnimations : MonoBehaviour
             anim.SetBool("Walk", false);
         }
 
-        if ((Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.Q) ||
-             Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.S)) &&
-            Input.GetKey(KeyCode.LeftShift))
+        if ((Input.GetButton("Horizontal") || Input.GetButton("Vertical")) && Input.GetButton("Sprint"))
         {
             anim.SetBool("Run", true);
         }

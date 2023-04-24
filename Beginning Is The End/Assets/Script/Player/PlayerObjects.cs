@@ -29,7 +29,7 @@ public class PlayerObjects : MonoBehaviour
         {
             if (hit.collider.gameObject.CompareTag("HealthRegen"))
             {
-                if (Input.GetKey(KeyCode.E))
+                if (Input.GetButton("Use"))
                 {
                     player.health += 5;
                     Destroy(hit.collider.gameObject);
@@ -39,7 +39,7 @@ public class PlayerObjects : MonoBehaviour
 
             else if (hit.collider.gameObject.CompareTag("HealthBoost"))
             {
-                if (Input.GetKey(KeyCode.E))
+                if (Input.GetButton("Use"))
                 {
                     player.maxEnergy += 10;
                     player.health += 10;
@@ -50,7 +50,7 @@ public class PlayerObjects : MonoBehaviour
 
             else if (hit.collider.gameObject.CompareTag("SpeedBoost"))
             {
-                if (Input.GetKey(KeyCode.E))
+                if (Input.GetButton("Use"))
                 {
                     playerMov.speed += 2;
                     playerMov.sprintSpeed += 2;
@@ -61,7 +61,7 @@ public class PlayerObjects : MonoBehaviour
 
             else if (hit.collider.gameObject.CompareTag("JumpBoost"))
             {
-                if (Input.GetKey(KeyCode.E))
+                if (Input.GetButton("Use"))
                 {
                     playerMov.jumpHeight += 2;
                     Destroy(hit.collider.gameObject);

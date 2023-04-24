@@ -18,7 +18,7 @@ public class PlayerRewind : NetworkBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetButtonDown("Rewind"))
         {
             foreach (var rew in rewinder)
             {
@@ -27,7 +27,7 @@ public class PlayerRewind : NetworkBehaviour
             
             _audioSource.PlayOneShot(rewindSound);
         }
-        else if (Input.GetKeyUp(KeyCode.R))
+        else if (Input.GetButtonUp("Rewind"))
         {
             foreach (var rew in rewinder)
             {
