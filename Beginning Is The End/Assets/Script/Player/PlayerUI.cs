@@ -74,6 +74,7 @@ public class PlayerUI : Player
         playerAnimations.enabled = false;
         healthBar.gameObject.SetActive(false);
         healthBarImage.gameObject.SetActive(false);
+        OptionMenu.gameObject.SetActive(false);
         _playerMovement.enabled = false;
         CinemachineFreeLook.enabled = false;
     }
