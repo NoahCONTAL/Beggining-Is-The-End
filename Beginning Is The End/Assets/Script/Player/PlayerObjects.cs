@@ -14,6 +14,10 @@ public class PlayerObjects : MonoBehaviour
     [SerializeField] 
     private AudioClip pickupSound;
 
+    public float fireDelta = 0.5F;
+    private float nextFire = 0.5F;
+    private float myTime = 0.0F;
+
     private void Start()
     {
         player = GetComponent<Player>();
@@ -23,6 +27,8 @@ public class PlayerObjects : MonoBehaviour
     private void Update()
     {
         RaycastHit hit;
+
+        myTime = myTime + Time.deltaTime;
 
         if (Physics.Raycast(transform.position, transform.forward, out hit,
                 pickupRange))
@@ -68,6 +74,23 @@ public class PlayerObjects : MonoBehaviour
                     _audioSource.PlayOneShot(pickupSound);
                 }
             }
+
+            else if (hit.collider.gameObject.CompareTag("Door") && myTime > nextFire)
+            {
+                if (Input.GetButton("Use"))
+                {
+                    nextFire = myTime + fireDelta;
+                    hit.collider.gameObject.GetComponent<DoorController>().ToggleDoor();
+                    nextFire = nextFire - myTime;
+                    myTime = 0.0F;
+                }
+            }
         }
     }
+
+    IEnumerator WaitForFunction()
+{
+    yield return new WaitForSeconds(1);
+    Debug.Log("C'est bon");  
+}
 }
