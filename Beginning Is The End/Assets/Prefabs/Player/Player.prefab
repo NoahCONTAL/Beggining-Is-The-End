@@ -2470,7 +2470,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3479630356762626431}
-  m_LocalRotation: {x: 0.0028640695, y: 0.9928316, z: -0.024305953, w: 0.11698938}
+  m_LocalRotation: {x: 0.0028640693, y: 0.9928316, z: -0.02430595, w: 0.11698938}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3076,6 +3076,7 @@ GameObject:
   - component: {fileID: 7973809944366785067}
   - component: {fileID: 6135088298111618224}
   - component: {fileID: 7532848627538524917}
+  - component: {fileID: 5174196249505205586}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -3481,6 +3482,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5174196249505205586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3479630357022820820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78d475bb4623dbf65b1d13f04fd7d96a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleportDuration: 0.5
 --- !u!1 &3479630357120725417
 GameObject:
   m_ObjectHideFlags: 0
@@ -3842,7 +3856,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3479630357460227062}
-  m_LocalRotation: {x: 0.0071118143, y: 0.99129343, z: -0.06035448, w: 0.116808146}
+  m_LocalRotation: {x: 0.0071118176, y: 0.99129343, z: -0.060354494, w: 0.11680816}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

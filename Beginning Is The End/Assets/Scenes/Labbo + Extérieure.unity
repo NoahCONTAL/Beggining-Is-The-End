@@ -4524,9 +4524,9 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0.1
-  nextSceneName: Level 2
-  nextSceneSpawnPoint: {x: 0, y: 0, z: 0}
-  nextSceneSpawnRotation: {x: 0, y: 0, z: 0, w: 0}
+  spawnPointPosition: {x: 0, y: 0, z: 0}
+  spawnPointRotation: {x: 0, y: 0, z: 0}
+  sceneName: 
 --- !u!64 &167904865
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5020,7 +5020,6 @@ MonoBehaviour:
   walkSpeed: 2
   chaseSpeed: 3.5
   attractionDistance: 6
-  attackRadius: 2.5
   attackDelay: 2.633
   rotationSpeed: 120
   wanderingWaitTimeMin: 2
@@ -5600,7 +5599,6 @@ MonoBehaviour:
   walkSpeed: 2
   chaseSpeed: 3.5
   attractionDistance: 6
-  attackRadius: 2.5
   attackDelay: 2.633
   rotationSpeed: 120
   wanderingWaitTimeMin: 2
@@ -11571,7 +11569,6 @@ MonoBehaviour:
   walkSpeed: 2
   chaseSpeed: 3.5
   attractionDistance: 6
-  attackRadius: 2.5
   attackDelay: 2.633
   rotationSpeed: 120
   wanderingWaitTimeMin: 2
@@ -13033,7 +13030,6 @@ MonoBehaviour:
   walkSpeed: 2
   chaseSpeed: 3.5
   attractionDistance: 6
-  attackRadius: 2.5
   attackDelay: 2.633
   rotationSpeed: 120
   wanderingWaitTimeMin: 2
@@ -24904,7 +24900,6 @@ MonoBehaviour:
   walkSpeed: 2
   chaseSpeed: 3.5
   attractionDistance: 6
-  attackRadius: 2.5
   attackDelay: 2.633
   rotationSpeed: 120
   wanderingWaitTimeMin: 2
@@ -36021,7 +36016,6 @@ MonoBehaviour:
   walkSpeed: 2
   chaseSpeed: 3.5
   attractionDistance: 6
-  attackRadius: 2.5
   attackDelay: 2.633
   rotationSpeed: 120
   wanderingWaitTimeMin: 2
@@ -42931,9 +42925,9 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0.1
-  nextSceneName: Level 3
-  nextSceneSpawnPoint: {x: 0, y: 0, z: 0}
-  nextSceneSpawnRotation: {x: 0, y: 0, z: 0, w: 0}
+  spawnPointPosition: {x: 0, y: 0, z: 0}
+  spawnPointRotation: {x: 0, y: 0, z: 0}
+  sceneName: 
 --- !u!64 &1597518147
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -45460,9 +45454,9 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0.1
-  nextSceneName: Level 1
-  nextSceneSpawnPoint: {x: 0, y: 0, z: -4}
-  nextSceneSpawnRotation: {x: 0, y: 0, z: 0, w: 0}
+  spawnPointPosition: {x: 0, y: 0, z: -4}
+  spawnPointRotation: {x: 0, y: 0, z: 0}
+  sceneName: Level 1
 --- !u!64 &1697344622
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -47487,7 +47481,6 @@ MonoBehaviour:
   walkSpeed: 2
   chaseSpeed: 3.5
   attractionDistance: 6
-  attackRadius: 2.5
   attackDelay: 2.633
   rotationSpeed: 120
   wanderingWaitTimeMin: 2
@@ -51992,7 +51985,6 @@ MonoBehaviour:
   walkSpeed: 2
   chaseSpeed: 3.5
   attractionDistance: 6
-  attackRadius: 2.5
   attackDelay: 2.633
   rotationSpeed: 120
   wanderingWaitTimeMin: 2
@@ -56052,7 +56044,6 @@ MonoBehaviour:
   walkSpeed: 2
   chaseSpeed: 3.5
   attractionDistance: 6
-  attackRadius: 2.5
   attackDelay: 2.633
   rotationSpeed: 120
   wanderingWaitTimeMin: 2

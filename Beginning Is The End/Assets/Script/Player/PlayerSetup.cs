@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 using Mirror;
 
@@ -32,5 +34,10 @@ public class PlayerSetup : NetworkBehaviour
         {
             scneneCamera.gameObject.SetActive(true);
         }
+    }
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
     }
 }

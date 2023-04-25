@@ -1,22 +1,23 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
+
 public class Teleporter : NetworkBehaviour
 {
-    public string nextSceneName;
-    public Vector3 nextSceneSpawnPoint;
-    public Quaternion nextSceneSpawnRotation;
-
+    public Vector3 spawnPointPosition;
+    public Vector3 spawnPointRotation;
+    public string sceneName;
+    
     private void OnTriggerEnter(Collider other)
     {
-        if (!isServer) return;
-
-        if (!other.CompareTag("Player")) return;
-
-        var networkManager = NetworkManager.singleton;
-
-        networkManager.ServerChangeScene(nextSceneName);
-        var playerTransform = other.transform;
-        playerTransform.position = nextSceneSpawnPoint;
-        playerTransform.rotation = nextSceneSpawnRotation;
+        if (other.CompareTag("Player"))
+        {
+            PlayerTeleport playerTeleport = other.GetComponent<PlayerTeleport>();
+            if (playerTeleport != null)
+            {
+                playerTeleport.CmdChangeScene(sceneName, spawnPointPosition, spawnPointRotation);
+            }
+        }
     }
 }

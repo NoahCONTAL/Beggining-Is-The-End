@@ -1466,8 +1466,7 @@ PrefabInstance:
       propertyPath: spawnPrefabs.Array.size
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1941593330976429025, guid: b09a905c82f3d9242878e515df14245f, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b09a905c82f3d9242878e515df14245f, type: 3}
 --- !u!1 &1225593737
 GameObject:
