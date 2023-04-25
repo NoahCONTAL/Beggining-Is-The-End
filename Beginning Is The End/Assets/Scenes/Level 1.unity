@@ -584,9 +584,9 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0.1
-  nextSceneName: "Labbo + Ext\xE9rieure"
-  nextSceneSpawnPoint: {x: 0, y: 0, z: 0}
-  nextSceneSpawnRotation: {x: 0, y: 0, z: 0, w: 0}
+  spawnPointPosition: {x: -184, y: 3.5, z: -165}
+  spawnPointRotation: {x: 0, y: -90, z: 0}
+  sceneName: "Labbo + Ext\xE9rieure"
 --- !u!65 &241014137
 BoxCollider:
   m_ObjectHideFlags: 0
