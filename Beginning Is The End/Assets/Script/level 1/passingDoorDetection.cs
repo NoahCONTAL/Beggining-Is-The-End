@@ -2,30 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class passingDoorDetection : MonoBehaviour
+namespace Level1
 {
-    [SerializeField] private GameObject pressurePlate;
-    [SerializeField] private GameObject pressurePlateInside;
-    [SerializeField] GameObject door;
-
-    void OnTriggerExit(Collider other)
+    public class passingDoorDetection : MonoBehaviour
     {
-        bool boo = pressurePlateInside.GetComponent<DoorExit>().comingFromInside;
-        if(other.CompareTag("Player") && boo && !(pressurePlate.GetComponent<doorOpener>().AlreadyOnFirstPlate))
+        [SerializeField] private GameObject pressurePlate;
+        [SerializeField] private GameObject pressurePlateInside;
+        [SerializeField] GameObject door;
+
+        void OnTriggerExit(Collider other)
         {
-            door.transform.position += new Vector3(0, 5, 0);
-            boo = false;
+            bool boo = pressurePlateInside.GetComponent<DoorExit>().comingFromInside;
+            if (other.CompareTag("Player") && boo && !(pressurePlate.GetComponent<doorOpener>().AlreadyOnFirstPlate))
+            {
+                door.transform.position += new Vector3(0, 5, 0);
+                boo = false;
+            }
         }
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
 
-public class Teleporter : NetworkBehaviour
+namespace Objects
 {
-    public Vector3 spawnPointPosition;
-    public Vector3 spawnPointRotation;
-    public string sceneName;
-    
-    private void OnTriggerEnter(Collider other)
+    public class Teleporter : NetworkBehaviour
     {
-        if (other.CompareTag("Player"))
+        public Vector3 spawnPointPosition;
+        public Vector3 spawnPointRotation;
+        public string sceneName;
+    
+        private void OnTriggerEnter(Collider other)
         {
-            PlayerTeleport playerTeleport = other.GetComponent<PlayerTeleport>();
+            if (!other.CompareTag("Player")) return;
+            var playerTeleport = other.GetComponent<PlayerTeleport>();
             if (playerTeleport != null)
             {
                 playerTeleport.CmdChangeScene(sceneName, spawnPointPosition, spawnPointRotation);

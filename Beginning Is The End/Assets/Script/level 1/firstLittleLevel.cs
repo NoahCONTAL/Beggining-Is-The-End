@@ -2,35 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class firstLittleLevel : MonoBehaviour
+namespace Level1
 {
-    public bool IsPressed = false;
-    
-    void OnTriggerEnter(Collider other)
+    public class firstLittleLevel : MonoBehaviour
     {
-        if(other.CompareTag("Player") || other.CompareTag("pickableObject"))
+        public bool IsPressed = false;
+
+        void OnTriggerEnter(Collider other)
         {
-            IsPressed = true;
+            if (other.CompareTag("Player") || other.CompareTag("pickableObject"))
+            {
+                IsPressed = true;
+            }
         }
-    }
 
-    void OnTriggerExit(Collider other)
-    {
-        if(other.CompareTag("Player") || other.CompareTag("pickableObject"))
+        void OnTriggerExit(Collider other)
         {
-            IsPressed = false;
+            if (other.CompareTag("Player") || other.CompareTag("pickableObject"))
+            {
+                IsPressed = false;
+            }
         }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

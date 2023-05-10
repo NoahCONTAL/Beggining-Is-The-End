@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Objects;
 using UnityEngine;
 
 public class PlayerObjects : MonoBehaviour
@@ -17,6 +18,9 @@ public class PlayerObjects : MonoBehaviour
     public float fireDelta = 0.5F;
     private float nextFire = 0.5F;
     private float myTime = 0.0F;
+
+    private GameObject pickableObject;
+    private bool beingCarried = false;
 
     private void Start()
     {
@@ -85,12 +89,30 @@ public class PlayerObjects : MonoBehaviour
                     myTime = 0.0F;
                 }
             }
+            
+            
+            else if (hit.collider.gameObject.CompareTag("pickableObject"))
+            {
+                pickableObject = hit.collider.gameObject;
+                var _player = this.transform;
+                
+                if (Input.GetButtonDown("Use"))
+                {
+                    pickableObject.GetComponent<Rigidbody>().isKinematic = true;
+                    pickableObject.transform.parent = _player;
+                    beingCarried = true;
+                }
+            }
+        }
+
+        if (beingCarried)
+        {
+            if (Input.GetButtonUp("Use"))
+            {
+                pickableObject.GetComponent<Rigidbody>().isKinematic = false;
+                pickableObject.transform.parent = null;
+                beingCarried = false;
+            }
         }
     }
-
-    IEnumerator WaitForFunction()
-{
-    yield return new WaitForSeconds(1);
-    Debug.Log("C'est bon");  
-}
 }
