@@ -45,17 +45,17 @@ namespace Mirror
         [Header("Selective Sync & Interpolation\nDon't change these at Runtime")]
         public bool syncPosition = true;  // do not change at runtime!
         public bool syncRotation = true;  // do not change at runtime!
-        public bool syncScale    = false; // do not change at runtime! rare. off by default.
+        public bool syncScale = false; // do not change at runtime! rare. off by default.
 
         // debugging ///////////////////////////////////////////////////////////
         [Header("Debug")]
         public bool showGizmos;
-        public bool  showOverlay;
+        public bool showOverlay;
         public Color overlayColor = new Color(0, 0, 0, 0.5f);
 
         // initialization //////////////////////////////////////////////////////
         // make sure to call this when inheriting too!
-        protected virtual void Awake() {}
+        protected virtual void Awake() { }
 
         protected virtual void OnValidate()
         {
@@ -72,13 +72,13 @@ namespace Mirror
             // obsolete clientAuthority compatibility:
             // if it was used, then set the new SyncDirection automatically.
             // if it wasn't used, then don't touch syncDirection.
- #pragma warning disable CS0618
+#pragma warning disable CS0618
             if (clientAuthority)
             {
                 syncDirection = SyncDirection.ClientToServer;
                 Debug.LogWarning($"{name}'s NetworkTransform component has obsolete .clientAuthority enabled. Please disable it and set SyncDirection to ClientToServer instead.");
             }
- #pragma warning restore CS0618
+#pragma warning restore CS0618
         }
 
         // snapshot functions //////////////////////////////////////////////////
@@ -115,7 +115,7 @@ namespace Mirror
             // replay it for 10 seconds.
             if (!position.HasValue) position = snapshots.Count > 0 ? snapshots.Values[snapshots.Count - 1].position : target.localPosition;
             if (!rotation.HasValue) rotation = snapshots.Count > 0 ? snapshots.Values[snapshots.Count - 1].rotation : target.localRotation;
-            if (!scale.HasValue)    scale    = snapshots.Count > 0 ? snapshots.Values[snapshots.Count - 1].scale    : target.localScale;
+            if (!scale.HasValue) scale = snapshots.Count > 0 ? snapshots.Values[snapshots.Count - 1].scale : target.localScale;
 
             // insert transform snapshot
             SnapshotInterpolation.InsertIfNotExists(snapshots, new TransformSnapshot(
@@ -152,7 +152,7 @@ namespace Mirror
             //    scale, then we should not touch scale etc.
             if (syncPosition) target.localPosition = interpolated.position;
             if (syncRotation) target.localRotation = interpolated.rotation;
-            if (syncScale)    target.localScale = interpolated.scale;
+            if (syncScale) target.localScale = interpolated.scale;
         }
 
         // client->server teleport to force position without interpolation.

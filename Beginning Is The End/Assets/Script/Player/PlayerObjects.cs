@@ -8,16 +8,16 @@ public class PlayerObjects : MonoBehaviour
 
     private Player player;
     private PlayerMovement playerMov;
-    
+
     private AudioSource _audioSource;
 
-    [SerializeField] 
+    [SerializeField]
     private AudioClip pickupSound;
 
     public float fireDelta = 0.5F;
     private float nextFire = 0.5F;
     private float myTime = 0.0F;
-    
+
     private GameObject pickableObject;
     private bool beingCarried = false;
 
@@ -88,11 +88,11 @@ public class PlayerObjects : MonoBehaviour
                     myTime = 0.0F;
                 }
             }
-            
+
             else if (hit.collider.gameObject.CompareTag("pickableObject"))
             {
                 pickableObject = hit.collider.gameObject;
-                
+
                 if (Input.GetMouseButton(0))
                 {
                     pickableObject.GetComponent<Rigidbody>().isKinematic = true;
@@ -101,7 +101,7 @@ public class PlayerObjects : MonoBehaviour
                 }
             }
         }
-        
+
         if (beingCarried)
         {
             if (Input.GetMouseButton(1))

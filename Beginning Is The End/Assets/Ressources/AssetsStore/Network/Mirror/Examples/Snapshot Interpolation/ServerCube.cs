@@ -100,7 +100,7 @@ namespace Mirror.Examples.SnapshotInterpolationDemo
             for (int i = 0; i < queue.Count; ++i)
             {
                 (double deliveryTime, Snapshot3D snap) = queue[i];
-                
+
 #if !UNITY_2020_3_OR_NEWER
                 if (NetworkTime.localTime >= deliveryTime)
 #else

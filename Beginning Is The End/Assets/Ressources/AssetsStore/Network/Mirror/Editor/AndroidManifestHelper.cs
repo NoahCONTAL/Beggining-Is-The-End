@@ -108,6 +108,6 @@ public class AndroidManifestHelper : IPreprocessBuildWithReport, IPostprocessBui
         }
     }
 
-    public void OnPostprocessBuild(BuildReport report) {}
-	public void OnPreprocessBuild(BuildReport report) {}
+    public void OnPostprocessBuild(BuildReport report) { }
+    public void OnPreprocessBuild(BuildReport report) { }
 }

@@ -15,7 +15,7 @@ public class EnemyAI : MonoBehaviour
 
     [SerializeField] private Animator animator;
 
-    [Header("Stats")] [SerializeField] private float walkSpeed = 2;
+    [Header("Stats")][SerializeField] private float walkSpeed = 2;
 
     [SerializeField] private float chaseSpeed = 3.5f;
 
@@ -27,7 +27,8 @@ public class EnemyAI : MonoBehaviour
 
     [SerializeField] private float rotationSpeed = 120;
 
-    [Header("Wandering parameters")] [SerializeField]
+    [Header("Wandering parameters")]
+    [SerializeField]
     private int wanderingWaitTimeMin = 2;
 
     [SerializeField] private int wanderingWaitTimeMax = 5;
@@ -126,7 +127,7 @@ public class EnemyAI : MonoBehaviour
         agent.isStopped = false;
         _isAttacking = false;
     }
-    
+
     // private void OnDrawGizmos()
     // {
     //     Gizmos.color = Color.red;

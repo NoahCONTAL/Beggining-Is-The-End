@@ -11,7 +11,7 @@ public class passingDoorDetection : MonoBehaviour
     void OnTriggerExit(Collider other)
     {
         bool boo = pressurePlateInside.GetComponent<DoorExit>().comingFromInside;
-        if(other.CompareTag("Player") && boo && !(pressurePlate.GetComponent<doorOpener>().AlreadyOnFirstPlate))
+        if (other.CompareTag("Player") && boo && !(pressurePlate.GetComponent<doorOpener>().AlreadyOnFirstPlate))
         {
             door.transform.position += new Vector3(0, 5, 0);
             boo = false;
@@ -20,12 +20,12 @@ public class passingDoorDetection : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

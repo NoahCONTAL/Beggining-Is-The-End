@@ -11,17 +11,17 @@ public class isFirstLittleLevelComplete : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(firstPressurePlate.GetComponent<firstLittleLevel>().IsPressed && secondPressurePlate.GetComponent<firstLittleLevel>().IsPressed)
+        if (firstPressurePlate.GetComponent<firstLittleLevel>().IsPressed && secondPressurePlate.GetComponent<firstLittleLevel>().IsPressed)
         {
             completed = true;
         }
-        if(completed)
+        if (completed)
         {
             transform.position += new Vector3(0, 69, 0);
         }

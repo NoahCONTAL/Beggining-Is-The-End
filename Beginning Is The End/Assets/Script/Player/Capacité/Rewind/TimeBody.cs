@@ -23,7 +23,7 @@ public class TimeBody : NetworkBehaviour
 
     private Rigidbody _rb;
     private NetworkIdentity _identity;
-    
+
     private void Start()
     {
         _rb = GetComponent<Rigidbody>();

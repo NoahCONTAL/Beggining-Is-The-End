@@ -252,7 +252,7 @@ namespace Mirror.Weaver
             FieldReference fr;
             if (fd.DeclaringType.HasGenericParameters)
             {
-               fr = fd.MakeHostInstanceGeneric();
+                fr = fd.MakeHostInstanceGeneric();
             }
             else
             {
@@ -268,7 +268,7 @@ namespace Mirror.Weaver
                 }
                 else
                 {
-                  netIdFieldReference = netFieldId;
+                    netIdFieldReference = netFieldId;
                 }
             }
 

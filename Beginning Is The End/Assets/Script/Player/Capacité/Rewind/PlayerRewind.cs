@@ -4,12 +4,12 @@ using Mirror;
 public class PlayerRewind : NetworkBehaviour
 {
     private GameObject[] rewinder;
-    
+
     private AudioSource _audioSource;
 
-    [SerializeField] 
+    [SerializeField]
     private AudioClip rewindSound;
-    
+
     void Start()
     {
         rewinder = GameObject.FindGameObjectsWithTag("Rewinder");
@@ -24,7 +24,7 @@ public class PlayerRewind : NetworkBehaviour
             {
                 rew.GetComponent<TimeBody>().CmdStartRewind();
             }
-            
+
             _audioSource.PlayOneShot(rewindSound);
         }
         else if (Input.GetButtonUp("Rewind"))

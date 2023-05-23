@@ -39,7 +39,7 @@ namespace Mirror.Discovery
         [Tooltip("Time in seconds between multi-cast messages")]
         [Range(1, 60)]
         float ActiveDiscoveryInterval = 3;
-        
+
         // broadcast address needs to be configurable on iOS:
         // https://github.com/vis2k/Mirror/pull/3255
         public string BroadcastAddress = "";
@@ -248,7 +248,7 @@ namespace Mirror.Discovery
         bool hasMulticastLock;
 #endif
         void BeginMulticastLock()
-		{
+        {
 #if UNITY_ANDROID
             if (hasMulticastLock) return;
                 
@@ -277,7 +277,7 @@ namespace Mirror.Discovery
 #endif
         }
 
-#endregion
+        #endregion
 
         #region Client
 
@@ -372,7 +372,7 @@ namespace Mirror.Discovery
             }
 
             IPEndPoint endPoint = new IPEndPoint(IPAddress.Broadcast, serverBroadcastListenPort);
-            
+
             if (!string.IsNullOrWhiteSpace(BroadcastAddress))
             {
                 try

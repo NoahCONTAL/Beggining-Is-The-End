@@ -9,18 +9,18 @@ public class ShutingDoor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void OnTriggerExit(Collider other)
     {
-        if(other.CompareTag("Player") && button.GetComponent<isFirstLittleLevelComplete>().completed)
+        if (other.CompareTag("Player") && button.GetComponent<isFirstLittleLevelComplete>().completed)
         {
             transform.position += new Vector3(0, -4.02f, 0);
         }

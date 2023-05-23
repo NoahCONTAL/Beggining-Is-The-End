@@ -9,13 +9,13 @@ public class pickableObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(touched)
+        if (touched)
         {
             GetComponent<Rigidbody>().isKinematic = false;
             transform.parent = null;
@@ -25,7 +25,7 @@ public class pickableObject : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(!(other.CompareTag("Player") || other.CompareTag("Floor")))
+        if (!(other.CompareTag("Player") || other.CompareTag("Floor")))
         {
             touched = true;
         }

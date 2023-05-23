@@ -10,18 +10,18 @@ public class doorOpener : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        if(col.CompareTag("Player") || col.CompareTag("pickableObject"))
+        if (col.CompareTag("Player") || col.CompareTag("pickableObject"))
         {
             door.transform.position += new Vector3(0, -5, 0);
             AlreadyOnFirstPlate = true;
         }
-        
-        
+
+
     }
 
     void OnTriggerExit(Collider col)
     {
-        if(col.CompareTag("Player") || col.CompareTag("pickableObject"))
+        if (col.CompareTag("Player") || col.CompareTag("pickableObject"))
         {
             door.transform.position += new Vector3(0, 5, 0);
             AlreadyOnFirstPlate = false;
@@ -31,12 +31,12 @@ public class doorOpener : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

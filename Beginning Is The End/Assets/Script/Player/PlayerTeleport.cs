@@ -11,7 +11,7 @@ public class PlayerTeleport : NetworkBehaviour
     {
         RpcChangeScene(sceneName, position, rotation);
     }
-    
+
     [ClientRpc]
     public void RpcChangeScene(string sceneName, Vector3 position, Vector3 rotation)
     {
@@ -20,7 +20,7 @@ public class PlayerTeleport : NetworkBehaviour
             StartCoroutine(ChangeSceneCoroutine(sceneName, position, rotation));
         }
     }
-    
+
     private IEnumerator ChangeSceneCoroutine(string sceneName, Vector3 position, Vector3 rotation)
     {
         float elapsedTime = 0;
@@ -32,7 +32,7 @@ public class PlayerTeleport : NetworkBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-        
+
         NetworkManager.singleton.ServerChangeScene(sceneName);
     }
 }

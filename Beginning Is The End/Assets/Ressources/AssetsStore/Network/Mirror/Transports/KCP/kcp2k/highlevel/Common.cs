@@ -29,12 +29,12 @@ namespace kcp2k
             // log initial size for comparison.
             // remember initial size for log comparison
             int initialReceive = socket.ReceiveBufferSize;
-            int initialSend    = socket.SendBufferSize;
+            int initialSend = socket.SendBufferSize;
 
             socket.SetReceiveBufferToOSLimit();
             socket.SetSendBufferToOSLimit();
 
-            Log.Info($"Kcp: RecvBuf = {initialReceive}=>{socket.ReceiveBufferSize} ({socket.ReceiveBufferSize/initialReceive}x) SendBuf = {initialSend}=>{socket.SendBufferSize} ({socket.SendBufferSize/initialSend}x) maximized to OS limits!");
+            Log.Info($"Kcp: RecvBuf = {initialReceive}=>{socket.ReceiveBufferSize} ({socket.ReceiveBufferSize / initialReceive}x) SendBuf = {initialSend}=>{socket.SendBufferSize} ({socket.SendBufferSize / initialSend}x) maximized to OS limits!");
         }
     }
 }
