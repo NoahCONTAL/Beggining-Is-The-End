@@ -13,13 +13,8 @@ namespace Objects
         {
             if (!other.CompareTag("Player")) return;
             var playerTeleport = other.GetComponent<PlayerTeleport>();
-            if (playerTeleport != null)
-            {
-                other.transform.position = spawnPointPosition;
-                other.transform.rotation = Quaternion.Euler(spawnPointRotation);
-                
-                SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
-            }
+
+            playerTeleport.CChangeScene(sceneName, spawnPointPosition, spawnPointRotation);
         }
     }
 }

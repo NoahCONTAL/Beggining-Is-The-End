@@ -249,7 +249,7 @@ namespace MirrorBasics
         {
             CmdBeginGame();
             UILobby.instance.UIdisable();
-            transform.position = new Vector3(-28, 1, -9);
+            transform.position = new Vector3(-180, 5, -160);
         }
 
         [Command]
@@ -262,6 +262,8 @@ namespace MirrorBasics
         public void StartGame()
         {
             TargetBeginGame();
+            
+            FindObjectOfType<test>().Spawn();
         }
 
         [TargetRpc]
@@ -270,8 +272,6 @@ namespace MirrorBasics
             Debug.Log($"MatchID: {matchID} | Beginning");
             
             SceneManager.LoadScene(2, LoadSceneMode.Single);
-            
-            FindObjectOfType<test>().Spawn();
         }
     }
 }

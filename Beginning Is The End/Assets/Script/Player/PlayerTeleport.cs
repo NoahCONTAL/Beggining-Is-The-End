@@ -2,18 +2,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Mirror;
 
 public class PlayerTeleport : NetworkBehaviour
 {
-    [Command]
-    public void CmdChangeScene(string sceneName, Vector3 position, Vector3 rotation)
+    public void CChangeScene(string sceneName, Vector3 position, Vector3 rotation)
     {
-        RpcChangeScene(sceneName, position, rotation);
+        RChangeScene(sceneName, position, rotation);
     }
-
-    [ClientRpc]
-    public void RpcChangeScene(string sceneName, Vector3 position, Vector3 rotation)
+    
+    public void RChangeScene(string sceneName, Vector3 position, Vector3 rotation)
     {
         if (isLocalPlayer)
         {
@@ -33,6 +32,6 @@ public class PlayerTeleport : NetworkBehaviour
             yield return null;
         }
 
-        NetworkManager.singleton.ServerChangeScene(sceneName);
+        SceneManager.LoadScene(sceneName);
     }
 }
