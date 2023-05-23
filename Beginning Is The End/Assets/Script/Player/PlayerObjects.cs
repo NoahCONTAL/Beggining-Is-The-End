@@ -17,6 +17,9 @@ public class PlayerObjects : MonoBehaviour
     public float fireDelta = 0.5F;
     private float nextFire = 0.5F;
     private float myTime = 0.0F;
+    
+    private GameObject pickableObject;
+    private bool beingCarried = false;
 
     private void Start()
     {
@@ -85,12 +88,28 @@ public class PlayerObjects : MonoBehaviour
                     myTime = 0.0F;
                 }
             }
+            
+            else if (hit.collider.gameObject.CompareTag("pickableObject"))
+            {
+                pickableObject = hit.collider.gameObject;
+                
+                if (Input.GetMouseButton(0))
+                {
+                    pickableObject.GetComponent<Rigidbody>().isKinematic = true;
+                    pickableObject.transform.parent = this.gameObject.transform;
+                    beingCarried = true;
+                }
+            }
+        }
+        
+        if (beingCarried)
+        {
+            if (Input.GetMouseButton(1))
+            {
+                pickableObject.GetComponent<Rigidbody>().isKinematic = false;
+                pickableObject.transform.parent = null;
+                beingCarried = false;
+            }
         }
     }
-
-    IEnumerator WaitForFunction()
-{
-    yield return new WaitForSeconds(1);
-    Debug.Log("C'est bon");  
-}
 }
