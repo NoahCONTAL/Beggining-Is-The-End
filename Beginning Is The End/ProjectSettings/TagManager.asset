@@ -18,6 +18,7 @@ TagManager:
   - Village
   - Floor
   - Door
+  - Recepteur
   layers:
   - Default
   - TransparentFX
