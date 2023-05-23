@@ -5,7 +5,7 @@ using UnityEngine;
 using Mirror;
 using Object = UnityEngine.Object;
 
-public class test : NetworkBehaviour
+public class test : MonoBehaviour
 {
     [SerializeField] private List<GameObject> objectsToSpawn = new List<GameObject>();
 

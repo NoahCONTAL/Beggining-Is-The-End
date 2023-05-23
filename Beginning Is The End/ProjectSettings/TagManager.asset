@@ -18,6 +18,7 @@ TagManager:
   - Village
   - Floor
   - Door
+  - NetworkSetGame
   layers:
   - Default
   - TransparentFX
