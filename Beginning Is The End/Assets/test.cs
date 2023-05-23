@@ -14,7 +14,7 @@ public class test : MonoBehaviour
     private string _matchID;
     private Object _o;
 
-    private void Start()
+    public void Spawn()
     {
         _o = FindObjectOfType(typeof(MirrorBasics.Player));
 

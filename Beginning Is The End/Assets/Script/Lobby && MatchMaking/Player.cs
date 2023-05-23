@@ -249,7 +249,7 @@ namespace MirrorBasics
         {
             CmdBeginGame();
             UILobby.instance.UIdisable();
-            transform.position = new Vector3(UnityEngine.Random.Range(-5, 5), 3, UnityEngine.Random.Range(-5, 5));
+            transform.position = new Vector3(-28, 1, -9);
         }
 
         [Command]
@@ -270,6 +270,8 @@ namespace MirrorBasics
             Debug.Log($"MatchID: {matchID} | Beginning");
             
             SceneManager.LoadScene(2, LoadSceneMode.Single);
+            
+            FindObjectOfType<test>().Spawn();
         }
     }
 }
