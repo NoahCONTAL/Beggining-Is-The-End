@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class pickableObject : MonoBehaviour
 {
-    bool touched = false;
+    public bool touched = false;
 
     // Start is called before the first frame update
     void Start()

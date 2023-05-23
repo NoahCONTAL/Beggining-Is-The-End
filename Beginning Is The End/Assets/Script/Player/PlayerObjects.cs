@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerObjects : MonoBehaviour
 {
     [SerializeField] private float pickupRange = 5;
-
     private Player player;
     private PlayerMovement playerMov;
 
@@ -93,7 +92,7 @@ public class PlayerObjects : MonoBehaviour
             {
                 pickableObject = hit.collider.gameObject;
 
-                if (Input.GetMouseButton(0))
+                if (Input.GetMouseButtonDown(0))
                 {
                     pickableObject.GetComponent<Rigidbody>().isKinematic = true;
                     pickableObject.transform.parent = this.gameObject.transform;
@@ -104,7 +103,7 @@ public class PlayerObjects : MonoBehaviour
 
         if (beingCarried)
         {
-            if (Input.GetMouseButton(1))
+            if (Input.GetMouseButtonDown(1))
             {
                 pickableObject.GetComponent<Rigidbody>().isKinematic = false;
                 pickableObject.transform.parent = null;

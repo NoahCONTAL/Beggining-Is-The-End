@@ -7,6 +7,7 @@ public class isFirstLittleLevelComplete : MonoBehaviour
     [SerializeField] private GameObject firstPressurePlate;
     [SerializeField] private GameObject secondPressurePlate;
     public bool completed = false;
+    Renderer ren;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +24,8 @@ public class isFirstLittleLevelComplete : MonoBehaviour
         }
         if (completed)
         {
-            transform.position += new Vector3(0, 69, 0);
+            ren = GetComponent<Renderer>();
+            ren.material.color = Color.green;
         }
     }
 }
