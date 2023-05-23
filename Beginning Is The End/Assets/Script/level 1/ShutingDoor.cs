@@ -2,18 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Level1
+public class ShutingDoor : MonoBehaviour
 {
-    public class ShutingDoor : MonoBehaviour
-    {
-        [SerializeField] private GameObject button;
+    [SerializeField] private GameObject button;
 
-        void OnTriggerExit(Collider other)
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if(other.CompareTag("Player") && button.GetComponent<isFirstLittleLevelComplete>().completed)
         {
-            if (other.CompareTag("Player") && button.GetComponent<isFirstLittleLevelComplete>().completed)
-            {
-                transform.position += new Vector3(0, -4.02f, 0);
-            }
+            transform.position += new Vector3(0, -4.02f, 0);
         }
     }
 }

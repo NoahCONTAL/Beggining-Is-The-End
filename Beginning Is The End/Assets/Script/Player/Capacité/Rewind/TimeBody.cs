@@ -13,20 +13,17 @@ public struct PointInTime
     }
 }
 
-[System.Serializable]
-public class SyncListPointInTime : SyncList<PointInTime> { }
-
 public class TimeBody : NetworkBehaviour
 {
     [SyncVar] public bool isRewinding = false;
 
-    public readonly SyncList<PointInTime> PointsInTime = new SyncList<PointInTime>();
+    public readonly SyncList<PointInTime> PointsInTime = new();
 
     [SerializeField] private float recordTime = 5f;
 
     private Rigidbody _rb;
     private NetworkIdentity _identity;
-
+    
     private void Start()
     {
         _rb = GetComponent<Rigidbody>();

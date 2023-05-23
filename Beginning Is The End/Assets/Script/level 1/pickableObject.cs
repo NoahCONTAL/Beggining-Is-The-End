@@ -2,28 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Level1
+public class pickableObject : MonoBehaviour
 {
-    public class pickableObject : MonoBehaviour
+    bool touched = false;
+
+    // Start is called before the first frame update
+    void Start()
     {
-        bool touched = false;
+        
+    }
 
-        void Update()
+    // Update is called once per frame
+    void Update()
+    {
+        if(touched)
         {
-            if (touched)
-            {
-                GetComponent<Rigidbody>().isKinematic = false;
-                transform.parent = null;
-                touched = false;
-            }
+            GetComponent<Rigidbody>().isKinematic = false;
+            transform.parent = null;
+            touched = false;
         }
+    }
 
-        void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
+    {
+        if(!(other.CompareTag("Player") || other.CompareTag("Floor")))
         {
-            if (!(other.CompareTag("Player") || other.CompareTag("Floor")))
-            {
-                touched = true;
-            }
+            touched = true;
         }
     }
 }

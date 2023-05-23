@@ -2,26 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Level1
+public class DoorScript : MonoBehaviour
 {
-    public class DoorScript : MonoBehaviour
+    [SerializeField] private GameObject firstPressurePlate;
+    [SerializeField] private GameObject secondPressurePlate;
+    
+    // Start is called before the first frame update
+    void Start()
     {
-        [SerializeField] private GameObject firstPressurePlate;
-        [SerializeField] private GameObject secondPressurePlate;
+        
+    }
 
-
-        void Update()
+    // Update is called once per frame
+    void Update()
+    {
+        if(firstPressurePlate.GetComponent<firstLittleLevel>().IsPressed && secondPressurePlate.GetComponent<firstLittleLevel>().IsPressed)
         {
-            if (firstPressurePlate.GetComponent<firstLittleLevel>().IsPressed &&
-                secondPressurePlate.GetComponent<firstLittleLevel>().IsPressed)
-            {
-                DestroyGameObject();
-            }
+            DestroyGameObject();
         }
-
-        void DestroyGameObject()
-        {
-            Destroy(gameObject);
-        }
+    }
+    void DestroyGameObject()
+    {
+        Destroy(gameObject);
     }
 }

@@ -71,8 +71,7 @@ namespace Mirror.Weaver
                 // "(0,0): error Mono.CecilX.Cil.SymbolsNotFoundException: No symbol found for file: "
                 using (MemoryStream symbols = new MemoryStream(compiledAssembly.InMemoryAssembly.PdbData))
                 {
-                    ReaderParameters readerParameters = new ReaderParameters
-                    {
+                    ReaderParameters readerParameters = new ReaderParameters{
                         SymbolStream = symbols,
                         ReadWrite = true,
                         ReadSymbols = true,

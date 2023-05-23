@@ -9,15 +9,15 @@ public class Player : NetworkBehaviour
     [SerializeField] public float energy = 100;
     public int maxEnergy = 100;
     [SerializeField] public int damage = 5;
-
+    
     [SerializeField]
     private Animator animator;
-
+    
     private AudioSource _audioSource;
 
-    [SerializeField]
+    [SerializeField] 
     private AudioClip attackSound;
-
+    
     public GameObject scriptDesactiver;
 
     public void TakeDamage(int _damage)

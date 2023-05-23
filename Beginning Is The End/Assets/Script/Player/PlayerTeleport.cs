@@ -2,24 +2,25 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using Mirror;
 
 public class PlayerTeleport : NetworkBehaviour
 {
-    public void CChangeScene(string sceneName, Vector3 position, Vector3 rotation)
+    [Command]
+    public void CmdChangeScene(string sceneName, Vector3 position, Vector3 rotation)
     {
-        RChangeScene(sceneName, position, rotation);
+        RpcChangeScene(sceneName, position, rotation);
     }
     
-    public void RChangeScene(string sceneName, Vector3 position, Vector3 rotation)
+    [ClientRpc]
+    public void RpcChangeScene(string sceneName, Vector3 position, Vector3 rotation)
     {
         if (isLocalPlayer)
         {
             StartCoroutine(ChangeSceneCoroutine(sceneName, position, rotation));
         }
     }
-
+    
     private IEnumerator ChangeSceneCoroutine(string sceneName, Vector3 position, Vector3 rotation)
     {
         float elapsedTime = 0;
@@ -31,7 +32,7 @@ public class PlayerTeleport : NetworkBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-
-        SceneManager.LoadScene(sceneName);
+        
+        NetworkManager.singleton.ServerChangeScene(sceneName);
     }
 }

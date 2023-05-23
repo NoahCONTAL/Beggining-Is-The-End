@@ -78,7 +78,7 @@ public class PlayerUI : Player
         _playerMovement.enabled = false;
         CinemachineFreeLook.enabled = false;
     }
-
+    
     public void Option()
     {
         if (!isLocalPlayer) return;
