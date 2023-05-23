@@ -15,9 +15,10 @@ namespace Objects
             var playerTeleport = other.GetComponent<PlayerTeleport>();
             if (playerTeleport != null)
             {
-                SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
                 other.transform.position = spawnPointPosition;
                 other.transform.rotation = Quaternion.Euler(spawnPointRotation);
+                
+                SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
             }
         }
     }
