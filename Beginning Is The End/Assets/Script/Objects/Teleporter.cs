@@ -1,23 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Mirror;
+using UnityEngine.SceneManagement;
 
 namespace Objects
 {
-    public class Teleporter : NetworkBehaviour
+    public class Teleporter : MonoBehaviour
     {
         public Vector3 spawnPointPosition;
         public Vector3 spawnPointRotation;
         public string sceneName;
-    
+
         private void OnTriggerEnter(Collider other)
         {
             if (!other.CompareTag("Player")) return;
             var playerTeleport = other.GetComponent<PlayerTeleport>();
             if (playerTeleport != null)
             {
-                playerTeleport.CmdChangeScene(sceneName, spawnPointPosition, spawnPointRotation);
+                SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+                other.transform.position = spawnPointPosition;
+                other.transform.rotation = Quaternion.Euler(spawnPointRotation);
             }
         }
     }

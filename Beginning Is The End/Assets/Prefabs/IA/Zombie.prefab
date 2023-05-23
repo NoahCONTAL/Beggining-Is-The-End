@@ -2146,7 +2146,6 @@ MonoBehaviour:
   walkSpeed: 2
   chaseSpeed: 3.5
   attractionDistance: 7
-  attackRadius: 3.5
   attackDelay: 2.633
   rotationSpeed: 120
   wanderingWaitTimeMin: 2
@@ -2187,7 +2186,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f6f3bf89aa97405989c802ba270f815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syncDirection: 0
   syncMode: 1
   syncInterval: 0
   clientAuthority: 0
@@ -2204,22 +2202,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f74aedd71d9a4f55b3ce499326d45fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syncDirection: 0
   syncMode: 0
   syncInterval: 0
-  target: {fileID: 8869376707138199792}
   clientAuthority: 0
+  sendInterval: 0.05
   syncPosition: 1
   syncRotation: 1
   syncScale: 0
+  interpolatePosition: 1
+  interpolateRotation: 1
+  interpolateScale: 0
+  bufferTimeMultiplier: 1
+  bufferSizeLimit: 64
+  catchupThreshold: 4
+  catchupMultiplier: 0.1
   showGizmos: 0
   showOverlay: 0
   overlayColor: {r: 0, g: 0, b: 0, a: 0.5}
-  onlySyncOnChange: 1
-  bufferResetMultiplier: 5
-  positionSensitivity: 0.01
-  rotationSensitivity: 0.01
-  scaleSensitivity: 0.01
 --- !u!114 &8979300671742658322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2233,9 +2232,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneId: 0
-  _assetId: 4057417454
   serverOnly: 0
   visible: 0
+  m_AssetId: add37420ef081ddb7b4e366908cbc25d
   hasSpawned: 0
 --- !u!1 &8282837263593631342
 GameObject:

@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e845d303-96dd-4152-b1d2-38a9e34b1c50" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../Beginning Is The End/Assets/Scenes/Labbo + Extérieure.unity" beforeDir="false" afterPath="$PROJECT_DIR$/../Beginning Is The End/Assets/Scenes/Labbo + Extérieure.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Beginning Is The End/Assets/Script/Ennemy/EnemyAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Beginning Is The End/Assets/Script/Ennemy/EnemyAI.cs" afterDir="false" />
-    </list>
+    <list default="true" id="e845d303-96dd-4152-b1d2-38a9e34b1c50" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +17,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
@@ -36,6 +34,7 @@
       <option name="presentableId" value="Default" />
       <updated>1683054205541</updated>
       <workItem from="1683054206503" duration="152000" />
+      <workItem from="1684088081979" duration="16000" />
     </task>
     <servers />
   </component>

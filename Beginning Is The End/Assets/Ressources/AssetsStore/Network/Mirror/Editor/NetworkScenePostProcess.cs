@@ -80,9 +80,7 @@ namespace Mirror
             // set scene hash
             identity.SetSceneIdSceneHashPartInternal();
 
-            // spawnable scene objects are force disabled on scene load to
-            // ensure Start/Update/etc. aren't called until actually spawned.
-            //
+            // disable it
             // note: NetworkIdentity.OnDisable adds itself to the
             //       spawnableObjects dictionary (only if sceneId != 0)
             identity.gameObject.SetActive(false);

@@ -9,10 +9,10 @@ public class PlayerObjects : MonoBehaviour
 
     private Player player;
     private PlayerMovement playerMov;
-    
+
     private AudioSource _audioSource;
 
-    [SerializeField] 
+    [SerializeField]
     private AudioClip pickupSound;
 
     public float fireDelta = 0.5F;
@@ -89,13 +89,13 @@ public class PlayerObjects : MonoBehaviour
                     myTime = 0.0F;
                 }
             }
-            
-            
+
+
             else if (hit.collider.gameObject.CompareTag("pickableObject"))
             {
                 pickableObject = hit.collider.gameObject;
                 var _player = this.transform;
-                
+
                 if (Input.GetButtonDown("Use"))
                 {
                     pickableObject.GetComponent<Rigidbody>().isKinematic = true;

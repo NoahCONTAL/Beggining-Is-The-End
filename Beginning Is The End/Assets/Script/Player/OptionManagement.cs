@@ -9,32 +9,32 @@ public class OptionManagement : MonoBehaviour
     [Header("Graphisme Menu")]
     [SerializeField]
     private Image OptionPopUp;
-    
-    [SerializeField] 
+
+    [SerializeField]
     private TMP_Dropdown resolutionDropdown;
-    
-    [SerializeField] 
+
+    [SerializeField]
     private TMP_Dropdown QualityDropdown;
-    
-    [SerializeField] 
+
+    [SerializeField]
     private AudioMixer audioMixer;
-    
+
     [SerializeField]
     private Slider volumeSlider;
-    
+
     void Start()
     {
         //Gestion des son
         audioMixer.GetFloat("Volume", out float volume);
         volumeSlider.value = volume;
-        
+
         //Gestion de la résolution
         Resolution[] resolutions = Screen.resolutions;
         resolutionDropdown.ClearOptions();
-        
+
         List<string> resolutionOptions = new List<string>();
         int currentResolutionIndex = 0;
-        
+
         for (int i = 0; i < resolutions.Length; i++)
         {
             string option = resolutions[i].width + " x " + resolutions[i].height + " " + resolutions[i].refreshRate + "Hz";
@@ -44,17 +44,17 @@ public class OptionManagement : MonoBehaviour
                 currentResolutionIndex = i;
             }
         }
-        
+
         resolutionDropdown.AddOptions(resolutionOptions);
         resolutionDropdown.value = currentResolutionIndex;
-        
+
         resolutionDropdown.RefreshShownValue();
-        
+
         //Gestion de la Qualité
         string[] qualityNames = QualitySettings.names;
         QualityDropdown.ClearOptions();
-        
-        
+
+
         List<string> qualityOptions = new List<string>();
         int currentQualityIndex = 0;
 
@@ -67,39 +67,39 @@ public class OptionManagement : MonoBehaviour
                 currentQualityIndex = i;
             }
         }
-        
+
         QualityDropdown.AddOptions(qualityOptions);
         QualityDropdown.value = currentQualityIndex;
-        
+
         QualityDropdown.RefreshShownValue();
     }
-    
+
     public void setResolution(int resolutionIndex)
     {
         Resolution resolutions = Screen.resolutions[resolutionIndex];
         Screen.SetResolution(resolutions.width, resolutions.height, Screen.fullScreen);
     }
-    
+
     public void setFullscreen(bool isFullscreen)
     {
         Screen.fullScreen = isFullscreen;
     }
-    
+
     public void setVolume(float volume)
     {
         audioMixer.SetFloat("Volume", volume);
     }
-    
+
     public void setQuality(int qualityIndex)
     {
         QualitySettings.SetQualityLevel(qualityIndex);
     }
-    
+
     public void GraphismeMenu()
     {
         OptionPopUp.gameObject.SetActive(true);
     }
-    
+
     public void InputMenu()
     {
         OptionPopUp.gameObject.SetActive(false);
