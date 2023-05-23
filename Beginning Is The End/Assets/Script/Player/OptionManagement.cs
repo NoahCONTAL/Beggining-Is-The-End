@@ -19,16 +19,8 @@ public class OptionManagement : MonoBehaviour
     [SerializeField]
     private AudioMixer audioMixer;
 
-    [SerializeField]
-    private Slider volumeSlider;
-
     void Start()
     {
-        //Gestion des son
-        audioMixer.GetFloat("Volume", out float volume);
-        volumeSlider.value = volume;
-
-        //Gestion de la résolution
         Resolution[] resolutions = Screen.resolutions;
         resolutionDropdown.ClearOptions();
 
@@ -49,8 +41,7 @@ public class OptionManagement : MonoBehaviour
         resolutionDropdown.value = currentResolutionIndex;
 
         resolutionDropdown.RefreshShownValue();
-
-        //Gestion de la Qualité
+        
         string[] qualityNames = QualitySettings.names;
         QualityDropdown.ClearOptions();
 
@@ -85,9 +76,24 @@ public class OptionManagement : MonoBehaviour
         Screen.fullScreen = isFullscreen;
     }
 
-    public void setVolume(float volume)
+    public void setMasterVolume(float volume)
     {
-        audioMixer.SetFloat("Volume", volume);
+        audioMixer.SetFloat("Master", volume);
+    }
+    
+    public void setGameplayVolume(float volume)
+    {
+        audioMixer.SetFloat("Gameplay", volume);
+    }
+    
+    public void setAmbiantVolume(float volume)
+    {
+        audioMixer.SetFloat("Ambiant", volume);
+    }
+    
+    public void setMusicVolume(float volume)
+    {
+        audioMixer.SetFloat("Music", volume);
     }
 
     public void setQuality(int qualityIndex)
@@ -98,10 +104,5 @@ public class OptionManagement : MonoBehaviour
     public void GraphismeMenu()
     {
         OptionPopUp.gameObject.SetActive(true);
-    }
-
-    public void InputMenu()
-    {
-        OptionPopUp.gameObject.SetActive(false);
     }
 }
