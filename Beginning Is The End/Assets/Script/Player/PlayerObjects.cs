@@ -134,7 +134,7 @@ public class PlayerObjects : MonoBehaviour
 
         if (beingCarried)
         {
-            playerUI.ShowLeftMouse();
+            playerUI.ShowRightMouse();
 
             if (Input.GetMouseButton(1))
             {
@@ -145,7 +145,7 @@ public class PlayerObjects : MonoBehaviour
         }
         else
         {
-            playerUI.HideLeftMouse();
+            playerUI.HideRightMouse();
         }
     }
 }
