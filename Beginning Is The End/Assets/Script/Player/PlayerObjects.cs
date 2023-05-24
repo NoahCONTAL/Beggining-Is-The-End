@@ -19,7 +19,7 @@ public class PlayerObjects : MonoBehaviour
     private float myTime = 0.0F;
 
     private GameObject pickableObject;
-    private bool beingCarried = false;
+    public bool beingCarried = false;
 
     private void Start()
     {
@@ -32,7 +32,24 @@ public class PlayerObjects : MonoBehaviour
     {
         RaycastHit hit;
 
-        myTime = myTime + Time.deltaTime;
+        myTime += Time.deltaTime;
+        
+        if (beingCarried)
+        {
+            playerUI.HideLeftMouse();
+            playerUI.ShowRightMouse();
+
+            if (Input.GetMouseButton(1))
+            {
+                pickableObject.GetComponent<Rigidbody>().isKinematic = false;
+                pickableObject.transform.parent = null;
+                beingCarried = false;
+            }
+        }
+        else
+        {
+            playerUI.HideRightMouse();
+        }
 
         if (Physics.Raycast(transform.position, transform.forward, out hit,
                 pickupRange))
@@ -130,22 +147,6 @@ public class PlayerObjects : MonoBehaviour
             playerUI.HideUse();
             playerUI.HideRightMouse();
             playerUI.HideLeftMouse();
-        }
-
-        if (beingCarried)
-        {
-            playerUI.ShowRightMouse();
-
-            if (Input.GetMouseButton(1))
-            {
-                pickableObject.GetComponent<Rigidbody>().isKinematic = false;
-                pickableObject.transform.parent = null;
-                beingCarried = false;
-            }
-        }
-        else
-        {
-            playerUI.HideRightMouse();
         }
     }
 }
