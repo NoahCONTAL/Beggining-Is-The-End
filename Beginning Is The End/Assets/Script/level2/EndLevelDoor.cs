@@ -22,7 +22,7 @@ public class EndLevelDoor : MonoBehaviour
     {
         if (other.CompareTag("Player") && button.GetComponent<RedLight>().completed)
         {
-            transform.position += new Vector3(0, -4.02f, 0);
+            transform.position += new Vector3(0, -6.02f, 0);
         }
     }
 }
