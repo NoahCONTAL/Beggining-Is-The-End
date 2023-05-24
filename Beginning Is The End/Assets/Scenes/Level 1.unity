@@ -587,7 +587,7 @@ MonoBehaviour:
   syncInterval: 0.1
   spawnPointPosition: {x: -184, y: 3.5, z: -165}
   spawnPointRotation: {x: 0, y: -90, z: 0}
-  sceneName: "Labbo + Ext\xE9rieure"
+  sceneName: Game
 --- !u!65 &241014137
 BoxCollider:
   m_ObjectHideFlags: 0

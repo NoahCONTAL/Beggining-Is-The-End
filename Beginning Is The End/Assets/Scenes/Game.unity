@@ -6616,9 +6616,9 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0.1
-  spawnPointPosition: {x: 0, y: 0, z: 0}
-  spawnPointRotation: {x: 0, y: 0, z: 0}
-  sceneName: 
+  spawnPointPosition: {x: -12.75, y: 1, z: -8.5}
+  spawnPointRotation: {x: 0, y: 90, z: 0}
+  sceneName: Level 2
 --- !u!64 &167904865
 MeshCollider:
   m_ObjectHideFlags: 0
