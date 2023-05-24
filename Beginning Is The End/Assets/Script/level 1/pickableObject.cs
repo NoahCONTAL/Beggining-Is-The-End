@@ -18,6 +18,7 @@ public class pickableObject : MonoBehaviour
         if (touched)
         {
             GetComponent<Rigidbody>().isKinematic = false;
+            transform.parent.gameObject.GetComponent<PlayerObjects>().beingCarried = false;
             transform.parent = null;
             touched = false;
         }
