@@ -42,7 +42,11 @@ public class PlayerTeleport : NetworkBehaviour
             yield return null;
         }
 
+        yield return new WaitForSeconds(0.8f);
+        
         NetworkManager.singleton.ServerChangeScene(sceneName);
+
+        
         
         playerUI.Chargement.gameObject.SetActive(false);
     }
