@@ -13,7 +13,7 @@ public class TypeWriter : MonoBehaviour
     [SerializeField] GameObject skipText;
     [SerializeField] GameObject continueText;
     [SerializeField] GameObject Main;
-    bool isFinished = false;
+    public bool isFinished = false;
     private void Awake()
     {
         uiText = GetComponent<Text>();
