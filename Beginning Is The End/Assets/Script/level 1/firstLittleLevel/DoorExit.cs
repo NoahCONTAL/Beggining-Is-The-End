@@ -16,9 +16,5 @@ public class DoorExit : MonoBehaviour
             door.transform.position += new Vector3(0, -5, 0);
             comingFromInside = true;
         }
-
-
     }
-
-
 }

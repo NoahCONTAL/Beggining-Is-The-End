@@ -8,11 +8,7 @@ public class resetButton : MonoBehaviour
     [SerializeField] GameObject obj1;
     [SerializeField] GameObject obj2;
     [SerializeField] GameObject obj3;
-
-    bool button1fun = true;
-    bool button2fun = true;
-    bool button3fun = true;
-
+    
     private Vector3 pos1;
     private Vector3 pos2;
     private Vector3 pos3;
@@ -31,7 +27,6 @@ public class resetButton : MonoBehaviour
             obj1.transform.position = pos1;
             obj2.transform.position = pos2;
             obj3.transform.position = pos3;
-
         }
     }
     
