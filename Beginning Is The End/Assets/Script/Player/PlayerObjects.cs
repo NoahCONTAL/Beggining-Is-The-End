@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerObjects : MonoBehaviour
 {
@@ -43,6 +44,7 @@ public class PlayerObjects : MonoBehaviour
             {
                 pickableObject.GetComponent<Rigidbody>().isKinematic = false;
                 pickableObject.transform.parent = null;
+                SceneManager.MoveGameObjectToScene(pickableObject, SceneManager.GetActiveScene());
                 beingCarried = false;
             }
         }

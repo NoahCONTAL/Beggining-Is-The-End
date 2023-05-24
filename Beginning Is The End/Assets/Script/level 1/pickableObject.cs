@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class pickableObject : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class pickableObject : MonoBehaviour
             GetComponent<Rigidbody>().isKinematic = false;
             transform.parent.gameObject.GetComponent<PlayerObjects>().beingCarried = false;
             transform.parent = null;
+            SceneManager.MoveGameObjectToScene(this.gameObject, SceneManager.GetActiveScene());
             touched = false;
         }
     }
