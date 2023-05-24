@@ -1,0 +1,27 @@
+fileFormatVersion: 2
+guid: 7f895e56d8b32e7bbabbc0578401dafe
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - JMH Typewriter
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 1b986914e83aa676e9995f6fde4a329a, type: 3}
+  - {fileID: 12800000, guid: e9c7031c613a44237a04a4f9e999e8b8, type: 3}
+  - {fileID: 12800000, guid: b4b3ef3e1bc19d1ac9740cf2ebdbe37b, type: 3}
+  - {fileID: 12800000, guid: 17ce805a5f05d5cc5801e81e7c29f13a, type: 3}
+  - {fileID: 12800000, guid: 7bbce110ee03002ffbeb4580a8a44863, type: 3}
+  - {fileID: 12800000, guid: a6f06c6ac667e500fa64d90146b35379, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
