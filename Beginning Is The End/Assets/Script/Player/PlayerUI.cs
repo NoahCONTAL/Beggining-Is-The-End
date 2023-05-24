@@ -30,6 +30,8 @@ public class PlayerUI : Player
     [SerializeField] private TMP_Text pressE;
     [SerializeField] private GameObject LeftMouse;
     [SerializeField] private GameObject RightMouse;
+    
+    [SerializeField] public Image Chargement;
 
     private void Start()
     {

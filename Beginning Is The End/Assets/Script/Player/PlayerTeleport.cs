@@ -6,6 +6,13 @@ using Mirror;
 
 public class PlayerTeleport : NetworkBehaviour
 {
+    private PlayerUI playerUI;
+
+    private void Start()
+    {
+        playerUI = GetComponent<PlayerUI>();
+    }
+
     [Command]
     public void CmdChangeScene(string sceneName, Vector3 position, Vector3 rotation)
     {
@@ -23,6 +30,8 @@ public class PlayerTeleport : NetworkBehaviour
 
     private IEnumerator ChangeSceneCoroutine(string sceneName, Vector3 position, Vector3 rotation)
     {
+        playerUI.Chargement.gameObject.SetActive(true);
+        
         float elapsedTime = 0;
 
         while (elapsedTime < 0.5f)
@@ -34,5 +43,7 @@ public class PlayerTeleport : NetworkBehaviour
         }
 
         NetworkManager.singleton.ServerChangeScene(sceneName);
+        
+        playerUI.Chargement.gameObject.SetActive(false);
     }
 }
