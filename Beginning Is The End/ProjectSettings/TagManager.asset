@@ -19,6 +19,7 @@ TagManager:
   - Floor
   - Door
   - Recepteur
+  - Mirror
   layers:
   - Default
   - TransparentFX
