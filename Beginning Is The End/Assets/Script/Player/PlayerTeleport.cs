@@ -41,13 +41,10 @@ public class PlayerTeleport : NetworkBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-
-        yield return new WaitForSeconds(0.8f);
         
         NetworkManager.singleton.ServerChangeScene(sceneName);
-
         
-        
+        yield return new WaitForSeconds(0.8f);
         playerUI.Chargement.gameObject.SetActive(false);
     }
 }
