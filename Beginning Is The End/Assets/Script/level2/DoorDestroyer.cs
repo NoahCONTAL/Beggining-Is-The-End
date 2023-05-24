@@ -5,7 +5,7 @@ using UnityEngine;
 public class DoorDestroyer : MonoBehaviour
 {
     [SerializeField] GameObject door;
-    public bool AlreadyOnFirstPlate = false;
+    public bool Actived = false;
 
 
     void OnTriggerEnter(Collider col)
@@ -13,7 +13,7 @@ public class DoorDestroyer : MonoBehaviour
         if (col.CompareTag("Player") || col.CompareTag("pickableObject"))
         {
             Destroy(door);
-            AlreadyOnFirstPlate = true;
+            Actived = true;
         }
     }
 }
