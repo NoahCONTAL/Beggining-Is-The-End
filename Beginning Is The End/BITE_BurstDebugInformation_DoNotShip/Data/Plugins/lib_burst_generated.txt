@@ -1,4 +1,4 @@
-Library: /home/noahc/Documents/Programation/Sup/Projet S2/Beggining_Is_The_End/Beginning Is The End/Temp/StagingArea/Data/Plugins/lib_burst_generated
+Library: /home/noahc/Documents/Programation/Sup/Projet/Beggining-Is-The-End/Beginning Is The End/Temp/StagingArea/Data/Plugins/lib_burst_generated
 --platform=Linux
 --backend=burst-llvm-14
 --target=X64_SSE2
@@ -141,8 +141,8 @@ Library: /home/noahc/Documents/Programation/Sup/Projet S2/Beggining_Is_The_End/B
 --compilation-defines=CINEMACHINE_UNITY_IMGUI
 --compilation-defines=TIMELINE_FRAMEACCURATE
 --generate-link-xml=Temp/burst.link.xml
---temp-folder=/home/noahc/Documents/Programation/Sup/Projet S2/Beggining_Is_The_End/Beginning Is The End/Temp/Burst
---output=/home/noahc/Documents/Programation/Sup/Projet S2/Beggining_Is_The_End/Beginning Is The End/Temp/StagingArea/Data/Plugins/lib_burst_generated
+--temp-folder=/home/noahc/Documents/Programation/Sup/Projet/Beggining-Is-The-End/Beginning Is The End/Temp/Burst
+--output=/home/noahc/Documents/Programation/Sup/Projet/Beggining-Is-The-End/Beginning Is The End/Temp/StagingArea/Data/Plugins/lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 --pdb-search-paths=Temp/ManagedSymbols/
 
@@ -301,8 +301,8 @@ Library: /home/noahc/Documents/Programation/Sup/Projet S2/Beggining_Is_The_End/B
 --compilation-defines=CINEMACHINE_UNITY_IMGUI
 --compilation-defines=TIMELINE_FRAMEACCURATE
 --generate-link-xml=Temp/burst.link.xml
---temp-folder=/home/noahc/Documents/Programation/Sup/Projet S2/Beggining_Is_The_End/Beginning Is The End/Temp/Burst
---output=/home/noahc/Documents/Programation/Sup/Projet S2/Beggining_Is_The_End/Beginning Is The End/Temp/StagingArea/Data/Plugins/lib_burst_generated
+--temp-folder=/home/noahc/Documents/Programation/Sup/Projet/Beggining-Is-The-End/Beginning Is The End/Temp/Burst
+--output=/home/noahc/Documents/Programation/Sup/Projet/Beggining-Is-The-End/Beginning Is The End/Temp/StagingArea/Data/Plugins/lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 --pdb-search-paths=Temp/ManagedSymbols/
 

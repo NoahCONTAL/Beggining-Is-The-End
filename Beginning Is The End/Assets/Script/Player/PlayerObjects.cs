@@ -40,6 +40,7 @@ public class PlayerObjects : MonoBehaviour
             if (hit.collider.gameObject.CompareTag("HealthRegen"))
             {
                 playerUI.ShowUse();
+                playerUI.HideLeftMouse();
                 
                 if (Input.GetButton("Use"))
                 {
@@ -52,6 +53,7 @@ public class PlayerObjects : MonoBehaviour
             else if (hit.collider.gameObject.CompareTag("HealthBoost"))
             {
                 playerUI.ShowUse();
+                playerUI.HideLeftMouse();
                 
                 if (Input.GetButton("Use"))
                 {
@@ -65,6 +67,7 @@ public class PlayerObjects : MonoBehaviour
             else if (hit.collider.gameObject.CompareTag("SpeedBoost"))
             {
                 playerUI.ShowUse();
+                playerUI.HideLeftMouse();
                 
                 if (Input.GetButton("Use"))
                 {
@@ -78,6 +81,7 @@ public class PlayerObjects : MonoBehaviour
             else if (hit.collider.gameObject.CompareTag("JumpBoost"))
             {
                 playerUI.ShowUse();
+                playerUI.HideLeftMouse();
                 
                 if (Input.GetButton("Use"))
                 {
@@ -90,6 +94,7 @@ public class PlayerObjects : MonoBehaviour
             else if (hit.collider.gameObject.CompareTag("Door") && myTime > nextFire)
             {
                 playerUI.ShowUse();
+                playerUI.HideLeftMouse();
                 
                 if (Input.GetButton("Use"))
                 {
@@ -103,6 +108,7 @@ public class PlayerObjects : MonoBehaviour
             else if (hit.collider.gameObject.CompareTag("pickableObject"))
             {
                 playerUI.HideUse();
+                playerUI.ShowLeftMouse();
                 pickableObject = hit.collider.gameObject;
 
                 if (Input.GetMouseButtonDown(0))
@@ -115,21 +121,31 @@ public class PlayerObjects : MonoBehaviour
             else
             {
                 playerUI.HideUse();
+                playerUI.HideRightMouse();
+                playerUI.HideLeftMouse();
             }
         }
         else
         {
             playerUI.HideUse();
+            playerUI.HideRightMouse();
+            playerUI.HideLeftMouse();
         }
 
         if (beingCarried)
         {
+            playerUI.ShowLeftMouse();
+            
             if (Input.GetMouseButtonDown(1))
             {
                 pickableObject.GetComponent<Rigidbody>().isKinematic = false;
                 pickableObject.transform.parent = null;
                 beingCarried = false;
             }
+        }
+        else
+        {
+            playerUI.HideLeftMouse();
         }
     }
 }
