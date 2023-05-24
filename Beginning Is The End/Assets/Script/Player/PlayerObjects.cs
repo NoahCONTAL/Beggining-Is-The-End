@@ -22,6 +22,8 @@ public class PlayerObjects : MonoBehaviour
     private GameObject pickableObject;
     public bool beingCarried = false;
 
+    Vector3 _rotate = new Vector3(0,1,0);
+
     private void Start()
     {
         player = GetComponent<Player>();
@@ -135,6 +137,11 @@ public class PlayerObjects : MonoBehaviour
                     pickableObject.GetComponent<Rigidbody>().isKinematic = true;
                     pickableObject.transform.parent = this.gameObject.transform;
                     beingCarried = true;
+                }
+                
+                if(Input.GetKey ("f"))
+                {
+                    pickableObject.transform.Rotate(_rotate);
                 }
             }
             else

@@ -29,12 +29,10 @@ public class LaserScript : MonoBehaviour
             if (hit.collider.gameObject.CompareTag("Recepteur"))
             {
                 recepteur = true;
-                Debug.Log("recepteur est en contact");
             }
             else
             {
                 recepteur = false;
-                Debug.Log("T'es une merde");
             }
         }
         else
