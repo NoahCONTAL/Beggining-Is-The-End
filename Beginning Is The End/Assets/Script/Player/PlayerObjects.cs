@@ -117,6 +117,10 @@ public class PlayerObjects : MonoBehaviour
                 playerUI.HideUse();
             }
         }
+        else
+        {
+            playerUI.HideUse();
+        }
 
         if (beingCarried)
         {
