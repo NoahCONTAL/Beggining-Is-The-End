@@ -39,7 +39,7 @@ public class LaserScript : MonoBehaviour
         }
         else
         {
-            lr.SetPosition(1,-transform.right*5000);
+            lr.SetPosition(1, -transform.right * 5000);
         }
     }
 }

@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class PlayerUI : Player
 {
-    [SerializeField] 
+    [SerializeField]
     private Image OptionMenu;
 
     [SerializeField] private GameObject pauseMenu;
@@ -194,7 +194,7 @@ public class PlayerUI : Player
         eImage.gameObject.SetActive(true);
         pressE.gameObject.SetActive(true);
     }
-    
+
     public void HideUse()
     {
         eImage.gameObject.SetActive(false);

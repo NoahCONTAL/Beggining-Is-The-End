@@ -16,9 +16,9 @@ public class LaserDisparition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!Emeteur.GetComponent<LaserScript>().recepteur)
+        if (!Emeteur.GetComponent<LaserScript>().recepteur)
         {
-            this.transform.position = new Vector3(0,-69,0);
+            this.transform.position = new Vector3(0, -69, 0);
         }
         else
         {

@@ -41,7 +41,7 @@ public class OptionManagement : MonoBehaviour
         resolutionDropdown.value = currentResolutionIndex;
 
         resolutionDropdown.RefreshShownValue();
-        
+
         string[] qualityNames = QualitySettings.names;
         QualityDropdown.ClearOptions();
 
@@ -80,17 +80,17 @@ public class OptionManagement : MonoBehaviour
     {
         audioMixer.SetFloat("Master", volume);
     }
-    
+
     public void setGameplayVolume(float volume)
     {
         audioMixer.SetFloat("Gameplay", volume);
     }
-    
+
     public void setAmbiantVolume(float volume)
     {
         audioMixer.SetFloat("Ambiant", volume);
     }
-    
+
     public void setMusicVolume(float volume)
     {
         audioMixer.SetFloat("Music", volume);

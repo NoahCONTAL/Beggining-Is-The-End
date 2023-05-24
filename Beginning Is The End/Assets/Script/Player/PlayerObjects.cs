@@ -41,7 +41,7 @@ public class PlayerObjects : MonoBehaviour
             {
                 playerUI.ShowUse();
                 playerUI.HideLeftMouse();
-                
+
                 if (Input.GetButton("Use"))
                 {
                     player.health += 5;
@@ -54,7 +54,7 @@ public class PlayerObjects : MonoBehaviour
             {
                 playerUI.ShowUse();
                 playerUI.HideLeftMouse();
-                
+
                 if (Input.GetButton("Use"))
                 {
                     player.maxEnergy += 10;
@@ -68,7 +68,7 @@ public class PlayerObjects : MonoBehaviour
             {
                 playerUI.ShowUse();
                 playerUI.HideLeftMouse();
-                
+
                 if (Input.GetButton("Use"))
                 {
                     playerMov.speed += 2;
@@ -82,7 +82,7 @@ public class PlayerObjects : MonoBehaviour
             {
                 playerUI.ShowUse();
                 playerUI.HideLeftMouse();
-                
+
                 if (Input.GetButton("Use"))
                 {
                     playerMov.jumpHeight += 2;
@@ -95,7 +95,7 @@ public class PlayerObjects : MonoBehaviour
             {
                 playerUI.ShowUse();
                 playerUI.HideLeftMouse();
-                
+
                 if (Input.GetButton("Use"))
                 {
                     nextFire = myTime + fireDelta;
@@ -135,7 +135,7 @@ public class PlayerObjects : MonoBehaviour
         if (beingCarried)
         {
             playerUI.ShowLeftMouse();
-            
+
             if (Input.GetMouseButton(1))
             {
                 pickableObject.GetComponent<Rigidbody>().isKinematic = false;
