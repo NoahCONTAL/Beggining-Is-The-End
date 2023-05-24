@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class PlayerUI : Player
 {
-    [SerializeField] 
+    [SerializeField]
     private Image OptionMenu;
 
     [SerializeField] private GameObject pauseMenu;
@@ -28,6 +28,8 @@ public class PlayerUI : Player
 
     [SerializeField] private Image eImage;
     [SerializeField] private TMP_Text pressE;
+    [SerializeField] private GameObject LeftMouse;
+    [SerializeField] private GameObject RightMouse;
 
     private void Start()
     {
@@ -192,10 +194,30 @@ public class PlayerUI : Player
         eImage.gameObject.SetActive(true);
         pressE.gameObject.SetActive(true);
     }
-    
+
     public void HideUse()
     {
         eImage.gameObject.SetActive(false);
         pressE.gameObject.SetActive(false);
+    }
+
+    public void ShowRightMouse()
+    {
+        RightMouse.SetActive(true);
+    }
+
+    public void HideRightMouse()
+    {
+        RightMouse.SetActive(false);
+    }
+
+    public void ShowLeftMouse()
+    {
+        LeftMouse.SetActive(true);
+    }
+
+    public void HideLeftMouse()
+    {
+        LeftMouse.SetActive(false);
     }
 }

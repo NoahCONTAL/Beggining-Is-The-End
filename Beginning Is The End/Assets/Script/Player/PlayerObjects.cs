@@ -40,7 +40,8 @@ public class PlayerObjects : MonoBehaviour
             if (hit.collider.gameObject.CompareTag("HealthRegen"))
             {
                 playerUI.ShowUse();
-                
+                playerUI.HideLeftMouse();
+
                 if (Input.GetButton("Use"))
                 {
                     player.health += 5;
@@ -52,7 +53,8 @@ public class PlayerObjects : MonoBehaviour
             else if (hit.collider.gameObject.CompareTag("HealthBoost"))
             {
                 playerUI.ShowUse();
-                
+                playerUI.HideLeftMouse();
+
                 if (Input.GetButton("Use"))
                 {
                     player.maxEnergy += 10;
@@ -65,7 +67,8 @@ public class PlayerObjects : MonoBehaviour
             else if (hit.collider.gameObject.CompareTag("SpeedBoost"))
             {
                 playerUI.ShowUse();
-                
+                playerUI.HideLeftMouse();
+
                 if (Input.GetButton("Use"))
                 {
                     playerMov.speed += 2;
@@ -78,7 +81,8 @@ public class PlayerObjects : MonoBehaviour
             else if (hit.collider.gameObject.CompareTag("JumpBoost"))
             {
                 playerUI.ShowUse();
-                
+                playerUI.HideLeftMouse();
+
                 if (Input.GetButton("Use"))
                 {
                     playerMov.jumpHeight += 2;
@@ -90,7 +94,8 @@ public class PlayerObjects : MonoBehaviour
             else if (hit.collider.gameObject.CompareTag("Door") && myTime > nextFire)
             {
                 playerUI.ShowUse();
-                
+                playerUI.HideLeftMouse();
+
                 if (Input.GetButton("Use"))
                 {
                     nextFire = myTime + fireDelta;
@@ -103,6 +108,7 @@ public class PlayerObjects : MonoBehaviour
             else if (hit.collider.gameObject.CompareTag("pickableObject"))
             {
                 playerUI.HideUse();
+                playerUI.ShowLeftMouse();
                 pickableObject = hit.collider.gameObject;
 
                 if (Input.GetMouseButton(0))
@@ -115,21 +121,31 @@ public class PlayerObjects : MonoBehaviour
             else
             {
                 playerUI.HideUse();
+                playerUI.HideRightMouse();
+                playerUI.HideLeftMouse();
             }
         }
         else
         {
             playerUI.HideUse();
+            playerUI.HideRightMouse();
+            playerUI.HideLeftMouse();
         }
 
         if (beingCarried)
         {
+            playerUI.ShowLeftMouse();
+
             if (Input.GetMouseButton(1))
             {
                 pickableObject.GetComponent<Rigidbody>().isKinematic = false;
                 pickableObject.transform.parent = null;
                 beingCarried = false;
             }
+        }
+        else
+        {
+            playerUI.HideLeftMouse();
         }
     }
 }
