@@ -8,11 +8,12 @@ public class isFirstLittleLevelComplete : MonoBehaviour
     [SerializeField] private GameObject secondPressurePlate;
     public bool completed = false;
     Renderer ren;
+    Light lt;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        lt = GetComponent<Light>();
     }
 
     // Update is called once per frame
@@ -26,6 +27,7 @@ public class isFirstLittleLevelComplete : MonoBehaviour
         {
             ren = GetComponent<Renderer>();
             ren.material.color = Color.green;
+            lt.color = Color.green;
         }
     }
 }
