@@ -7,6 +7,7 @@ public class PlayerObjects : MonoBehaviour
     [SerializeField] private float pickupRange = 5;
     private Player player;
     private PlayerMovement playerMov;
+    private PlayerUI playerUI;
 
     private AudioSource _audioSource;
 
@@ -24,6 +25,7 @@ public class PlayerObjects : MonoBehaviour
     {
         player = GetComponent<Player>();
         playerMov = GetComponent<PlayerMovement>();
+        playerUI = GetComponent<PlayerUI>();
     }
 
     private void Update()
@@ -37,6 +39,8 @@ public class PlayerObjects : MonoBehaviour
         {
             if (hit.collider.gameObject.CompareTag("HealthRegen"))
             {
+                playerUI.ShowUse();
+                
                 if (Input.GetButton("Use"))
                 {
                     player.health += 5;
@@ -47,6 +51,8 @@ public class PlayerObjects : MonoBehaviour
 
             else if (hit.collider.gameObject.CompareTag("HealthBoost"))
             {
+                playerUI.ShowUse();
+                
                 if (Input.GetButton("Use"))
                 {
                     player.maxEnergy += 10;
@@ -58,6 +64,8 @@ public class PlayerObjects : MonoBehaviour
 
             else if (hit.collider.gameObject.CompareTag("SpeedBoost"))
             {
+                playerUI.ShowUse();
+                
                 if (Input.GetButton("Use"))
                 {
                     playerMov.speed += 2;
@@ -69,6 +77,8 @@ public class PlayerObjects : MonoBehaviour
 
             else if (hit.collider.gameObject.CompareTag("JumpBoost"))
             {
+                playerUI.ShowUse();
+                
                 if (Input.GetButton("Use"))
                 {
                     playerMov.jumpHeight += 2;
@@ -79,6 +89,8 @@ public class PlayerObjects : MonoBehaviour
 
             else if (hit.collider.gameObject.CompareTag("Door") && myTime > nextFire)
             {
+                playerUI.ShowUse();
+                
                 if (Input.GetButton("Use"))
                 {
                     nextFire = myTime + fireDelta;
@@ -90,6 +102,7 @@ public class PlayerObjects : MonoBehaviour
 
             else if (hit.collider.gameObject.CompareTag("pickableObject"))
             {
+                playerUI.HideUse();
                 pickableObject = hit.collider.gameObject;
 
                 if (Input.GetMouseButtonDown(0))
@@ -98,6 +111,10 @@ public class PlayerObjects : MonoBehaviour
                     pickableObject.transform.parent = this.gameObject.transform;
                     beingCarried = true;
                 }
+            }
+            else
+            {
+                playerUI.HideUse();
             }
         }
 

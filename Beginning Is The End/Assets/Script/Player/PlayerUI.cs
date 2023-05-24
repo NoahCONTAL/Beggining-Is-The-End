@@ -8,7 +8,8 @@ using UnityEngine.UI;
 
 public class PlayerUI : Player
 {
-    [SerializeField] private Image OptionMenu;
+    [SerializeField] 
+    private Image OptionMenu;
 
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject dieMenu;
@@ -24,6 +25,9 @@ public class PlayerUI : Player
     [SerializeField] private CinemachineFreeLook CinemachineFreeLook;
     [SerializeField] private PlayerAnimations playerAnimations;
     private NetworkManager _networkManager;
+
+    [SerializeField] private Image eImage;
+    [SerializeField] private TMP_Text pressE;
 
     private void Start()
     {
@@ -181,5 +185,17 @@ public class PlayerUI : Player
         {
             villageHint.SetActive(false);
         }
+    }
+
+    public void ShowUse()
+    {
+        eImage.gameObject.SetActive(true);
+        pressE.gameObject.SetActive(true);
+    }
+    
+    public void HideUse()
+    {
+        eImage.gameObject.SetActive(false);
+        pressE.gameObject.SetActive(false);
     }
 }
