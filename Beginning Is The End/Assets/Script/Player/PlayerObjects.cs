@@ -111,7 +111,7 @@ public class PlayerObjects : MonoBehaviour
                 playerUI.ShowLeftMouse();
                 pickableObject = hit.collider.gameObject;
 
-                if (Input.GetMouseButtonDown(0))
+                if (Input.GetMouseButton(0))
                 {
                     pickableObject.GetComponent<Rigidbody>().isKinematic = true;
                     pickableObject.transform.parent = this.gameObject.transform;
@@ -136,7 +136,7 @@ public class PlayerObjects : MonoBehaviour
         {
             playerUI.ShowLeftMouse();
             
-            if (Input.GetMouseButtonDown(1))
+            if (Input.GetMouseButton(1))
             {
                 pickableObject.GetComponent<Rigidbody>().isKinematic = false;
                 pickableObject.transform.parent = null;
