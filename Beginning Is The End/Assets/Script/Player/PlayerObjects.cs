@@ -146,49 +146,6 @@ public class PlayerObjects : MonoBehaviour
                     pickableObject.transform.Rotate(_rotate);
                 }
             }
-
-            else if(hit.collider.gameObject.CompareTag("Button1"))
-            {
-                playerUI.ShowLeftMouse();
-                if(Input.GetMouseButtonDown(0))
-                {
-                    hit.collider.gameObject.GetComponent<Button1>().execute();
-                }
-            }
-            else if(hit.collider.gameObject.CompareTag("Button2"))
-            {
-                if(Input.GetMouseButtonDown(0))
-                {
-                    hit.collider.gameObject.GetComponent<Button2>().execute();
-                }
-            }
-            else if(hit.collider.gameObject.CompareTag("Button3"))
-            {
-                playerUI.ShowLeftMouse();
-                if(Input.GetMouseButtonDown(0))
-                {
-                   
-                    hit.collider.gameObject.GetComponent<Button3>().execute();
-                }
-            }
-            else if(hit.collider.gameObject.CompareTag("resetButton"))
-            {
-                playerUI.ShowLeftMouse();
-                if(Input.GetMouseButtonDown(0))
-                {
-                   
-                    hit.collider.gameObject.GetComponent<resetButton>().execute();
-                }
-            }
-            else if(hit.collider.gameObject.CompareTag("Code3chiifre"))
-            {
-                playerUI.ShowUse();
-
-                if (Input.GetButton("Use"))
-                {
-                    playerUI.ShowAskCode();
-                }
-            }
             else
             {
                 playerUI.HideUse();
