@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShutingDoor : MonoBehaviour
+public class ShuttingDoor2 : MonoBehaviour
 {
     [SerializeField] private GameObject button;
 
@@ -20,7 +20,7 @@ public class ShutingDoor : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player") && button.GetComponent<IsFirstLittleLevelComplete>().completed)
+        if (other.CompareTag("Player") && button.GetComponent<IsSecondLittleLevelComplete>().completed)
         {
             transform.position += new Vector3(0, -4.02f, 0);
         }

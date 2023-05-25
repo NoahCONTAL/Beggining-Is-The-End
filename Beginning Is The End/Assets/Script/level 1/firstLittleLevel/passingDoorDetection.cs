@@ -14,7 +14,7 @@ public class passingDoorDetection : MonoBehaviour
         if (other.CompareTag("Player") && boo && !(pressurePlate.GetComponent<doorOpener>().AlreadyOnFirstPlate))
         {
             door.transform.position += new Vector3(0, 5, 0);
-            boo = false;
+            pressurePlateInside.GetComponent<DoorExit>().comingFromInside = false;
         }
     }
     // Start is called before the first frame update
