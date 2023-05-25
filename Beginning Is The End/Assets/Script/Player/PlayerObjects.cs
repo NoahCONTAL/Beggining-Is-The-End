@@ -146,6 +146,46 @@ public class PlayerObjects : MonoBehaviour
                     pickableObject.transform.Rotate(_rotate);
                 }
             }
+            else if (hit.collider.gameObject.CompareTag("Button1"))
+            {
+                playerUI.ShowLeftMouse();
+                Button = hit.collider.gameObject;
+
+                if (Input.GetMouseButtonDown(0))
+                {
+                    Button.GetComponent<Button1>().execute();
+                }
+            }
+            else if (hit.collider.gameObject.CompareTag("Button2"))
+            {
+                playerUI.ShowLeftMouse();
+                Button = hit.collider.gameObject;
+
+                if (Input.GetMouseButtonDown(0))
+                {
+                    Button.GetComponent<Button2>().execute();
+                }
+            }
+            else if (hit.collider.gameObject.CompareTag("Button3"))
+            {
+                playerUI.ShowLeftMouse();
+                Button = hit.collider.gameObject;
+
+                if (Input.GetMouseButtonDown(0))
+                {
+                    Button.GetComponent<Button3>().execute();
+                }
+            }
+            else if (hit.collider.gameObject.CompareTag("resetButton"))
+            {
+                playerUI.ShowLeftMouse();
+                Button = hit.collider.gameObject;
+
+                if (Input.GetMouseButtonDown(0))
+                {
+                    Button.GetComponent<resetButton>().execute();
+                }
+            }
             else
             {
                 playerUI.HideUse();
