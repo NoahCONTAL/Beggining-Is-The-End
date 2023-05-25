@@ -8,6 +8,8 @@ public class LaserBounce : MonoBehaviour
     private LineRenderer lr;
     [SerializeField] private Transform startPoint;
     [SerializeField] private bool OnlyMirror;
+    public bool recepteur = false;
+    public bool FinLaser = false;
 
     // Start is called before the first frame update
     void Start()
@@ -31,8 +33,21 @@ public class LaserBounce : MonoBehaviour
             Ray ray = new Ray(position, direction);
             RaycastHit hit;
 
+
             if(Physics.Raycast(ray, out hit, 300, 1))
             {
+                if(hit.transform.tag == "Recepteur" || hit.transform.tag == "FinLaser")
+                {
+                    recepteur = true;
+                    if(hit.transform.tag == "FinLaser")
+                    {
+                        FinLaser = true;
+                    }
+                }
+                else
+                {
+                    recepteur = false;
+                }
                 position = hit.point;
                 direction = Vector3.Reflect(direction, hit.normal);
                 lr.SetPosition(i + 1, hit.point);
@@ -45,6 +60,7 @@ public class LaserBounce : MonoBehaviour
                     }
                     break;
                 }
+                
             }
         }
     }

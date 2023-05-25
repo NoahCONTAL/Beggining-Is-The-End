@@ -6,6 +6,7 @@ public class LaserDisparition : MonoBehaviour
 {
     [SerializeField] GameObject Disparition;
     [SerializeField] private GameObject Emeteur;
+    [SerializeField] private bool Open;
     private Vector3 position;
 
     void Start()
@@ -16,13 +17,28 @@ public class LaserDisparition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!Emeteur.GetComponent<LaserScript>().recepteur)
+        if(Open)
         {
-            this.transform.position = new Vector3(0, -69, 0);
+            if (Emeteur.GetComponent<LaserBounce>().recepteur)
+            {
+                this.transform.position = new Vector3(0, -69, 0);
+            }
+            else
+            {
+                this.transform.position = position;
+            }
         }
         else
         {
-            this.transform.position = position;
+            if (!Emeteur.GetComponent<LaserBounce>().recepteur)
+            {
+                this.transform.position = new Vector3(0, -69, 0);
+            }
+            else
+            {
+                this.transform.position = position;
+            }
         }
     }
+
 }
