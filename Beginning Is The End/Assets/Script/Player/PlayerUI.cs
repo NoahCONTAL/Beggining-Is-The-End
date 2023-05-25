@@ -32,6 +32,10 @@ public class PlayerUI : Player
     [SerializeField] private GameObject RightMouse;
     
     [SerializeField] public Image Chargement;
+    [SerializeField] public GameObject Code;
+    
+
+    
 
     private void Start()
     {
@@ -222,4 +226,18 @@ public class PlayerUI : Player
     {
         LeftMouse.SetActive(false);
     }
+
+    public void ShowAskCode()
+    {
+        Code.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        _playerMovement.enabled = false;
+        CinemachineFreeLook.enabled = false;
+    }
+    public void HideAskCode()
+    {
+        Code.SetActive(false);
+    }
+
+
 }

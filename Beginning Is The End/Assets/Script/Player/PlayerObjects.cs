@@ -186,11 +186,23 @@ public class PlayerObjects : MonoBehaviour
                     Button.GetComponent<resetButton>().execute();
                 }
             }
+            else if (hit.collider.gameObject.CompareTag("BlocCommande"))
+            {
+                playerUI.ShowUse();
+
+                if (Input.GetButton("Use"))
+                {
+                    playerUI.ShowAskCode();
+                    
+                }
+            }
+            
             else
             {
                 playerUI.HideUse();
                 playerUI.HideRightMouse();
                 playerUI.HideLeftMouse();
+                playerUI.HideAskCode();
             }
         }
         else
@@ -198,6 +210,7 @@ public class PlayerObjects : MonoBehaviour
             playerUI.HideUse();
             playerUI.HideRightMouse();
             playerUI.HideLeftMouse();
+            playerUI.HideAskCode();
         }
     }
 }
