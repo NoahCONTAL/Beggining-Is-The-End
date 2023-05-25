@@ -48,26 +48,18 @@ public class Button1 : MonoBehaviour
     
     }
 
-    void OnTriggerStay()
+    public void execute()
     {
-        if(Input.GetButtonDown("Use"))
+        if(b1.y < 1.36 )
         {
-            print($"{b1.y}");
-            if(b1.y > -1.36)
-            {
-                tar1.position += new Vector3(0, -1.18f, 0);
-            }
-
-            if(b2.y > -1.36)
-            {
-                tar2.position += new Vector3(0, -1.18f, 0);
-            }
-
-            if(b3.y < 1.36)
-            {
-                tar3.position += new Vector3(0, 1.18f, 0);
-            }
+            tar1.position += new Vector3(0, 1.18f, 0);
         }
+
+        if(b2.y > -1.36 )
+        {
+            tar2.position += new Vector3(0, -1.18f, 0);
+        }
+        
     }
 
     

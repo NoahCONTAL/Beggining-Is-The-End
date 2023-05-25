@@ -20,6 +20,10 @@ TagManager:
   - Door
   - Recepteur
   - Mirror
+  - Button1
+  - Button2
+  - Button3
+  - resetButton
   layers:
   - Default
   - TransparentFX

@@ -5,9 +5,9 @@ using UnityEngine;
 public class resetButton : MonoBehaviour
 {
 
-    [SerializeField] GameObject obj1;
-    [SerializeField] GameObject obj2;
-    [SerializeField] GameObject obj3;
+    [SerializeField] GameObject tar1;
+    [SerializeField] GameObject tar2;
+    [SerializeField] GameObject tar3;
     
     private Vector3 pos1;
     private Vector3 pos2;
@@ -15,19 +15,16 @@ public class resetButton : MonoBehaviour
 
     void Start()
     {
-        pos1 = obj1.transform.position;
-        pos2 = obj2.transform.position;
-        pos3 = obj3.transform.position;
+        pos1 = tar1.transform.position;
+        pos2 = tar2.transform.position;
+        pos3 = tar3.transform.position;
     }
 
-    void OnTriggerStay()
+    public void execute()
     {
-        if(Input.GetButtonDown("Use"))
-        {
-            obj1.transform.position = pos1;
-            obj2.transform.position = pos2;
-            obj3.transform.position = pos3;
-        }
+        tar1.transform.position = pos1;
+        tar2.transform.position = pos2;
+        tar3.transform.position = pos3;
     }
     
 }

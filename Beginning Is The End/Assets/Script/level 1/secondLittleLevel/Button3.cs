@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class Button3 : MonoBehaviour
 {
+    public Transform tar1;
+    public Transform tar2;
+    public Transform tar3;
 
-    [SerializeField] private GameObject obj1;
-    [SerializeField] private GameObject obj2;
-    [SerializeField] private GameObject obj3;
-    
+
+    Vector3 b1;
+
+    Vector3 b2;
+
+    Vector3 b3;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +25,25 @@ public class Button3 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        b1 = tar1.position;
+
+        b2 = tar2.position;
+
+        b3 = tar3.position;
+    
+    }
+
+    public void execute()
+    {
+        if(b1.y > -1.36 )
+        {
+            tar1.position += new Vector3(0, -1.18f, 0);
+        }
+
+        if(b2.y < 1.36 )
+        {
+            tar2.position += new Vector3(0, 1.18f, 0);
+        }
         
     }
 }
