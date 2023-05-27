@@ -55,9 +55,9 @@ public class Button1 : MonoBehaviour
             tar1.position += new Vector3(0, 1.18f, 0);
         }
 
-        if(b2.y > -1.36 )
+        if(b3.y > -1.36 )
         {
-            tar2.position += new Vector3(0, -1.18f, 0);
+            tar3.position += new Vector3(0, -1.18f, 0);
         }
         
     }

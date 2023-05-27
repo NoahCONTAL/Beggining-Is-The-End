@@ -315,7 +315,7 @@ MonoBehaviour:
   tar1: {fileID: 1356058849}
   tar2: {fileID: 290912987}
   tar3: {fileID: 1919036871}
-  speed: 0.01
+  speed: 0.025
   t: 0.05
 --- !u!1 &44082278
 GameObject:
@@ -3604,6 +3604,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   completed: 0
+  isAlone: 0
 --- !u!1001 &738658897
 PrefabInstance:
   m_ObjectHideFlags: 0
