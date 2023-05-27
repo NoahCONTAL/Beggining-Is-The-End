@@ -16,9 +16,7 @@ public class FinLvl2Porte : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Emeteur.tag == "FinLaser")
-        {
-            if (Emeteur.GetComponent<LaserBounce>().recepteur && Emeteur.GetComponent<LaserBounce>().FinLaser)
+            if (Emeteur.GetComponent<LaserBounce>().FinLaser)
             {
                 this.transform.position = new Vector3(0, -69, 0);
             }
@@ -26,6 +24,5 @@ public class FinLvl2Porte : MonoBehaviour
             {
                 this.transform.position = position;
             }
-        }
     }
 }

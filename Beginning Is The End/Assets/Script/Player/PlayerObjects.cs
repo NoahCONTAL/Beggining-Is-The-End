@@ -128,7 +128,7 @@ public class PlayerObjects : MonoBehaviour
                 }
             }
 
-            else if (hit.collider.gameObject.CompareTag("pickableObject"))
+            else if (hit.collider.gameObject.CompareTag("pickableObject") || hit.collider.gameObject.CompareTag("Mirror"))
             {
                 playerUI.HideUse();
                 playerUI.ShowLeftMouse();

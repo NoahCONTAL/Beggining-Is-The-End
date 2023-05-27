@@ -5,7 +5,6 @@ using UnityEngine;
 public class LaserDisparition : MonoBehaviour
 {
     [SerializeField] GameObject Disparition;
-    [SerializeField] private GameObject Emeteur;
     [SerializeField] private bool Open;
     private Vector3 position;
 
