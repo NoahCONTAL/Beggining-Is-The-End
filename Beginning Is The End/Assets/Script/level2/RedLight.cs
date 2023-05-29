@@ -21,7 +21,6 @@ public class RedLight : MonoBehaviour
         if(firstPressurePlate.GetComponent<DoorDestroyer>().Actived)
         {
             completed = true;
-            ren = GetComponent<Renderer>();
             ren.material.color = Color.green;
             lt.color = Color.green;
         }
