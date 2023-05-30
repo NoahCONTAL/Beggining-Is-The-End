@@ -24,7 +24,7 @@ public class PlayerObjects : MonoBehaviour
 
     private GameObject Button;
 
-    Vector3 _rotate = new Vector3(0,1,0);
+    Vector3 _rotate = new Vector3(0,0.5,0);
 
     private void Start()
     {
