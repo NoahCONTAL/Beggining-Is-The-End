@@ -21,10 +21,10 @@ public class PlayerObjects : MonoBehaviour
 
     private GameObject pickableObject;
     public bool beingCarried = false;
-
     private GameObject Button;
 
-    Vector3 _rotate = new Vector3(0,1,0);
+    Vector3 _rotate_right = new Vector3(0,0.5f,0);
+    Vector3 _rotate_left = new Vector3(0,-0.5f,0);
 
     private void Start()
     {
@@ -141,9 +141,13 @@ public class PlayerObjects : MonoBehaviour
                     beingCarried = true;
                 }
                 
-                if(Input.GetKey ("f"))
+                if(Input.GetKey ("v") && beingCarried)
                 {
-                    pickableObject.transform.Rotate(_rotate);
+                    pickableObject.transform.Rotate(_rotate_right);
+                }
+                if(Input.GetKey ("c") && beingCarried)
+                {
+                    pickableObject.transform.Rotate(_rotate_left);
                 }
             }
             else if (hit.collider.gameObject.CompareTag("Button1"))
