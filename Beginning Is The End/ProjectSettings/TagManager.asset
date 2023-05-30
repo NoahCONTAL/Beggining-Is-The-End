@@ -25,6 +25,7 @@ TagManager:
   - Button3
   - resetButton
   - BlocCommande
+  - enterButton
   layers:
   - Default
   - TransparentFX
