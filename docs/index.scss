@@ -164,33 +164,40 @@ body {
   /* PAGE EQUIPE */
 
   :root {
-	--card-height: 50vw;
-	--card-margin: 4vw;
+	--card-height: 35vw;
+	--card-margin: 6vw;
 	--card-top-offset: 1em;
-	--numcards: 3;
-	--outline-width: 0px;
+	--numcards: 5;
 }
 
 #cards {
-	padding-bottom: calc(var(--numcards) * var(--card-top-offset)); /* Make place at bottom, as items will slide to that position*/
+	padding-bottom: calc(var(--numcards) * var(--card-top-offset) ); /* Make place at bottom, as items will slide to that position*/
 	margin-bottom: var(--card-margin); /* Don't include the --card-margin in padding, as that will affect the scroll-timeline*/
 }
 
 #card_1 {
-	--index: 1;
+	--index: 0;
 }
 
 #card_2 {
-	--index: 2;
+	--index: 0;
 }
 
 #card_3 {
-	--index: 3;
+	--index: 0;
+}
+
+#card_4 {
+	--index: 0;
+}
+
+#card_5 {
+	--index: 0;
 }
 
 .card {
 	position: sticky;
-	top: 0;
+	top: 1em;
 	padding-top: calc(var(--index) * var(--card-top-offset));
 }
 
@@ -355,4 +362,13 @@ aside p {
 	border-image-width: 10px;
 }
 
+.Histoire {
+	div{
+		color :rgb(0, 0, 0);
+		margin-left: 10%;
+		margin-right: 10%;
+		padding-top : 2%;
+		padding-bottom : 2%;
+	}
+}
 /* PAGE DEVBLOG */
