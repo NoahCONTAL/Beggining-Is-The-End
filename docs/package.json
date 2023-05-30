@@ -4,7 +4,7 @@
   "description": "",
   "main": "config.js",
   "scripts": {
-    "sass": "sass --watch devlog.scss devlog.css"
+    "sass": "sass --watch index.scss index.css"
   },
   "author": "",
   "license": "ISC"
