@@ -17,7 +17,7 @@ public class EnterLevel2 : MonoBehaviour
         
     }
 
-    void OnTriggerEnter(Collider col)
+    void OnTriggerStay(Collider col)
     {
         if (col.CompareTag("Player") || col.CompareTag("pickableObject"))
         {

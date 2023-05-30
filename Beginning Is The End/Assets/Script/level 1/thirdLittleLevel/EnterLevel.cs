@@ -27,13 +27,21 @@ public class EnterLevel : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter()
+    void OnTriggerStay(Collider col)
     {
-        pressed = true;
+        if (col.CompareTag("Player"))
+        {
+            pressed = true; 
+        }
+        
     }
 
-    void OnTriggerExit()
+    void OnTriggerExit(Collider col)
     {
-        pressed = false;
+        if (col.CompareTag("Player"))
+        {
+            pressed = false;
+        }
+        
     }
 }
