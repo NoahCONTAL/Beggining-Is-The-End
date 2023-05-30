@@ -233,10 +233,14 @@ public class PlayerUI : Player
         Cursor.lockState = CursorLockMode.None;
         _playerMovement.enabled = false;
         CinemachineFreeLook.enabled = false;
+
     }
     public void HideAskCode()
     {
         Code.SetActive(false);
+        _playerMovement.enabled = true;
+        CinemachineFreeLook.enabled = true;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
 
