@@ -207,6 +207,7 @@ public class PlayerObjects : MonoBehaviour
                 playerUI.HideRightMouse();
                 playerUI.HideLeftMouse();
                 playerUI.HideAskCode();
+                playerUI.HideCorrect();
             }
         }
         else
@@ -215,6 +216,7 @@ public class PlayerObjects : MonoBehaviour
             playerUI.HideRightMouse();
             playerUI.HideLeftMouse();
             playerUI.HideAskCode();
+            playerUI.HideCorrect();
         }
     }
 }

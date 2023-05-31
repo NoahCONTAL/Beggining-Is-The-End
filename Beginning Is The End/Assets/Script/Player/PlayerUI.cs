@@ -8,8 +8,7 @@ using UnityEngine.UI;
 
 public class PlayerUI : Player
 {
-    [SerializeField]
-    private Image OptionMenu;
+    [SerializeField] private Image OptionMenu;
 
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject dieMenu;
@@ -30,14 +29,16 @@ public class PlayerUI : Player
     [SerializeField] private TMP_Text pressE;
     [SerializeField] private GameObject LeftMouse;
     [SerializeField] private GameObject RightMouse;
-    
+
     [SerializeField] public Image Chargement;
     [SerializeField] public GameObject Code;
     [SerializeField] public TMP_InputField Code3chiffres;
     public Player player;
+    [SerializeField] public GameObject Good;
     
 
-    
+
+
 
     private void Start()
     {
@@ -237,6 +238,7 @@ public class PlayerUI : Player
         CinemachineFreeLook.enabled = false;
 
     }
+
     public void HideAskCode()
     {
         Code.SetActive(false);
@@ -245,15 +247,27 @@ public class PlayerUI : Player
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    public void essai()
+    public void ShowCorrect()
+    {
+        Good.SetActive(true);
+    }
+
+    public void HideCorrect()
+    {
+        Good.SetActive(false);
+    }
+
+public void essai()
     {
         if (Code3chiffres.text == "237" || Code3chiffres.text == "273" ||Code3chiffres.text == "327" || Code3chiffres.text == "372" || Code3chiffres.text == "723" || Code3chiffres.text == "732")
         {
             HideAskCode();
-            
+            ShowCorrect();
+
         }
         else
         {
+            HideAskCode();
             player.TakeDamage(10);
         }
     }
