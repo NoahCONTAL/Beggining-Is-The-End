@@ -7,6 +7,7 @@ public class ExitLevel : MonoBehaviour
     public GameObject Door;
     public GameObject OtherButton;
     public GameObject OtherButton2;
+    public GameObject redLight;
     public bool pressed = false;
 
     // Start is called before the first frame update
@@ -21,6 +22,7 @@ public class ExitLevel : MonoBehaviour
         if(pressed && OtherButton.GetComponent<EnterLevel2>().pressed && OtherButton2.GetComponent<EnterLevel2>().pressed )
         {
             Door.transform.position += new Vector3(0, 4, 0);
+            redLight.GetComponent<IsThirdLittleLevelComplete>().completed = true;
         }
     }
 }

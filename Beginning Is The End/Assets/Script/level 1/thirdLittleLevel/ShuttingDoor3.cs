@@ -6,6 +6,7 @@ public class ShuttingDoor3 : MonoBehaviour
 {
     [SerializeField] private GameObject button;
     private Vector3 openPosition;
+    private int ye = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +28,12 @@ public class ShuttingDoor3 : MonoBehaviour
     {
         if (other.CompareTag("Player") && button.GetComponent<IsThirdLittleLevelComplete>().completed)
         {
-            transform.position += new Vector3(0, -4.02f, 0);
+            ye += 1;
+            if(ye == 2)
+            {
+                transform.position += new Vector3(0, -4.02f, 0);
+            }
+            
         }
     }
 }
