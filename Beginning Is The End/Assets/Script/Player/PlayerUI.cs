@@ -33,6 +33,8 @@ public class PlayerUI : Player
     
     [SerializeField] public Image Chargement;
     [SerializeField] public GameObject Code;
+    [SerializeField] public TMP_InputField Code3chiffres;
+    public Player player;
     
 
     
@@ -241,6 +243,19 @@ public class PlayerUI : Player
         _playerMovement.enabled = true;
         CinemachineFreeLook.enabled = true;
         Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void essai()
+    {
+        if (Code3chiffres.text == "237" || Code3chiffres.text == "273" ||Code3chiffres.text == "327" || Code3chiffres.text == "372" || Code3chiffres.text == "723" || Code3chiffres.text == "732")
+        {
+            HideAskCode();
+            
+        }
+        else
+        {
+            player.TakeDamage(10);
+        }
     }
 
 
