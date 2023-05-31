@@ -347,6 +347,11 @@ aside p {
   padding-bottom: 2%;
 }
 
-/* PAGE DEVBLOG */
+/* PAGE JEU */
+.mid-text {
+  color: rgb(0, 0, 0);
+  font-size: 2em;
+  font-weight: bold;
+}
 
 /*# sourceMappingURL=index.css.map */
