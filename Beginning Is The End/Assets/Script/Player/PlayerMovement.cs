@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     private float turnSmoothVelocity;
 
     private Vector3 velocity;
+    
+    public AudioSource walkSound;
 
     private void Update()
     {
@@ -43,6 +45,24 @@ public class PlayerMovement : MonoBehaviour
 
             controller.Move(
                 moveDir.normalized * (currentSpeed * Time.deltaTime));
+
+            if (isSprinting)
+            {
+                walkSound.pitch = 3f;
+            }
+            else
+            {
+                walkSound.pitch = 0.9f;
+            }
+            
+            if (!walkSound.isPlaying)
+            {
+                walkSound.Play();
+            }
+        }
+        else if (walkSound.isPlaying)
+        {
+            walkSound.Stop();
         }
 
         if (Input.GetButtonDown("Jump") && controller.isGrounded)
