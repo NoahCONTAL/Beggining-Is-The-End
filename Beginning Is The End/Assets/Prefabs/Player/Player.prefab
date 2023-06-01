@@ -3147,14 +3147,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: orem Ipsum is simply dummy text of the printing and typesetting industry.
-    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-    when an unknown printer took a galley of type and scrambled it to make a type
-    specimen book. It has survived not only five centuries, but also the leap into
-    electronic typesetting, remaining essentially unchanged. It was popularised in
-    the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-    and more recently with desktop publishing software like Aldus PageMaker including
-    versions of Lorem Ipsum.
+  m_Text: "Vous \xEAtes maintenant au deuxi\xE8me niveau, qui se compose de trois
+    sous-niveaux. Dans cette section du laboratoire, des lasers ont \xE9t\xE9 introduits,
+    chacun avec un r\xE9cepteur. Vous trouverez \xE9galement des miroirs qui permettent
+    de r\xE9fl\xE9chir les lasers. L'objectif ici est d'appuyer sur la plaque de
+    pression rouge. Bonne chance !"
 --- !u!82 &7863923499330919711
 AudioSource:
   m_ObjectHideFlags: 0
