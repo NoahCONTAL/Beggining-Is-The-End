@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <link rel="icon" href="../Ressources/Horologe.png" type="image/icon type">
+    <head>
+        <meta charset="UTF-8">
+        <title>Beginning Is The End</title>
+        <link rel="stylesheet" href="../index.css">
+    </head>
+    
+    <body class="cardbody">
+        <header>
+            <nav class="pics">
+                <a href="index.html">
+                    <img src="../Ressources/logo_cote_blanc.png" alt="logo" class="logo" href="index">
+                </a>
+            </nav>
+            <nav>
+                <ul>
+                    <li><button onclick="location.href='index.html'">Home</button></li>
+                    <li><button onclick="location.href='Equipe.html'">Team presentation</button></li>
+                    <li><button onclick="location.href='Jeu.html'">Game presentation</button></li>
+                    <li><button onclick="location.href='DEVLOG.html'">DevLogs</button></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <h1>Team presentation</h1>
+            <ul id="cards">
+                <li class="card" id="card_1">
+                    <div class="card__content">
+                        <div>
+                            <h2 class="card dis-block" id="id11">Jérémie</h2>
+                            <p class="dis-block" id="id12">
+                                Role: Group leader, Game design, Communication</p>
+                            <p class="dis-none text-pres" id="id13">
+                                Coming from small rural colleges and high schools in Bourgogne Franche-Comté, he had never dabbled in programming before high school. However, his passion for video games drove him to explore it on his own through Unity3D, in order to uncover the behind-the-scenes aspects of game development. He then decided to join EPITA with the goal of pursuing a future in software development and programming. It was his motivation to create his very first video game that led him to take on the role of group leader for this project.</p>
+                            <p><a onclick="toggle_visibility('id11'); toggle_visibility('id12'); toggle_visibility('id13'); toggleText(this.id);" id="id1" class="btn btn--accent">Read more</a></p>
+                        </div>
+                        <figure>
+                            <img src="../Ressources/jeremie.levan_f4c654bc-8ffa-46cf-be22-f172ec95d57f-thumb.jpg" alt="Image description">
+                        </figure>
+                    </div>
+                </li>
+                <li class="card" id="card_2">
+                    <div class="card__content">
+                        <div>
+                            <h2 class="card dis-block" id="id21">Noah</h2>
+                            <p class="dis-block" id="id22">Role: Artificial Intelligence, User Interface, Unity</p>
+                            <p class="dis-none text-pres" id="id23">
+                                Originally from Alsace, he studied in rural establishments. He has already practiced programming for the purpose of developing mods for games and web development. He then decided to join EPITA Strasbourg to stay close to home while acquiring strong skills in the field of computer science. His goal is to build his future around computer science and enhance the quality of his projects, which he undertakes for both recreational and lucrative purposes.</p>
+                            <p><a onclick="toggle_visibility('id21'); toggle_visibility('id22'); toggle_visibility('id23'); toggleText(this.id);" id="id2" class="btn btn--accent">Read more</a></p>
+                        </div>
+                        <figure>
+                            <img src="../Ressources/noah.contal_9939d120-f0dd-47d8-adbe-347efb1364e4.jpg" alt="Image description">
+                        </figure>
+                    </div>
+                </li>
+                <li class="card" id="card_3">
+                    <div class="card__content">
+                        <div>
+                            <h2 class="card dis-block" id="id31">Tom</h2>
+                            <p class="dis-block" id="id32">
+                                Role: Website development, Graphic design, 3D</p>
+                            <p class="dis-none text-pres" id="id33">Originally from Morocco and later migrated to the Vosges region, he took his first steps into the world of computer science thanks to his father, who played video games with him. As his passion grew stronger, and unable to access the specialized NSI (Numérique et Sciences Informatiques) program in his high school, he embarked on small projects with his friends. For him, his path in computer science was clear. That's when he decided to join EPITA with the goal of building his future in the field of computer science.</p>
+                            <p><a onclick="toggle_visibility('id31'); toggle_visibility('id32'); toggle_visibility('id33'); toggleText(this.id);" id="id3" class="btn btn--accent">Read more</a></p>
+                        </div>
+                        <figure>
+                            <img src="../Ressources/tom.giles_923eb03c-8404-41c0-800c-9b48187fba4d-thumb.jpg" alt="Image description">
+                        </figure>
+                    </div>
+                </li>
+                <li class="card" id="card_4">
+                    <div class="card__content">
+                        <div>
+                            <h2 class="card dis-block" id="id41">Nino</h2>
+                            <p class="dis-block" id="id42">
+                                Role: Level Design, General Support</p>
+                            <p class="dis-none text-pres" id="id43">He spent his entire childhood in Morocco and is a huge fan of video games. He joined EPITA to improve his computer and technological skills. Moving from group to group, he found his true passion when he joined EPISOFT and was able to thrive in programming and video game creation.</p>
+                            <p><a onclick="toggle_visibility('id41'); toggle_visibility('id42'); toggle_visibility('id43'); toggleText(this.id);" id="id4" class="btn btn--accent">Lire plus</a></p>
+                        </div>
+                        <figure>
+                            <img src="../Ressources/nino.zanfonato_d78e725f-f8b5-4af9-8297-1f57105b151f-thumb.jpg" alt="Image description">
+                        </figure>
+                    </div>
+                </li>
+            </ul>
+
+            <h1>
+                Team History</h1>
+            <section class="Histoire">
+                <div>
+                    Our team was initially composed of 4 members: Jeremie Levan, Noah Contal, Tom Giles, and Lucas Giglielmetti. However, Lucas left Epita shortly before the first presentation, and the group continued with 3 members until the second presentation. After the second presentation, with the group nearly dissolved, Nino Zanfonato joined Episoft. Now, the team once again consists of 4 members.
+                </div>
+
+            </section>
+        </main>
+
+        <footer>
+            <p>Copyright © 2023 <a href="index.html"> EPISOFT</a> </p>
+        </footer>
+    </body>
+</html>
+
+
+<script type="text/javascript">
+    <!--
+        function getStyle(el, name) {
+        if ( document.defaultView && document.defaultView.getComputedStyle )
+        {
+            var style = document.defaultView.getComputedStyle(el, null);
+            if ( style )
+                return style[name];
+            }
+        else if ( el.currentStyle )
+            return el.currentStyle[name];       
+        return null;
+}
+
+
+    function toggle_visibility(id) {
+        var e = document.getElementById(id);
+        if(getStyle(e, "display") == "none"){
+            e.style.display="block"
+        } else {
+            e.style.display="none"
+        }
+    }
+
+    function toggleText(button_id)  {
+   var text = document.getElementById(button_id).firstChild;
+   text.data = text.data == "Read more" ? "Read less" : "Read more";
+}
+    //-->
+    </script>
