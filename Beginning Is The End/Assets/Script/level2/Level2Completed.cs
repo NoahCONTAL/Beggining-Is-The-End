@@ -12,17 +12,15 @@ public class Level2Completed : MonoBehaviour
     Renderer ren;
     private GameObject[] players;
 
-    // Start is called before the first frame update
     void Start()
     {
         lt = GetComponent<Light>();
         players = GameObject.FindGameObjectsWithTag("Player");
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
-        if(button1.GetComponent<RedLight>().completed && button1.GetComponent<RedLight>().completed && button1.GetComponent<RedLight>().completed)
+        if (button1.GetComponent<RedLight>().completed && button1.GetComponent<RedLight>().completed && button1.GetComponent<RedLight>().completed)
         {
             
             ren = GetComponent<Renderer>();
