@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Mirror;
 
 public class PlayerTeleport : NetworkBehaviour
@@ -33,11 +34,10 @@ public class PlayerTeleport : NetworkBehaviour
     {
         playerUI.Chargement.gameObject.SetActive(true);
         
-        //trouve les tous les objects avec un tag "pickable" et les désactive
-        GameObject[] pickableObjects = GameObject.FindGameObjectsWithTag("pickableObject");
-        foreach (var pickableObject in pickableObjects)
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        foreach (var player in players)
         {
-            Destroy(pickableObject);
+            DontDestroyOnLoad(player);
         }
         
         float elapsedTime = 0;
@@ -54,5 +54,10 @@ public class PlayerTeleport : NetworkBehaviour
         
         yield return new WaitForSeconds(0.8f);
         playerUI.Chargement.gameObject.SetActive(false);
+        
+        foreach (var player in players)
+        {
+            SceneManager.MoveGameObjectToScene(gameObject, SceneManager.GetActiveScene());
+        }
     }
 }
