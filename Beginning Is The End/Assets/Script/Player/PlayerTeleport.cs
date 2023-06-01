@@ -34,12 +34,8 @@ public class PlayerTeleport : NetworkBehaviour
     {
         playerUI.Chargement.gameObject.SetActive(true);
         
-        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-        foreach (var player in players)
-        {
-            DontDestroyOnLoad(player);
-        }
-        
+        DontDestroyOnLoad(gameObject);
+
         float elapsedTime = 0;
 
         while (elapsedTime < 0.5f)
@@ -55,9 +51,6 @@ public class PlayerTeleport : NetworkBehaviour
         yield return new WaitForSeconds(0.8f);
         playerUI.Chargement.gameObject.SetActive(false);
         
-        foreach (var player in players)
-        {
-            SceneManager.MoveGameObjectToScene(gameObject, SceneManager.GetActiveScene());
-        }
+        SceneManager.MoveGameObjectToScene(gameObject, SceneManager.GetActiveScene());
     }
 }
