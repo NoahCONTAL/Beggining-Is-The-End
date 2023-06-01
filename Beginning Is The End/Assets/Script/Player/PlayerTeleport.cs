@@ -33,8 +33,12 @@ public class PlayerTeleport : NetworkBehaviour
     private IEnumerator ChangeSceneCoroutine(string sceneName, Vector3 position, Vector3 rotation)
     {
         playerUI.Chargement.gameObject.SetActive(true);
-        
-        DontDestroyOnLoad(gameObject);
+
+        var players = GameObject.FindGameObjectsWithTag("Player");
+        foreach (var player in players)
+        {
+            DontDestroyOnLoad(player);
+        }
 
         float elapsedTime = 0;
 
@@ -50,7 +54,10 @@ public class PlayerTeleport : NetworkBehaviour
         
         yield return new WaitForSeconds(0.8f);
         playerUI.Chargement.gameObject.SetActive(false);
-        
-        SceneManager.MoveGameObjectToScene(gameObject, SceneManager.GetActiveScene());
+
+        foreach (var player in players)
+        {
+            SceneManager.MoveGameObjectToScene(player, SceneManager.GetActiveScene());
+        }
     }
 }
