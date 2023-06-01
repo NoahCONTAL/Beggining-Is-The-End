@@ -33,7 +33,6 @@ public class PlayerUI : Player
     [SerializeField] public Image Chargement;
     [SerializeField] public GameObject Code;
     [SerializeField] public TMP_InputField Code3chiffres;
-    public Player player;
     [SerializeField] public GameObject Good;
     [SerializeField] public GameObject False;
     
@@ -269,19 +268,21 @@ public class PlayerUI : Player
         False.SetActive(false);
     }
 
+    [SerializeField] private LevelManagger _levelManager;
 public void essai()
     {
         if (Code3chiffres.text == "237" || Code3chiffres.text == "273" ||Code3chiffres.text == "327" || Code3chiffres.text == "372" || Code3chiffres.text == "723" || Code3chiffres.text == "732")
         {
             HideAskCode();
             ShowCorrect();
+            _levelManager.level3finished = true;
 
         }
         else
         {
             HideAskCode();
             ShowIncorrect();
-            player.TakeDamage(10);
+            GetComponent<Player>().TakeDamage(5);
         }
     }
 
