@@ -35,6 +35,8 @@ public class PlayerUI : Player
     [SerializeField] public TMP_InputField Code3chiffres;
     public Player player;
     [SerializeField] public GameObject Good;
+    [SerializeField] public GameObject False;
+    
     
 
 
@@ -257,6 +259,16 @@ public class PlayerUI : Player
         Good.SetActive(false);
     }
 
+    public void ShowIncorrect()
+    {
+        False.SetActive(true);
+    }
+
+    public void HideIncorrect()
+    {
+        False.SetActive(false);
+    }
+
 public void essai()
     {
         if (Code3chiffres.text == "237" || Code3chiffres.text == "273" ||Code3chiffres.text == "327" || Code3chiffres.text == "372" || Code3chiffres.text == "723" || Code3chiffres.text == "732")
@@ -268,6 +280,7 @@ public void essai()
         else
         {
             HideAskCode();
+            ShowIncorrect();
             player.TakeDamage(10);
         }
     }
