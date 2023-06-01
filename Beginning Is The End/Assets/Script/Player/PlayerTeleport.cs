@@ -7,7 +7,7 @@ using Mirror;
 public class PlayerTeleport : NetworkBehaviour
 {
     private PlayerUI playerUI;
-    
+    public AudioSource _audioSource;    
 
     private void Start()
     {
@@ -32,6 +32,7 @@ public class PlayerTeleport : NetworkBehaviour
     private IEnumerator ChangeSceneCoroutine(string sceneName, Vector3 position, Vector3 rotation)
     {
         playerUI.Chargement.gameObject.SetActive(true);
+        _audioSource.Play();
         
         float elapsedTime = 0;
 
@@ -47,5 +48,6 @@ public class PlayerTeleport : NetworkBehaviour
         
         yield return new WaitForSeconds(0.8f);
         playerUI.Chargement.gameObject.SetActive(false);
+        _audioSource.Stop();
     }
 }
