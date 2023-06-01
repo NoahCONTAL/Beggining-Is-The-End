@@ -1605,7 +1605,7 @@ RectTransform:
   m_GameObject: {fileID: 1240807496785611551}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4, y: 1.1, z: 1.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2146508617997295548}
@@ -1613,7 +1613,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -42}
   m_SizeDelta: {x: 1000, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &86153426582659999
@@ -1648,23 +1648,23 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: e9c7031c613a44237a04a4f9e999e8b8, type: 3}
     m_FontSize: 32
     m_FontStyle: 1
-    m_BestFit: 1
+    m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 56
-    m_Alignment: 4
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: orem Ipsum is simply dummy text of the printing and typesetting industry.
-    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-    when an unknown printer took a galley of type and scrambled it to make a type
-    specimen book. It has survived not only five centuries, but also the leap into
-    electronic typesetting, remaining essentially unchanged. It was popularised in
-    the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-    and more recently with desktop publishing software like Aldus PageMaker including
-    versions of Lorem Ipsum.
+  m_Text: "Vous \xEAtes un scientifique qui a \xE9chapp\xE9 \xE0 une apocalypse zombie
+    de justesse gr\xE2ce \xE0 sa machine \xE0 voyager dans le temps. Malheureusement,
+    celle-ci n'\xE9tait pas abouti et vous n'\xEAtes revenu que quelques heures dans
+    le pass\xE9 avec une machine compl\xE8tement d\xE9truite. Mais gr\xE2ce \xE0
+    ce disfonctionnement, vous avez acqu\xE9ri le pouvoir de remonter les objects
+    dans le temps ! Utiliser ce pouvoir pour r\xE9soudre les \xE9nigmes de votre
+    laboratoire qui vous aiderons \xE0 reconstruire votre machine et \xE0 \xE9chapper
+    \xE0 l'apocalypse. "
 --- !u!82 &7244759915988662424
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1773,7 +1773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54349f844a0d5134db0af48f722f4716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 0.2
+  delay: 0.05
   skipText: {fileID: 1133711143237323610}
   continueText: {fileID: 574478826201625667}
   Main: {fileID: 9054236443194616223}
@@ -3016,7 +3016,7 @@ RectTransform:
   m_GameObject: {fileID: 2421832202639690528}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8763696662359431099}
@@ -3095,7 +3095,7 @@ RectTransform:
   m_GameObject: {fileID: 2435835684595207598}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4, y: 1.1, z: 1.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3708042179336373434}
@@ -3103,7 +3103,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -42}
   m_SizeDelta: {x: 1000, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5538741380632248888
@@ -3138,10 +3138,10 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: e9c7031c613a44237a04a4f9e999e8b8, type: 3}
     m_FontSize: 32
     m_FontStyle: 1
-    m_BestFit: 1
+    m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 56
-    m_Alignment: 4
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -8826,6 +8826,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be14afe95525843d68c8e6330a9b4963, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level1finished: 0
+  level2finished: 0
+  level3finished: 0
 --- !u!1 &3971314207794255459
 GameObject:
   m_ObjectHideFlags: 0
@@ -11631,7 +11634,7 @@ RectTransform:
   m_GameObject: {fileID: 5897424962960116197}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4, y: 1.1, z: 1.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7462865242175999656}
@@ -11639,7 +11642,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -42}
   m_SizeDelta: {x: 1000, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1331455418247129453
@@ -11674,10 +11677,10 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: e9c7031c613a44237a04a4f9e999e8b8, type: 3}
     m_FontSize: 32
     m_FontStyle: 1
-    m_BestFit: 1
+    m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 56
-    m_Alignment: 4
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -12920,7 +12923,7 @@ RectTransform:
   m_GameObject: {fileID: 6917235905971703817}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8007379648148379619}
@@ -15691,7 +15694,7 @@ RectTransform:
   m_GameObject: {fileID: 8763393073823568045}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6121797317735557870}
@@ -16371,7 +16374,7 @@ RectTransform:
   m_GameObject: {fileID: 8922346119270682405}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8794636188123838700}
@@ -16450,7 +16453,7 @@ RectTransform:
   m_GameObject: {fileID: 8969900041733889800}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4, y: 1.1, z: 1.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 11074818430875369}
@@ -16458,7 +16461,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -42}
   m_SizeDelta: {x: 1000, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6218729297683349383
@@ -16493,23 +16496,21 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: e9c7031c613a44237a04a4f9e999e8b8, type: 3}
     m_FontSize: 32
     m_FontStyle: 1
-    m_BestFit: 1
+    m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 56
-    m_Alignment: 4
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: orem Ipsum is simply dummy text of the printing and typesetting industry.
-    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-    when an unknown printer took a galley of type and scrambled it to make a type
-    specimen book. It has survived not only five centuries, but also the leap into
-    electronic typesetting, remaining essentially unchanged. It was popularised in
-    the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-    and more recently with desktop publishing software like Aldus PageMaker including
-    versions of Lorem Ipsum.
+  m_Text: "Vous \xEAtes dans la premi\xE8re salle ! Celle-ci est compos\xE9e de 3
+    petites pi\xE8ces. Dans chacune d'elles, vous devez appuyer sur les boutons bleus
+    simultan\xE9ment ! Pour rappel, vous avez le pouvoir de faire revenir des objects
+    dans le temps en appuyant sur R. Ils reviendront 5 secondes dans le temps. La
+    troisi\xE8me pi\xE8ce n'est accessible qu'avec un co\xE9quipier ! Bonne chance
+    ! "
 --- !u!82 &4851761871991300765
 AudioSource:
   m_ObjectHideFlags: 0
@@ -16618,7 +16619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54349f844a0d5134db0af48f722f4716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 0.2
+  delay: 0.05
   skipText: {fileID: 6841599324150554330}
   continueText: {fileID: 6228400162682826536}
   Main: {fileID: 5276892181517002799}
@@ -17124,7 +17125,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5830950142045092343}
   - {fileID: 6466545117045199622}
