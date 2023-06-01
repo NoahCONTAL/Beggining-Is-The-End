@@ -1377,7 +1377,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 259151a4db9fd7e749bf92f84ec938b8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.85
+      value: -15.85
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 259151a4db9fd7e749bf92f84ec938b8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1486,8 +1486,8 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0.1
-  spawnPointPosition: {x: -184, y: 3.5, z: -165}
-  spawnPointRotation: {x: 0, y: -90, z: 0}
+  spawnPointPosition: {x: -186.233, y: 7.409, z: -164.25}
+  spawnPointRotation: {x: 0, y: -104.53, z: 0}
   sceneName: Game
 --- !u!65 &241014137
 BoxCollider:

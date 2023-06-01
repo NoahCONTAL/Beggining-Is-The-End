@@ -3395,7 +3395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54349f844a0d5134db0af48f722f4716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 0.2
+  delay: 0.05
   skipText: {fileID: 8991588626376051059}
   continueText: {fileID: 2649327458341319531}
   Main: {fileID: 1065838639657097558}
@@ -12000,7 +12000,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54349f844a0d5134db0af48f722f4716, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 0.2
+  delay: 0.05
   skipText: {fileID: 1544936912507816739}
   continueText: {fileID: 730850797167355456}
   Main: {fileID: 2608673689915346845}

@@ -42,13 +42,4 @@ public class ExitWhenCompleted : MonoBehaviour
             ok2 = false;
         }
     }
-
-    void OnTriggerStay(Collider col)
-    {
-        if(col.CompareTag("Player") && ok)
-        {
-            exitDoor.transform.position += new Vector3(0, 0 , -10);
-            ok = false;
-        }
-    }
 }
