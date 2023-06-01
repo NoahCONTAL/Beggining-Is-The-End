@@ -22,7 +22,7 @@ public class ActivateSecond : MonoBehaviour
     {
         if(col.CompareTag("Player") || col.CompareTag("pickableObject"))
         {
-            floor.transform.position += new Vector3(0, 0, 7);
+            floor.transform.position += new Vector3(0, 0, -7);
         }
     }
 
@@ -30,7 +30,7 @@ public class ActivateSecond : MonoBehaviour
     {
         if(col.CompareTag("Player") || col.CompareTag("pickableObject"))
         {
-            floor.transform.position += new Vector3(0, 0, -7);
+            floor.transform.position += new Vector3(0, 0, 7);
         }
     }
 }
