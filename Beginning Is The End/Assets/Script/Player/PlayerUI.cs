@@ -245,12 +245,12 @@ public class PlayerUI : Player
         Code.SetActive(false);
         _playerMovement.enabled = true;
         CinemachineFreeLook.enabled = true;
-        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void ShowCorrect()
     {
         Good.SetActive(true);
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void HideCorrect()
@@ -269,7 +269,7 @@ public class PlayerUI : Player
     }
 
     [SerializeField] private LevelManagger _levelManager;
-public void essai()
+    public void essai()
     {
         if (Code3chiffres.text == "237" || Code3chiffres.text == "273" ||Code3chiffres.text == "327" || Code3chiffres.text == "372" || Code3chiffres.text == "723" || Code3chiffres.text == "732")
         {
