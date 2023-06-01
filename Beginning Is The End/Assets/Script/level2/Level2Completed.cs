@@ -10,11 +10,13 @@ public class Level2Completed : MonoBehaviour
     Light lt;
     public bool ended;
     Renderer ren;
+    private GameObject[] players;
 
     // Start is called before the first frame update
     void Start()
     {
         lt = GetComponent<Light>();
+        players = GameObject.FindGameObjectsWithTag("Player");
     }
 
     // Update is called once per frame
@@ -25,8 +27,13 @@ public class Level2Completed : MonoBehaviour
             
             ren = GetComponent<Renderer>();
             ren.material.color = Color.green;
-            ended = true; 
-            lt.color = Color.green;        
+            ended = true;
+            lt.color = Color.green;
+
+            foreach (var Player in players)
+            {
+                Player.GetComponent<LevelManagger>().level2finished = true;
+            }
         }
     }
 }
