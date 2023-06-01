@@ -20,7 +20,7 @@ public class ShutingDoor : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player") && button.GetComponent<IsFirstLittleLevelComplete>().completed)
+        if (other.CompareTag("Player") && button.GetComponent<isfirstlittlelevelcomplete>().completed)
         {
             transform.position += new Vector3(0, -4.02f, 0);
         }

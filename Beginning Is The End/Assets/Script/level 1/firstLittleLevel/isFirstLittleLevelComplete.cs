@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IsFirstLittleLevelComplete : MonoBehaviour
+public class isfirstlittlelevelcomplete : MonoBehaviour
 {
     [SerializeField] private GameObject firstPressurePlate;
     [SerializeField] private GameObject secondPressurePlate;

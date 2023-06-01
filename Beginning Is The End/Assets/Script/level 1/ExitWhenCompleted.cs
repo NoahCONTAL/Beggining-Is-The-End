@@ -21,7 +21,7 @@ public class ExitWhenCompleted : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(firstLight.GetComponent<IsFirstLittleLevelComplete>().completed && secondLight.GetComponent<IsSecondLittleLevelComplete>().completed && (thirdLight.GetComponent<IsThirdLittleLevelComplete>().completed || thirdLight.GetComponent<IsThirdLittleLevelComplete>().isAlone))
+        if(firstLight.GetComponent<isfirstlittlelevelcomplete>().completed && secondLight.GetComponent<IsSecondLittleLevelComplete>().completed && (thirdLight.GetComponent<IsThirdLittleLevelComplete>().completed || thirdLight.GetComponent<IsThirdLittleLevelComplete>().isAlone))
         {
             levelCompleted = true;
         }
