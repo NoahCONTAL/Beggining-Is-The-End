@@ -617,8 +617,8 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0.1
-  spawnPointPosition: {x: -184, y: 3.5, z: -165}
-  spawnPointRotation: {x: 0, y: 0, z: 0}
+  spawnPointPosition: {x: -186.233, y: 5.409, z: -156.25}
+  spawnPointRotation: {x: 0, y: -104.53, z: 0}
   sceneName: Game
 --- !u!65 &516026005
 BoxCollider:
