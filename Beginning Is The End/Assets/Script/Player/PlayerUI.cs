@@ -285,6 +285,12 @@ public class PlayerUI : Player
             GetComponent<Player>().TakeDamage(5);
         }
     }
-
-
+    
+    [SerializeField] private GameObject End;
+    
+    public void ShowEnd()
+    {
+        End.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+    }
 }

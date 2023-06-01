@@ -200,6 +200,14 @@ public class PlayerObjects : MonoBehaviour
                     
                 }
             }
+            
+            else if (hit.collider.gameObject.CompareTag("end"))
+            {
+                playerUI.ShowUse();
+
+                if (Input.GetButton("Use"))
+                    playerUI.ShowEnd();
+            }
         
             else
             {
