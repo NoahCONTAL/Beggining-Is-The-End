@@ -33,6 +33,13 @@ public class PlayerTeleport : NetworkBehaviour
     {
         playerUI.Chargement.gameObject.SetActive(true);
         
+        //trouve les tous les objects avec un tag "pickable" et les désactive
+        GameObject[] pickableObjects = GameObject.FindGameObjectsWithTag("pickableObject");
+        foreach (var pickableObject in pickableObjects)
+        {
+            Destroy(pickableObject);
+        }
+        
         float elapsedTime = 0;
 
         while (elapsedTime < 0.5f)

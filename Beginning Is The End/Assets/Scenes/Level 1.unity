@@ -1693,6 +1693,7 @@ MonoBehaviour:
   secondLight: {fileID: 231925827}
   thirdLight: {fileID: 737185569}
   levelCompleted: 0
+  players: []
 --- !u!65 &307543276
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2710,11 +2711,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ff3ba0becae47b8b9381191598957c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syncDirection: 1
+  syncDirection: 0
   syncMode: 0
   syncInterval: 0
   target: {fileID: 475725556}
-  clientAuthority: 1
+  clientAuthority: 0
   syncPosition: 1
   syncRotation: 1
   syncScale: 0

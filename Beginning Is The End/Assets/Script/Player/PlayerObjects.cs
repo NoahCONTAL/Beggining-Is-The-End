@@ -48,7 +48,6 @@ public class PlayerObjects : MonoBehaviour
             {
                 pickableObject.GetComponent<Rigidbody>().isKinematic = false;
                 pickableObject.transform.parent = null;
-                SceneManager.MoveGameObjectToScene(pickableObject, SceneManager.GetActiveScene());
                 beingCarried = false;
             }
         }
